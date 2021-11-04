@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="OpenBeetoCell" customModule="PulBackCashBack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvr-6a-9dS">
+                        <rect key="frame" x="10" y="10" width="300" height="62"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-UW-uBw">
+                                <rect key="frame" x="20" y="10" width="260" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-gY-dIo">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="42"/>
+                                        <string key="text">Начните
+покупки через</string>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="Betoo" translatesAutoresizingMaskIntoConstraints="NO" id="cOe-FO-4Yz">
+                                        <rect key="frame" x="132" y="0.0" width="128" height="42"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6xJ-UW-uBw" firstAttribute="leading" secondItem="Mvr-6a-9dS" secondAttribute="leading" constant="20" id="4Jc-fY-olI"/>
+                            <constraint firstAttribute="bottom" secondItem="6xJ-UW-uBw" secondAttribute="bottom" constant="10" id="BQj-XA-IQK"/>
+                            <constraint firstItem="6xJ-UW-uBw" firstAttribute="top" secondItem="Mvr-6a-9dS" secondAttribute="top" constant="10" id="Lni-JB-Wxz"/>
+                            <constraint firstAttribute="trailing" secondItem="6xJ-UW-uBw" secondAttribute="trailing" constant="20" id="pRZ-dm-ziM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Mvr-6a-9dS" secondAttribute="bottom" constant="10" id="Sq7-tQ-6jl"/>
+                    <constraint firstItem="Mvr-6a-9dS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Sx6-Pd-X6x"/>
+                    <constraint firstItem="Mvr-6a-9dS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Z9m-r5-qkh"/>
+                    <constraint firstAttribute="trailing" secondItem="Mvr-6a-9dS" secondAttribute="trailing" constant="10" id="yQk-Xv-BCo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="Mvr-6a-9dS" id="QnU-cT-Txy"/>
+            </connections>
+            <point key="canvasLocation" x="28.985507246376812" y="87.723214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Betoo" width="69" height="58"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyProfileVC" customModule="PulBackCashBack" customModuleProvider="target">
+            <connections>
+                <outlet property="phoneNumberLabel" destination="oep-CG-bDR" id="Xm2-Cn-HXk"/>
+                <outlet property="table_view" destination="WaS-1S-zZk" id="Szf-SD-5jR"/>
+                <outlet property="userImage" destination="uMH-LT-jxT" id="Dcj-hp-YSk"/>
+                <outlet property="userNameLabel" destination="HhX-X5-5rW" id="3qT-hR-JLc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-fw-4F9">
+                    <rect key="frame" x="20" y="64" width="274.5" height="109.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой пофиль в Tiin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzA-7C-Dca">
+                            <rect key="frame" x="0.0" y="0.0" width="274.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zkj-YE-kdT">
+                            <rect key="frame" x="0.0" y="40.5" width="274.5" height="69"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Betoo" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-LT-jxT">
+                                    <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                    <color key="backgroundColor" systemColor="linkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="uMH-LT-jxT" secondAttribute="height" id="rWU-pB-6VI"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-IO-jQc">
+                                    <rect key="frame" x="79" y="10" width="195.5" height="49.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Муроджон Турсунов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-X5-5rW">
+                                            <rect key="frame" x="0.0" y="0.0" width="195.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+998 (97) 707 02 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oep-CG-bDR">
+                                            <rect key="frame" x="0.0" y="29" width="156" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-1S-zZk">
+                    <rect key="frame" x="0.0" y="193.5" width="414" height="448"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-s4-u8l">
+                    <rect key="frame" x="127" y="748" width="160" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Xe-6GL">
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="+998 94 555 58 92">
+                                <color key="titleColor" systemColor="systemBlueColor"/>
+                            </state>
+                            <connections>
+                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="l7D-j5-s9m"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukZ-7g-sdO">
+                            <rect key="frame" x="0.0" y="34" width="160" height="30"/>
+                            <state key="normal" title="Служба поддержки"/>
+                            <connections>
+                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="l2L-HL-KXD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uAc-s4-u8l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DJn-Er-u73"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uAc-s4-u8l" secondAttribute="bottom" constant="50" id="JYV-eT-QgJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WaS-1S-zZk" secondAttribute="trailing" id="ba8-Vv-o6K"/>
+                <constraint firstItem="WaS-1S-zZk" firstAttribute="top" secondItem="wXT-fw-4F9" secondAttribute="bottom" constant="20" id="bes-Ky-x1f"/>
+                <constraint firstItem="wXT-fw-4F9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="gkj-ES-iuB"/>
+                <constraint firstItem="WaS-1S-zZk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="jQQ-Yl-1Ku"/>
+                <constraint firstItem="WaS-1S-zZk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pvk-UX-26Y"/>
+                <constraint firstItem="wXT-fw-4F9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rro-Ka-UaP"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="61"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Betoo" width="69" height="58"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

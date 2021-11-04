@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewsCell" customModule="PulBackCashBack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="357"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="357"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI4-4F-qpa">
+                        <rect key="frame" x="0.0" y="0.0" width="356" height="357"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 24" translatesAutoresizingMaskIntoConstraints="NO" id="8h1-Gy-mdE">
+                                <rect key="frame" x="0.0" y="0.0" width="356" height="214"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="O21-v3-08B">
+                                <rect key="frame" x="15" y="224" width="331" height="124.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.06.2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-eR-duY">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KOLBERG GROUP – " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNE-73-c6j">
+                                        <rect key="frame" x="0.0" y="30.5" width="331" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="многопрофильная группа компаний, ориентированных на дистрибьюцию товаров" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcE-S3-WYj">
+                                        <rect key="frame" x="0.0" y="63.5" width="331" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O21-v3-08B" firstAttribute="top" secondItem="8h1-Gy-mdE" secondAttribute="bottom" constant="10" id="0nr-ip-tiA"/>
+                            <constraint firstAttribute="trailing" secondItem="O21-v3-08B" secondAttribute="trailing" constant="10" id="8Zh-rR-UZc"/>
+                            <constraint firstItem="O21-v3-08B" firstAttribute="leading" secondItem="xI4-4F-qpa" secondAttribute="leading" constant="15" id="FJ0-0Z-54v"/>
+                            <constraint firstItem="8h1-Gy-mdE" firstAttribute="leading" secondItem="xI4-4F-qpa" secondAttribute="leading" id="QA0-jy-koI"/>
+                            <constraint firstAttribute="trailing" secondItem="8h1-Gy-mdE" secondAttribute="trailing" id="UGg-Te-sqv"/>
+                            <constraint firstItem="8h1-Gy-mdE" firstAttribute="height" secondItem="xI4-4F-qpa" secondAttribute="height" multiplier="0.6" id="X3T-uz-6aF"/>
+                            <constraint firstItem="8h1-Gy-mdE" firstAttribute="top" secondItem="xI4-4F-qpa" secondAttribute="top" id="ahw-m5-idZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="xI4-4F-qpa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Szt-Vs-8vo"/>
+                <constraint firstItem="xI4-4F-qpa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y18-48-e6D"/>
+                <constraint firstAttribute="trailing" secondItem="xI4-4F-qpa" secondAttribute="trailing" id="h7C-pa-0FT"/>
+                <constraint firstAttribute="bottom" secondItem="xI4-4F-qpa" secondAttribute="bottom" id="q70-2b-2GP"/>
+            </constraints>
+            <size key="customSize" width="356" height="357"/>
+            <connections>
+                <outlet property="dateLabel" destination="jhe-eR-duY" id="bq3-qn-4vO"/>
+                <outlet property="img" destination="8h1-Gy-mdE" id="djJ-UT-CVj"/>
+            </connections>
+            <point key="canvasLocation" x="-163.768115942029" y="87.388392857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Rectangle 24" width="288" height="362.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

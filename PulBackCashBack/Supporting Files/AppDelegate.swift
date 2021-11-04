@@ -14,9 +14,14 @@ var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
-        let vc = MainVC(nibName: "MainVC", bundle: nil)
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nav
+        UITabBar.appearance().tintColor = UIColor(red: 0.278, green: 0.749, blue: 0.639, alpha: 1)
+        
+//        let vc = MainVC(nibName: "MainVC", bundle: nil)
+        let login = LoginVC(nibName: "LoginVC", bundle: nil)
+        let nav = UINavigationController(rootViewController: login)
+        nav.navigationBar.backgroundColor = .green
+        let tabbar = TabBarController()
+        window?.rootViewController = tabbar
         window?.makeKeyAndVisible()
         return true
     }
