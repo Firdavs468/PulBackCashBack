@@ -20,10 +20,10 @@ class ProfileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = containerView.frame.height/10
+        containerView.layer.cornerRadius = containerView.frame.height/20
         containerView.layer.shadowColor = UIColor.darkGray.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        containerView.layer.shadowRadius = 2
+        containerView.layer.shadowRadius = 1
         containerView.layer.shadowOpacity = 0.5
     }
     

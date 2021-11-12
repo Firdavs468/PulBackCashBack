@@ -11,6 +11,8 @@ import LocalAuthentication
 class PinVC: UIViewController {
     
     
+    @IBOutlet weak var nextButtonTop: NSLayoutConstraint!
+    @IBOutlet weak var passwordStack: UIStackView!
     @IBOutlet var numbersButton: [UIButton]!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -61,6 +63,15 @@ class PinVC: UIViewController {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
         for number in numbersButton {
             number.layer.cornerRadius = number.frame.height/6
+        }
+        
+        //setup constraint
+        if isSmalScreen568 {
+            passwordStack.spacing = 25
+            nextButtonTop.constant = 30
+        }else {
+            passwordStack.spacing = 35
+            nextButtonTop.constant = 50
         }
     }
     

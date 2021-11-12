@@ -9,4 +9,5 @@ import Foundation
 class Keys {
     static let token = "TOKEN"
     static let phone_number = "PHONE_NUMBER"
+    static let bar_code = "bar_code"
 }

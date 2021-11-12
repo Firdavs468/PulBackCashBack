@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
+                <outlet property="collectionBottom" destination="G7K-aT-G9K" id="Mns-Ne-eVF"/>
+                <outlet property="collectionTop" destination="cfJ-3P-BN3" id="rDR-Ep-Rh1"/>
                 <outlet property="collection_view" destination="QIs-B9-wqW" id="xDS-cb-NWD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QIs-B9-wqW">
-                    <rect key="frame" x="0.0" y="94" width="414" height="718"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QIs-B9-wqW">
+                    <rect key="frame" x="10" y="74" width="394" height="638"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i1W-dW-14z">
                         <size key="itemSize" width="128" height="128"/>
@@ -33,10 +35,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIs-B9-wqW" secondAttribute="bottom" constant="50" id="G7K-aT-G9K"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QIs-B9-wqW" secondAttribute="trailing" id="GwM-jL-JGB"/>
-                <constraint firstItem="QIs-B9-wqW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cfJ-3P-BN3"/>
-                <constraint firstItem="QIs-B9-wqW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oGV-ct-HiU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIs-B9-wqW" secondAttribute="bottom" constant="150" id="G7K-aT-G9K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QIs-B9-wqW" secondAttribute="trailing" constant="10" id="GwM-jL-JGB"/>
+                <constraint firstItem="QIs-B9-wqW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="cfJ-3P-BN3"/>
+                <constraint firstItem="QIs-B9-wqW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="oGV-ct-HiU"/>
             </constraints>
             <point key="canvasLocation" x="122" y="61"/>
         </view>

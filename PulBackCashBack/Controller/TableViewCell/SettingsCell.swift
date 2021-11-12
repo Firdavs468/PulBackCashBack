@@ -6,14 +6,19 @@
 //
 
 import UIKit
+protocol SettingsDelegate {
+    func isOn()
+}
 
 class SettingsCell: UITableViewCell {
-
     
+    @IBOutlet weak var touchIdSwitch: UISwitch!
     static func nib() -> UINib {
         return UINib(nibName: "SettingsCell", bundle: nil)
     }
     static let identifier = "SettingsCell"
+    
+    let delegate : SettingsDelegate? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,60 +18,71 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-Mh-XBt">
-                    <rect key="frame" x="10" y="64" width="394" height="236.5"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j10-a2-w7D">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-Mp-Yvr">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="68.5"/>
-                            <string key="text">Любой ваш отзыв важен для нас.
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hy1-gE-KuE">
+                            <rect key="frame" x="10" y="10" width="300" height="468"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-Mh-XBt">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="208"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-Mp-Yvr">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="64.5"/>
+                                            <string key="text">Любой ваш отзыв важен для нас.
 Поля, отмеченные (*), обязательны для заполнения.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Сообщение*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-ux-Kpa">
-                            <rect key="frame" x="0.0" y="108.5" width="394" height="128"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Сообщение*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-ux-Kpa">
+                                            <rect key="frame" x="0.0" y="94.5" width="300" height="113.5"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </stackView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZi-91-hYm">
+                                    <rect key="frame" x="0.0" y="238" width="300" height="165"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-SM-EnA">
+                                    <rect key="frame" x="0.0" y="433" width="300" height="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <state key="normal" title="Отправить ">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendButtonPressed:" destination="-1" eventType="touchUpInside" id="JrJ-el-PPC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZi-91-hYm">
-                    <rect key="frame" x="0.0" y="330.5" width="414" height="313.5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-SM-EnA">
-                    <rect key="frame" x="40" y="674" width="334" height="54"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="Отправить ">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="sendButtonPressed:" destination="-1" eventType="touchUpInside" id="JrJ-el-PPC"/>
-                    </connections>
-                </button>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="hy1-gE-KuE" secondAttribute="trailing" constant="10" id="A05-lV-Uqf"/>
+                        <constraint firstItem="hy1-gE-KuE" firstAttribute="top" secondItem="j10-a2-w7D" secondAttribute="top" constant="10" id="MjD-j6-73Z"/>
+                        <constraint firstItem="hy1-gE-KuE" firstAttribute="centerX" secondItem="j10-a2-w7D" secondAttribute="centerX" id="QTF-ZD-XlW"/>
+                        <constraint firstItem="hy1-gE-KuE" firstAttribute="leading" secondItem="j10-a2-w7D" secondAttribute="leading" constant="10" id="Suw-tE-eKP"/>
+                        <constraint firstAttribute="bottom" secondItem="hy1-gE-KuE" secondAttribute="bottom" id="ktV-LK-K1J"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="G5B-Mh-XBt" secondAttribute="trailing" constant="10" id="0fn-50-yyP"/>
-                <constraint firstItem="G5B-Mh-XBt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="47Y-35-HHa"/>
-                <constraint firstItem="oZi-91-hYm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7AL-yk-3NJ"/>
-                <constraint firstItem="6MX-SM-EnA" firstAttribute="top" secondItem="oZi-91-hYm" secondAttribute="bottom" constant="30" id="7NW-oF-pzG"/>
-                <constraint firstItem="oZi-91-hYm" firstAttribute="top" secondItem="G5B-Mh-XBt" secondAttribute="bottom" constant="30" id="Cqf-eH-8Jb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6MX-SM-EnA" secondAttribute="trailing" constant="40" id="E3a-JD-g2y"/>
-                <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="IAq-ZN-QBl"/>
-                <constraint firstItem="G5B-Mh-XBt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Ufr-fG-XBx"/>
-                <constraint firstItem="6MX-SM-EnA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="cd9-89-hhR"/>
-                <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.142857" id="d6N-mW-llm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oZi-91-hYm" secondAttribute="trailing" id="j5X-ZW-pqU"/>
-                <constraint firstItem="6MX-SM-EnA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="wAt-RI-7PI"/>
+                <constraint firstItem="j10-a2-w7D" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.85" id="6Mp-wk-abM"/>
+                <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.29" id="HOt-HQ-FVi"/>
+                <constraint firstItem="j10-a2-w7D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vds-vz-6Ns"/>
+                <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="Vx9-5V-8rr"/>
+                <constraint firstAttribute="trailing" secondItem="j10-a2-w7D" secondAttribute="trailing" id="b8X-kJ-6iX"/>
+                <constraint firstItem="j10-a2-w7D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nfG-c2-3t0"/>
             </constraints>
-            <point key="canvasLocation" x="28.985507246376812" y="60.9375"/>
+            <point key="canvasLocation" x="79" y="-1804"/>
         </view>
     </objects>
     <resources>

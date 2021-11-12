@@ -17,6 +17,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-Pw-aaD">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-aQ-i5b">
                     <rect key="frame" x="116.5" y="411.5" width="181" height="73.5"/>
                     <subviews>
@@ -36,12 +39,18 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.24479999999999996" green="0.71999999999999997" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Gbp-aQ-i5b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Rb-oh-J6T"/>
+                <constraint firstItem="ArU-Pw-aaD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BX8-my-cXd"/>
+                <constraint firstItem="ArU-Pw-aaD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EZn-Rm-CZS"/>
                 <constraint firstItem="Gbp-aQ-i5b" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Fhk-Yp-5kO"/>
+                <constraint firstAttribute="bottom" secondItem="ArU-Pw-aaD" secondAttribute="bottom" id="xD7-8a-KIf"/>
+                <constraint firstItem="ArU-Pw-aaD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zfR-nA-3rG"/>
             </constraints>
-            <point key="canvasLocation" x="43" y="68"/>
+            <point key="canvasLocation" x="42.028985507246382" y="67.633928571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="frame" width="428" height="927"/>
+    </resources>
 </document>

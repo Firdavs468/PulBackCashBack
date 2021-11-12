@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCell" customModule="PulBackCashBack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chz-c9-fFP">
+                        <rect key="frame" x="0.0" y="0.0" width="241" height="180"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0DB-9g-3GM">
+                                <rect key="frame" x="0.0" y="0.0" width="241" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0DB-9g-3GM" firstAttribute="leading" secondItem="chz-c9-fFP" secondAttribute="leading" id="BKv-ig-mhw"/>
+                            <constraint firstItem="0DB-9g-3GM" firstAttribute="top" secondItem="chz-c9-fFP" secondAttribute="top" id="R52-ns-9p8"/>
+                            <constraint firstAttribute="trailing" secondItem="0DB-9g-3GM" secondAttribute="trailing" id="bvJ-hl-CXn"/>
+                            <constraint firstAttribute="bottom" secondItem="0DB-9g-3GM" secondAttribute="bottom" id="fQf-6p-Gz5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="chz-c9-fFP" secondAttribute="trailing" id="E3o-vq-6E0"/>
+                <constraint firstItem="chz-c9-fFP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PRS-5J-6UQ"/>
+                <constraint firstItem="chz-c9-fFP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SRc-xK-C40"/>
+                <constraint firstAttribute="bottom" secondItem="chz-c9-fFP" secondAttribute="bottom" id="xZv-aX-ABh"/>
+            </constraints>
+            <size key="customSize" width="241" height="180"/>
+            <connections>
+                <outlet property="containerView" destination="chz-c9-fFP" id="Sik-9d-gfY"/>
+                <outlet property="table_view" destination="0DB-9g-3GM" id="GLf-wv-Yl5"/>
+            </connections>
+            <point key="canvasLocation" x="167.39130434782609" y="109.15178571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

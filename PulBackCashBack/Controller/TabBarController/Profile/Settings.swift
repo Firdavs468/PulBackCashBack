@@ -55,13 +55,22 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.table_view.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 120
         }else {
-            return 80
+            if isSmalScreen568 {
+                return 60
+            }else if isSmalScreen736 {
+                return 70
+            }else {
+                return 80
+            }
         }
     }
     

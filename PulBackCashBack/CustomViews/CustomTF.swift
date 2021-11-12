@@ -154,6 +154,26 @@ class CustomTF:UIView {
         }
     }
     
+     var textInputView : UIView? {
+        get {
+            return self.textField.inputView
+        }set(newValue) {
+            if let input = newValue {
+                textField.inputView = input
+            }
+        }
+    }
+    
+    var accessoryView : UIView? {
+        get {
+            return self.textField.inputAccessoryView
+        }set(newValue) {
+            if let accesory = newValue {
+                textField.inputAccessoryView = accesory
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -226,9 +246,7 @@ class CustomTF:UIView {
     }
     
     @objc func rightButtonTapped() {
-        //        rightButton.isHidden = true
         self.textField.text = ""
-        //        textField.resignFirstResponder()
     }
     
 }

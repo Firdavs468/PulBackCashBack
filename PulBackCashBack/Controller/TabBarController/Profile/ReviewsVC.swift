@@ -14,7 +14,7 @@ class ReviewsVC: UIViewController {
     @IBOutlet weak var table_view: UITableView!
     
     let cellLabelArray = [
-    "Выберите тип обращения*",
+        "Выберите тип обращения*",
         "Выберите филиал",
         "Прикрепить файл"
     ]
@@ -29,6 +29,7 @@ class ReviewsVC: UIViewController {
     @IBAction func sendButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     func cornerView() {
         sendButton.layer.borderWidth = 2
         sendButton.layer.cornerRadius = sendButton.frame.height/6
@@ -37,12 +38,7 @@ class ReviewsVC: UIViewController {
         textView.layer.borderColor = UIColor.systemGray3.cgColor
         textView.layer.borderWidth = 2
         textView.layer.cornerRadius = textView.frame.height/7
-//        textView.layer.shadowRadius = 2
-//        textView.layer.shadowOpacity = 0.5
-//        textView.layer.shadowColor = UIColor.black.cgColor
-//        textView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
-    
 }
 
 //MARK: - TableView delegate methods
@@ -71,7 +67,13 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        if isSmalScreen568 {
+            return 50
+        }else if isSmalScreen736 {
+            return 60
+        }else {
+            return 65
+        }
     }
     
     

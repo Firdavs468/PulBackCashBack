@@ -6,13 +6,18 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class LoginVC: UIViewController {
     
+    @IBOutlet weak var tiinMarketLabel: UILabel!
+    @IBOutlet weak var nextButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var uncheckButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var phoneNumberTF: CustomTF!
+    @IBOutlet weak var fullTextLabel: UILabel!
+    
     
     var isPressed1 : Bool = false
     var isPressed2 : Bool = false
@@ -20,11 +25,15 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGesture()
-        cornerView()
         setupTextField()
         //        navBarBackground()
+        multipleFontColorsSingleLabel()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        nextButton.layer.cornerRadius = nextButton.frame.height/2
+    }
     
     @IBAction func uncheckButtonPressed(_ sender: Any) {
         if !isPressed1 {
@@ -38,33 +47,59 @@ class LoginVC: UIViewController {
     
     @IBAction func checkButtonPressed(_ sender: Any) {
         if !isPressed2 {
-            uncheckButton.setImage(UIImage(named: "uncheck"), for: .normal)
+            uncheckButton.setImage(UIImage(named: "check"), for: .normal)
             isPressed2 = true
         }else {
-            uncheckButton.setImage(UIImage(named: "check"), for: .normal)
+            uncheckButton.setImage(UIImage(named: "uncheck"), for: .normal)
             isPressed2 = false
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if ((phoneNumberTF.text?.isEmpty) != nil) {
-            
-        }
-        Cache.saveUserDefaults(phoneNumberTF.text, forKey: Keys.phone_number)
-        let vc = ConfirmationVC(nibName: "ConfirmationVC", bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
+        userLogin()
     }
     
-    
-    func cornerView() {
-        nextButton.layer.cornerRadius = nextButton.frame.height/2
-    }
-    
+    //Custom Text Field setup
     func setupTextField() {
         phoneNumberTF.title = "Номер мобильного"
         phoneNumberTF.placeholder = "+998"
-        phoneNumberTF.keyboardType = .numberPad
+        phoneNumberTF.keyboardType = .phonePad
         phoneNumberTF.delegate = self
+    }
+    
+    //Use multiple font colors in a single label
+    func multipleFontColorsSingleLabel() {
+        
+        //fullTextLabel
+        let yourAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let yourOtherAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)] as [NSAttributedString.Key : Any]
+        let yourAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let yourOtherAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)] as [NSAttributedString.Key : Any]
+        
+        let partOne = NSMutableAttributedString(string: "Я согласен с ", attributes: yourAttributes)
+        let partTwo = NSMutableAttributedString(string: " Пользовательским соглашением", attributes: yourOtherAttributes)
+        let partThird = NSMutableAttributedString(string: " и даю ", attributes: yourAttributes2)
+        let part4 = NSMutableAttributedString(string: "согласие на обработку персональных данных", attributes: yourOtherAttributes2)
+        let combination = NSMutableAttributedString()
+        
+        combination.append(partOne)
+        combination.append(partTwo)
+        combination.append(partThird)
+        combination.append(part4)
+        fullTextLabel.attributedText = combination
+        
+        //tiinMarketLabel
+        let tiinAtributs = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .regular)]
+        let tiinAtributs2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .bold)]
+        
+        let part1 = NSMutableAttributedString(string: "Я согласен с на получение сообшений об акциях, скидках и других рекламных уведомлений Tiin ", attributes: tiinAtributs)
+        let part2 = NSMutableAttributedString(string: "Tiin Market", attributes: tiinAtributs2)
+        
+        let combination2 = NSMutableAttributedString()
+        
+        combination2.append(part1)
+        combination2.append(part2)
+        tiinMarketLabel.attributedText = combination2
     }
     
 }
@@ -78,6 +113,7 @@ extension LoginVC : UITextFieldDelegate {
         textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
         return false
     }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if ((textField.text?.isEmpty) != nil) {
             phoneNumberTF.rightButtonIcon = UIImage(systemName:"xmark.circle.fill")
@@ -123,6 +159,45 @@ extension LoginVC {
         return result
     }
     
+}
+
+extension LoginVC {
+    func userLogin() {
+        let phoneNumber = phoneNumberTF.text?.replacingOccurrences(of: "+998", with: "").replacingOccurrences(of: " ", with:"").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
+        if let number = phoneNumber {
+            print(number)
+            let param = [
+                "phone" : number
+            ]
+            let headers : HTTPHeaders = [
+                "Content-Type": "application/json"
+            ]
+            
+            Networking.fetchRequest(urlAPI: API.signInUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+                if let data = data {
+                    Loader.start()
+                    print(JSON(data))
+                    let jsonData = JSON(data)
+                    if jsonData["code"].intValue == 0 {
+                        Loader.stop()
+                        Cache.saveUserDefaults(Keys.phone_number, forKey:number)
+                        let vc = ConfirmationVC(nibName: "ConfirmationVC", bundle: nil)
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }else if jsonData["code"].intValue == 50000 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Registratsiyadan o'ting")
+                        let vc = ProfileVC(nibName: "ProfileVC", bundle: nil)
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }else if jsonData["code"].intValue == 50005 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Tasdiqlash kodinin jo'natib bo'lmadi")
+                    }
+                }
+            }
+        }
+    }
 }
 
 ////MARK: - Navigation Controller Barbackground

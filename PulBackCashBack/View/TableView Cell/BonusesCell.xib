@@ -54,27 +54,33 @@
                             </button>
                         </subviews>
                     </stackView>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="46r-5y-Iq2">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-83-E01">
                         <rect key="frame" x="0.0" y="67" width="320" height="255"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </tableView>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lvc-te-rCw">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="46r-5y-Iq2" secondAttribute="trailing" id="4ee-xp-gZ1"/>
                     <constraint firstItem="hLz-HJ-h6t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="92i-az-t4s"/>
                     <constraint firstItem="hLz-HJ-h6t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="Esh-XL-KKl"/>
-                    <constraint firstAttribute="bottom" secondItem="46r-5y-Iq2" secondAttribute="bottom" id="LWs-64-EBP"/>
-                    <constraint firstItem="46r-5y-Iq2" firstAttribute="top" secondItem="hLz-HJ-h6t" secondAttribute="bottom" constant="20" id="VcZ-aQ-L1W"/>
+                    <constraint firstAttribute="bottom" secondItem="NwB-83-E01" secondAttribute="bottom" id="Ppn-F6-V0B"/>
+                    <constraint firstItem="NwB-83-E01" firstAttribute="top" secondItem="hLz-HJ-h6t" secondAttribute="bottom" constant="20" id="RVL-Kf-wCm"/>
                     <constraint firstAttribute="trailing" secondItem="hLz-HJ-h6t" secondAttribute="trailing" constant="40" id="beZ-mX-Tkc"/>
-                    <constraint firstItem="46r-5y-Iq2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qjB-ft-F5c"/>
+                    <constraint firstAttribute="trailing" secondItem="NwB-83-E01" secondAttribute="trailing" id="h2I-YN-gcB"/>
+                    <constraint firstItem="NwB-83-E01" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kX4-oP-Flo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bonusesButton" destination="Tq1-jz-9d7" id="ibE-Ng-cMy"/>
                 <outlet property="bonusesView" destination="ZA9-IX-6d1" id="7Kb-5L-pEL"/>
+                <outlet property="collection_view" destination="NwB-83-E01" id="UxT-oM-rr4"/>
                 <outlet property="purchasesButton" destination="ElJ-6b-qUN" id="Ojo-bP-5SF"/>
-                <outlet property="table_view" destination="46r-5y-Iq2" id="ZSh-nV-x7Q"/>
             </connections>
             <point key="canvasLocation" x="42.028985507246382" y="160.04464285714286"/>
         </tableViewCell>

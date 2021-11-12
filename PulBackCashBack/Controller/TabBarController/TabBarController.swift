@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
         let navbranches =  UINavigationController(rootViewController: branches)
         
         let qrcode = QRCodeVC(nibName: "QRCodeVC", bundle: nil)
-        qrcode.tabBarItem.image = UIImage(systemName: "star")
+        qrcode.tabBarItem.image = UIImage(named: "scanner")
         qrcode.tabBarItem.title = "QRCode"
         let navqrcode =  UINavigationController(rootViewController: qrcode)
         

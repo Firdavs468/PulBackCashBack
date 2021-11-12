@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol OpenBeeto {
+    func openApp()
+}
 
 class OpenBeetoCell: UITableViewCell {
 
@@ -15,14 +18,20 @@ class OpenBeetoCell: UITableViewCell {
         return UINib(nibName: "OpenBeetoCell", bundle: nil)
     }
     static let identifier = "OpenBeetoCell"
-    
+    var delegate : OpenBeeto? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = containerView.frame.height/5
+        containerView.layer.cornerRadius = containerView.frame.height/8
         containerView.layer.shadowOpacity = 0.5
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
         containerView.layer.shadowColor = UIColor.systemGray.cgColor
         containerView.layer.shadowRadius = 2
     }
+    func open(_ url: URL,
+      options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:],
+      completionHandler completion: ((Bool) -> Void)? = nil) {
+        
+    }
+
     
 }

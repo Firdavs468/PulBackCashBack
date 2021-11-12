@@ -24,11 +24,23 @@ class MyProfileVC: UIViewController {
         "Поделиться приложением",
         "Жалобы и предложения"
     ]
+    let imagesArr = [
+        UIImage(named: "setting")!,
+        UIImage(named: "information")!,
+        UIImage(named: "wifi")!,
+        UIImage(named: "message")!
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Профиль"
         setupTableView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userImage.layer.masksToBounds = true
+        userImage.layer.cornerRadius = userImage.frame.height/2
     }
     
     @IBAction func callCenterButtonPressed(_ sender: Any) {
@@ -44,6 +56,7 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         self.table_view.delegate = self
         self.table_view.dataSource = self
         self.table_view.tableFooterView = UIView()
+        self.table_view.separatorStyle = .none
         self.table_view.register(ProfileCell.nib(), forCellReuseIdentifier: ProfileCell.identifier)
     }
     
@@ -53,7 +66,7 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.table_view.dequeueReusableCell(withIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
-        cell.updateCell(image: UIImage(systemName: "person")!, label: lblsArr[indexPath.row])
+        cell.updateCell(image:imagesArr[indexPath.row] , label: lblsArr[indexPath.row])
         return cell
     }
     
@@ -70,7 +83,13 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        if isSmalScreen568 {
+            return 60
+        }else if isSmalScreen736 {
+            return 70
+        }else {
+            return 80
+        }
     }
     
 }
@@ -99,14 +118,14 @@ extension MyProfileVC {
         if let urlStr = NSURL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8") {
             let objectsToShare = [urlStr]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
+            
             if UIDevice.current.userInterfaceIdiom == .pad {
                 if let popup = activityVC.popoverPresentationController {
                     popup.sourceView = self.view
                     popup.sourceRect = CGRect(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 4, width: 0, height: 0)
                 }
             }
-
+            
             self.present(activityVC, animated: true, completion: nil)
         }
     }
