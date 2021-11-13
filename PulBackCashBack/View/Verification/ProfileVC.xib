@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,39 +11,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
                 <outlet property="allStack" destination="U2T-Zd-49J" id="iDs-cK-4c1"/>
-                <outlet property="birthdayTF" destination="5Uz-vG-2bU" id="wgV-VV-nLg"/>
-                <outlet property="genderTF" destination="a5L-a8-gBN" id="NEI-4g-vro"/>
+                <outlet property="birthdayTextField" destination="gW1-pV-x2s" id="g66-OX-QAM"/>
+                <outlet property="familyStatusTextField" destination="ZGX-Wb-yUV" id="Sf6-pI-F8U"/>
+                <outlet property="genderTextField" destination="R2J-Yo-1SQ" id="r76-O5-JUE"/>
                 <outlet property="labelsStack" destination="1uu-u1-NKR" id="OmI-Ti-fqW"/>
-                <outlet property="maritalStatusTF" destination="lkc-LP-Ofn" id="ubb-kg-uuP"/>
-                <outlet property="nameTF" destination="2Kv-Ja-LUL" id="tKF-lq-u25"/>
+                <outlet property="nameTextField" destination="j4q-6L-ZTm" id="rK2-Ru-0Q8"/>
                 <outlet property="nextButton" destination="Q7u-6t-NGT" id="93o-Fh-aKd"/>
-                <outlet property="surnamTF" destination="797-tp-7q8" id="C9K-9P-ItD"/>
+                <outlet property="surnameTextField" destination="cy6-8M-UQv" id="kK7-eK-Wcn"/>
                 <outlet property="textFieldsStack" destination="08G-8d-XTc" id="k4s-Pr-qdq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="containerView" destination="2Kv-Ja-LUL" collectionClass="NSMutableArray" id="qjA-Ca-NAQ"/>
+                <outletCollection property="containerView" destination="m5P-kB-c6D" collectionClass="NSMutableArray" id="XRp-xw-M17"/>
+                <outletCollection property="containerView" destination="Qny-2Z-JvR" collectionClass="NSMutableArray" id="uR1-WX-Ydh"/>
+                <outletCollection property="containerView" destination="s4g-lo-kgd" collectionClass="NSMutableArray" id="mCM-YC-he2"/>
+                <outletCollection property="containerView" destination="Hvg-u8-TMv" collectionClass="NSMutableArray" id="mNV-gZ-8VP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHI-tT-7Vk">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="1344"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-Zd-49J">
-                            <rect key="frame" x="20" y="30" width="280" height="528"/>
+                            <rect key="frame" x="20" y="30" width="374" height="598"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1uu-u1-NKR">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="181.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="153"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профиль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdA-dj-RmF">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOR-eD-5I6">
-                                            <rect key="frame" x="0.0" y="56" width="280" height="72"/>
+                                            <rect key="frame" x="0.0" y="56" width="374" height="60"/>
                                             <string key="text">Кешбек карта виртульной и не имеет физического аналога. Виртуальная карта доступна для пользования только через данное приложение.
 При регистрации карты просим ва вводить реальные данные, поскольку они могут быть использованы для идентификации владельца карты в случае ее утерии.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -51,7 +56,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поля, отмеченные (*), обязательны для заполнения" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-KX-22v">
-                                            <rect key="frame" x="0.0" y="148" width="280" height="33.5"/>
+                                            <rect key="frame" x="0.0" y="136" width="374" height="17"/>
                                             <color key="tintColor" red="0.2901960784" green="0.77176076169999996" blue="0.65385818480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <color key="textColor" red="0.2901960784" green="0.77176076169999996" blue="0.65385818480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,41 +65,166 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="08G-8d-XTc">
-                                    <rect key="frame" x="0.0" y="206.5" width="280" height="230.5"/>
+                                    <rect key="frame" x="0.0" y="178" width="374" height="329"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kv-Ja-LUL" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kv-Ja-LUL">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O8u-aT-wQU">
+                                                    <rect key="frame" x="15" y="4" width="349" height="46"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4q-6L-ZTm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="319" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjj-m4-lZr">
+                                                            <rect key="frame" x="329" y="0.0" width="20" height="46"/>
+                                                            <state key="normal" image="x.circle.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="nameButtonPressed:" destination="-1" eventType="touchUpInside" id="N24-si-Cri"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="O8u-aT-wQU" secondAttribute="bottom" constant="4" id="AIp-Xr-9iF"/>
+                                                <constraint firstItem="O8u-aT-wQU" firstAttribute="leading" secondItem="2Kv-Ja-LUL" secondAttribute="leading" constant="15" id="Mtg-Kq-ECz"/>
+                                                <constraint firstItem="O8u-aT-wQU" firstAttribute="top" secondItem="2Kv-Ja-LUL" secondAttribute="top" constant="4" id="PoZ-HW-JiY"/>
+                                                <constraint firstAttribute="trailing" secondItem="O8u-aT-wQU" secondAttribute="trailing" constant="10" id="RnY-JN-tRv"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="797-tp-7q8" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="49" width="280" height="34"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5P-kB-c6D">
+                                            <rect key="frame" x="0.0" y="69" width="374" height="53.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3IA-cB-3iK">
+                                                    <rect key="frame" x="15" y="4" width="349" height="45.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cy6-8M-UQv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="319" height="45.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-5A-7Tn">
+                                                            <rect key="frame" x="329" y="0.0" width="20" height="45.5"/>
+                                                            <state key="normal" image="x.circle.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="surnameButtonPressed:" destination="-1" eventType="touchUpInside" id="sne-ok-nmz"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstItem="3IA-cB-3iK" firstAttribute="top" secondItem="m5P-kB-c6D" secondAttribute="top" constant="4" id="1dW-nY-yd9"/>
+                                                <constraint firstAttribute="trailing" secondItem="3IA-cB-3iK" secondAttribute="trailing" constant="10" id="B4h-9d-w4W"/>
+                                                <constraint firstItem="3IA-cB-3iK" firstAttribute="leading" secondItem="m5P-kB-c6D" secondAttribute="leading" constant="15" id="n6s-Az-1AJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="3IA-cB-3iK" secondAttribute="bottom" constant="4" id="rRD-k4-To2"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Uz-vG-2bU" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="98" width="280" height="34"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qny-2Z-JvR">
+                                            <rect key="frame" x="0.0" y="137.5" width="374" height="54"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="miH-Sv-85M">
+                                                    <rect key="frame" x="15" y="4" width="349" height="46"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-pV-x2s">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320.5" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjV-n2-TtG">
+                                                            <rect key="frame" x="330.5" y="0.0" width="18.5" height="46"/>
+                                                            <state key="normal" image="chevron.down" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="birthdayButtonPressed:" destination="-1" eventType="touchUpInside" id="bm0-4A-UuF"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="miH-Sv-85M" secondAttribute="bottom" constant="4" id="1UK-v8-Si5"/>
+                                                <constraint firstAttribute="trailing" secondItem="miH-Sv-85M" secondAttribute="trailing" constant="10" id="1Xq-39-unl"/>
+                                                <constraint firstItem="miH-Sv-85M" firstAttribute="leading" secondItem="Qny-2Z-JvR" secondAttribute="leading" constant="15" id="6x6-ze-pqI"/>
+                                                <constraint firstItem="miH-Sv-85M" firstAttribute="top" secondItem="Qny-2Z-JvR" secondAttribute="top" constant="4" id="KMA-ck-YgM"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5L-a8-gBN" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="147" width="280" height="34.5"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-lo-kgd">
+                                            <rect key="frame" x="0.0" y="206.5" width="374" height="53.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="92C-8L-Z39">
+                                                    <rect key="frame" x="15" y="4" width="349" height="45.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пол" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-Yo-1SQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320.5" height="45.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZO-js-o7w">
+                                                            <rect key="frame" x="330.5" y="0.0" width="18.5" height="45.5"/>
+                                                            <state key="normal" image="chevron.down" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="genderButtonPressed:" destination="-1" eventType="touchUpInside" id="kKl-Cv-0rj"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstItem="92C-8L-Z39" firstAttribute="leading" secondItem="s4g-lo-kgd" secondAttribute="leading" constant="15" id="5MI-7d-qek"/>
+                                                <constraint firstItem="92C-8L-Z39" firstAttribute="top" secondItem="s4g-lo-kgd" secondAttribute="top" constant="4" id="KU1-6E-ChD"/>
+                                                <constraint firstAttribute="trailing" secondItem="92C-8L-Z39" secondAttribute="trailing" constant="10" id="aAa-rx-EjO"/>
+                                                <constraint firstAttribute="bottom" secondItem="92C-8L-Z39" secondAttribute="bottom" constant="4" id="j10-kM-3eh"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-LP-Ofn" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="196.5" width="280" height="34"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvg-u8-TMv">
+                                            <rect key="frame" x="0.0" y="275" width="374" height="54"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aVZ-hS-nVo">
+                                                    <rect key="frame" x="15" y="4" width="349" height="46"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Семеное положение" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-Wb-yUV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320.5" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0de-dT-tV4">
+                                                            <rect key="frame" x="330.5" y="0.0" width="18.5" height="46"/>
+                                                            <state key="normal" image="chevron.down" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="familyStatusButtonPressed:" destination="-1" eventType="touchUpInside" id="Aes-B3-m0m"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aVZ-hS-nVo" secondAttribute="bottom" constant="4" id="TuL-HX-I3I"/>
+                                                <constraint firstItem="aVZ-hS-nVo" firstAttribute="top" secondItem="Hvg-u8-TMv" secondAttribute="top" constant="4" id="mph-JO-zlf"/>
+                                                <constraint firstAttribute="trailing" secondItem="aVZ-hS-nVo" secondAttribute="trailing" constant="10" id="n10-lZ-3u8"/>
+                                                <constraint firstItem="aVZ-hS-nVo" firstAttribute="leading" secondItem="Hvg-u8-TMv" secondAttribute="leading" constant="15" id="reS-YZ-Rci"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Aq-oS-BSE">
-                                    <rect key="frame" x="0.0" y="462" width="280" height="66"/>
+                                    <rect key="frame" x="0.0" y="532" width="374" height="66"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продолжить" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ec-fP-Vcv">
-                                            <rect key="frame" x="0.0" y="0.0" width="204" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="66"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-6t-NGT">
-                                            <rect key="frame" x="214" y="0.0" width="66" height="66"/>
+                                            <rect key="frame" x="308" y="0.0" width="66" height="66"/>
                                             <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="66" id="X2x-Wn-Xu8"/>
@@ -135,7 +265,9 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

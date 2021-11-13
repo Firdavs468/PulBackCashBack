@@ -6,10 +6,14 @@
 //
 
 import UIKit
-
+import  Alamofire
+import SwiftyJSON
 class NewsVC: UIViewController {
     
     @IBOutlet weak var collection_view: UICollectionView!
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
     @IBOutlet weak var collectionTop: NSLayoutConstraint! {
         didSet {
             if isSmalScreen568 {
@@ -37,13 +41,16 @@ class NewsVC: UIViewController {
     var carouselData = [CarouselData]()
     private var currentPage = 0
     var imgArr = [1,2,3,4,4]
-    
+    var bannerArr : [GetBannerNews] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getBanner()
         setupCollectionView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setNeedsStatusBarAppearanceUpdate()
+    }
 }
 
 //MARK: - CollectionView delegate methods
@@ -56,11 +63,24 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imgArr.count
+        if !bannerArr.isEmpty {
+            return bannerArr.count
+        }else {
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collection_view.dequeueReusableCell(withReuseIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
+        if !bannerArr.isEmpty {
+            self.collection_view.isHidden = false
+            Loader.stop()
+            cell.updateCell(img: bannerArr[indexPath.row].image, date: bannerArr[indexPath.row].created_at, content: bannerArr[indexPath.row].content, title: bannerArr[indexPath.row].title)
+        }else {
+            self.collection_view.isHidden = true
+            Loader.start()
+        }
         return cell
     }
     
@@ -70,7 +90,7 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collection_view.frame.width-10 , height:self.collection_view.frame.height-20 )
-       }
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = NewsTappedVC(nibName: "NewsTappedVC", bundle: nil)
@@ -79,17 +99,17 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     //scroll
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-          currentPage = getCurrentPage()
-      }
-      
-      func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-          currentPage = getCurrentPage()
-      }
-      
-      func scrollViewDidScroll(_ scrollView: UIScrollView) {
-          currentPage = getCurrentPage()
-      }
-
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+    
 }
 
 //CarouselView
@@ -126,21 +146,56 @@ private extension NewsVC {
 //MARK: -
 extension NewsVC {
     func scrollToItem() {
-                let visibleItems: NSArray = self.collection_view.indexPathsForVisibleItems as NSArray
-                let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
-                let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-//            let nextItem : IndexPath = IndexPath(item: 1, section: 0)
-                       if nextItem.row < imgArr.count {
-                        let cellPadding = (self.collection_view.frame.width - 300) / 2
-                        let carouselLayout = UICollectionViewFlowLayout()
-                        carouselLayout.itemSize = CGSize(width: 600, height: 400)
-                        carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
-                        carouselLayout.minimumLineSpacing = self.collection_view.frame.width - 300
-                        
-                        collection_view.collectionViewLayout = carouselLayout
-                        collection_view.reloadData()
-
-//        self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
-                }
+        let visibleItems: NSArray = self.collection_view.indexPathsForVisibleItems as NSArray
+        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+        let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
+        //            let nextItem : IndexPath = IndexPath(item: 1, section: 0)
+        if nextItem.row < imgArr.count {
+            let cellPadding = (self.collection_view.frame.width - 300) / 2
+            let carouselLayout = UICollectionViewFlowLayout()
+            carouselLayout.itemSize = CGSize(width: 600, height: 400)
+            carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
+            carouselLayout.minimumLineSpacing = self.collection_view.frame.width - 300
+            
+            collection_view.collectionViewLayout = carouselLayout
+            collection_view.reloadData()
+            
+            //        self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
+        }
     }
 }
+
+
+//MARK: - GetBanner
+extension NewsVC {
+    func getBanner() {
+        if let token = Cache.getUserToken() {
+            print(token)
+            let headers : HTTPHeaders = [
+                "Authorization": "\(token)"
+            ]
+            Networking.fetchRequest(urlAPI: API.getBannerUrl, method: .get, params: nil, encoding: JSONEncoding.default, headers: headers) { [self] data in
+                if let data = data {
+                    Loader.start()
+                    print(data)
+                    if data["code"].intValue == 0 {
+                        Loader.start()
+                        let responseData = data["data"]
+                        for dat in 0..<responseData.count {
+                            let banner = GetBannerNews(_id: responseData[dat]["_id"].stringValue, created_at:  responseData[dat]["created_at"].stringValue, title: responseData[dat]["title"].stringValue, content: responseData[dat]["content"].stringValue, image: responseData[dat]["image"].stringValue)
+                            self.bannerArr.append(banner)
+                            print("bannerArr= ", bannerArr)
+                            self.collection_view.reloadData()
+                        }}else if data["code"].intValue == 50012 {
+                            Loader.stop()
+                            Alert.showAlert(forState: .error, message: "Banner bo'sh")
+                        }else {
+                            Loader.stop()
+                            Alert.showAlert(forState: .error, message: "Nomalum xato")
+                        }
+                        }
+                }
+            }
+        }
+    }
+

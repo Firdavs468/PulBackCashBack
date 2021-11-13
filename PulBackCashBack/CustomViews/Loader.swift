@@ -32,7 +32,7 @@ public class Loader {
         if let window = UIApplication.shared.windows.first(where: { (window) -> Bool in window.isKeyWindow}) {
             window.addSubview(loadV)
         }
-        customView.animation = Animation.named("68240-loader")
+        customView.animation = Animation.named("loader")
         customView.animationSpeed = 3.0
         customView.loopMode = .loop
         customView.play()

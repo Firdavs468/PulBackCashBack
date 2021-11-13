@@ -19,9 +19,13 @@ class Cache {
     class func saveUserDefaults(_ value:Any?, forKey: String) {
         UserDefaults.standard.setValue(value, forKey: forKey)
     }
-
+    
     class func getUserDefaultsString(forKey:String) -> String {
         return UserDefaults.standard.string(forKey: forKey) ?? ""
+    }
+    
+    class func isUserLogged() -> Bool{
+        return UserDefaults.standard.string(forKey: Keys.token) != nil
     }
 }
 

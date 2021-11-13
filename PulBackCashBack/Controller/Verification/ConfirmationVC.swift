@@ -5,10 +5,14 @@
 //  Created by Firdavs Zokirov  on 01/11/21.
 //
 
+
+//anor_p@ssw0rd
 import UIKit
 import Alamofire
 import SwiftyJSON
 
+
+//My Telegram code - 3434
 class ConfirmationVC: UIViewController {
     
     @IBOutlet weak var otpLabel: UILabel!
@@ -29,10 +33,11 @@ class ConfirmationVC: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        //        let vc = ProfileVC(nibName: "ProfileVC", bundle: nil)
-        //        vc.modalPresentationStyle = .fullScreen
-        //        self.present(vc, animated: true, completion: nil)
-        userVerification()
+        if UserDefaults.standard.integer(forKey: Keys.code) == 0 {
+            userVerification()
+        }else {
+            userSignUp()
+        }
     }
     
     
@@ -101,28 +106,98 @@ extension ConfirmationVC : UITextFieldDelegate {
     }
 }
 
+//User Verify
 extension ConfirmationVC {
     func userVerification() {
         if let otp = otpTF.text {
-            
             let param : [String : Any] = [
                 "phone": Cache.getUserDefaultsString(forKey: Keys.phone_number),
                 "code": otp
             ]
-            let headers : HTTPHeaders = [
-                "Content-Type": "application/json"
-            ]
-            AF.request(API.verifyUrl, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                if let data = response.data {
-                    print(JSON(data))
-                    let jsonData = JSON(data)
-                    if jsonData["code"].intValue == 0 {
-                        //                        let vc = ConfirmationVC(nibName: "ConfirmationVC", bundle: nil)
-                        //                        self.present(vc, animated: true, completion: nil)
+            print(param)
+            print(Cache.isUserLogged())
+            Networking.fetchRequest(urlAPI: API.verifyUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: Net.commonHeader) { data in
+                if let data = data {
+                    print(data)
+                    Loader.start()
+                    if data["code"].intValue == 0 {
+                        Cache.saveUserToken(token: data["data"]["token"].stringValue)
+                        Loader.stop()
+                        let vc = PinVC(nibName: "PinVC", bundle: nil)
+                        let window = UIApplication.shared.keyWindow
+                        let nav = UINavigationController(rootViewController: vc)
+                        window?.rootViewController = nav
+                        window?.makeKeyAndVisible()
+                    }else if data["code"].intValue == 50003 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Nomalum tuzilma")
+                    }else if data["code"].intValue == 50008 || data["code"].intValue == 50010  {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Tasdiqlash kodi xato kiritildi")
+                    }else if data["code"].intValue == 50000 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Foydalanuvchi topilmadi")
+                    }else if data["code"].intValue == 50009 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Token yaratib bo'lmadi")
+                    }else {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Nomalum xato")
                     }
                 }
             }
         }
+    }
+}
+//MARK: - Anor group kodi -> anor_p@ssw0rd
+
+//User Sign Up
+extension ConfirmationVC {
+    func userSignUp() {
+        if let otp = otpTF.text {
+            let param : [String : Any] = [
+                "first_name": Cache.getUserDefaultsString(forKey: Keys.name),
+                "last_name": Cache.getUserDefaultsString(forKey: Keys.surname),
+                "birth_date": "2003-11-11T14:58:29.134673671+05:00",
+                "gender": UserDefaults.standard.integer(forKey: Keys.gender),
+                "family_status": UserDefaults.standard.integer(forKey: Keys.family_status),
+                "phone": Cache.getUserDefaultsString(forKey: Keys.phone_number),
+                "code": otp
+            ]
+            print(param)
+            Networking.fetchRequest(urlAPI: API.signUpUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: Net.commonHeader) { data in
+                if let data = data {
+                    Loader.start()
+                    print(data)
+                    let jsonData = JSON(data)
+                    if jsonData["code"].intValue == 0 {
+                        Cache.saveUserToken(token: data["data"]["token"].stringValue)
+                        Loader.stop()
+                        let vc = PinVC(nibName: "PinVC", bundle: nil)
+                        let window = UIApplication.shared.keyWindow
+                        let nav = UINavigationController(rootViewController: vc)
+                        window?.rootViewController = nav
+                        window?.makeKeyAndVisible()
+                    }else if jsonData["code"].intValue == 50006 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Foydalanuvchi uchun talab qilinadigan maydonlar toʻldirilmagan")
+                    }else if jsonData["code"].intValue == 50008 || jsonData["code"].intValue == 50010  {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Tasdiqlash kodi xato kiritildi")
+                    }else if jsonData["code"].intValue == 50007 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Server bilan bog'lanish vaqti tugadi")
+                    }else if jsonData["code"].intValue == 50001 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Foydalanuvchi allaqachon ro'yxatdan o'tgan")
+                    }else {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Nomalum xato")
+                    }
+                }
+            }
+        }
+        
     }
 }
 

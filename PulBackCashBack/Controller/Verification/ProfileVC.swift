@@ -6,37 +6,95 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileVC: UIViewController {
     
     @IBOutlet weak var allStack: UIStackView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var nameTF: CustomTF!
-    @IBOutlet weak var surnamTF: CustomTF!
-    @IBOutlet weak var birthdayTF: CustomTF!
-    @IBOutlet weak var genderTF: CustomTF!
-    @IBOutlet weak var maritalStatusTF: CustomTF!
     @IBOutlet weak var labelsStack: UIStackView!
     @IBOutlet weak var textFieldsStack: UIStackView!
+    @IBOutlet var containerView: [UIView]!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var surnameTextField: UITextField!
+    @IBOutlet weak var birthdayTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var familyStatusTextField: UITextField!
     
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
-        setupTextField()
         tapGesture()
         registerKeyboardNotifications()
         showDatePicker()
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        let vc = PinVC(nibName: "PinVC", bundle: nil)
-        let window = UIApplication.shared.keyWindow
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
+        Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
+        Cache.saveUserDefaults(nameTextField.text, forKey: Keys.surname)
+        continueSignUp()
     }
+    
+    //TextField right button pressed
+    
+    //Name Button pressed
+    @IBAction func nameButtonPressed(_ sender: Any) {
+        nameTextField.text = ""
+    }
+    
+    //surname button pressed
+    @IBAction func surnameButtonPressed(_ sender: Any) {
+        surnameTextField.text = ""
+    }
+    
+    //birthday button pressed
+    @IBAction func birthdayButtonPressed(_ sender: Any) {
+        
+    }
+    
+    //gender button pressed
+    @IBAction func genderButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Jinsigizni tanlang", message: nil, preferredStyle: .actionSheet)
+        let male = UIAlertAction(title: "Erkak", style: .default) { [self] _ in
+            genderTextField.text = "Erkak"
+            Cache.saveUserDefaults(1, forKey: Keys.gender)
+        }
+        let femele = UIAlertAction(title: "Ayol", style: .default) { [self] _ in
+            genderTextField.text = "Ayol"
+            Cache.saveUserDefaults(2, forKey: Keys.gender)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            
+        }
+        alert.addAction(male)
+        alert.addAction(femele)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //familiy status button pressed
+    @IBAction func familyStatusButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Oilaviy xolatingizni tanlang", message: nil, preferredStyle: .actionSheet)
+        let male = UIAlertAction(title: "Turmush qurgan", style: .default) { _ in
+            self.familyStatusTextField.text = "Turmush qurgan"
+            Cache.saveUserDefaults(2, forKey: Keys.family_status)
+        }
+        let female = UIAlertAction(title: "Turmush qurmagan", style: .default) { _ in
+            self.familyStatusTextField.text = "Turmush qurmagan"
+            Cache.saveUserDefaults(1, forKey: Keys.family_status)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            
+        }
+        alert.addAction(male)
+        alert.addAction(female)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     //birthday. DatePicker
     func showDatePicker(){
@@ -54,9 +112,9 @@ class ProfileVC: UIViewController {
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
-        birthdayTF.accessoryView = toolbar
+        //        birthdayTF.accessoryView = toolbar
         // add datepicker to textField
-        birthdayTF.textInputView = datePicker
+        //        birthdayTF.textInputView = datePicker
         
     }
     
@@ -64,7 +122,7 @@ class ProfileVC: UIViewController {
         //For date formate
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MM yyyy"
-        birthdayTF.text = formatter.string(from: datePicker.date)
+        //        birthdayTF.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
     }
@@ -74,8 +132,12 @@ class ProfileVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    //corner View /// corner Radius
     func cornerView() {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
+        for container in containerView {
+            container.layer.cornerRadius = container.frame.height/10
+        }
         
         //Setup constraint
         if isSmalScreen568 {
@@ -89,27 +151,6 @@ class ProfileVC: UIViewController {
         }
     }
     
-    func setupTextField() {
-        nameTF.tag = 0
-        surnamTF.tag = 1
-        birthdayTF.tag = 2
-        genderTF.tag = 3
-        maritalStatusTF.tag = 4
-        nameTF.delegate = self
-        surnamTF.delegate = self
-        birthdayTF.delegate = self
-        genderTF.delegate = self
-        maritalStatusTF.delegate = self
-        
-        nameTF.placeholder = "Имя * "
-        surnamTF.placeholder = "Фамилия *"
-        birthdayTF.placeholder = "Дата рождения * "
-        genderTF.placeholder = "Пол"
-        genderTF.rightButtonIcon = UIImage(systemName: "chevron.right")
-        genderTF.rightButtonTapped()
-        maritalStatusTF.placeholder = "Семеное положение"
-        maritalStatusTF.rightButtonIcon = UIImage(systemName: "chevron.right")
-    }
     
 }
 
@@ -121,26 +162,21 @@ extension ProfileVC : UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if ((textField.text?.isEmpty) != nil) {
-            nameTF.rightButtonIcon = UIImage(systemName:"xmark.circle.fill")
-            surnamTF.rightButtonIcon = UIImage(systemName:"xmark.circle.fill")
-        }else {
-            nameTF.rightButtonIcon = UIImage(systemName: "")
-        }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTF {
+        if textField == nameTextField {
             print("namtf")
-            surnamTF.becomeFirstResponder()
-        }else if textField == surnamTF {
-            birthdayTF.becomeFirstResponder()
-        }else if textField == birthdayTF {
-            genderTF.becomeFirstResponder()
-        }else if textField == genderTF {
-            maritalStatusTF.becomeFirstResponder()
+            surnameTextField.becomeFirstResponder()
+        }else if textField == surnameTextField {
+            birthdayTextField.becomeFirstResponder()
+        }else if textField == birthdayTextField {
+            genderTextField.becomeFirstResponder()
+        }else if textField == genderTextField {
+            familyStatusTextField.becomeFirstResponder()
         }else {
-            nameTF.resignFirstResponder()
+            nameTextField.resignFirstResponder()
         }
         return true
     }
@@ -191,4 +227,32 @@ extension ProfileVC {
         self.view.endEditing(true)
     }
     
+}
+
+//MARK: - Continue Sign Up
+extension ProfileVC {
+    func continueSignUp() {
+        let param : [String : Any] = [
+            "phone" : Cache.getUserDefaultsString(forKey: Keys.phone_number)
+        ]
+        
+        Networking.fetchRequest(urlAPI: API.continueSignUpUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: Net.commonHeader) { data in
+            if let data = data {
+                Loader.start()
+                print(data)
+                if data["code"].intValue == 0 {
+                    Loader.stop()
+                    let vc = ConfirmationVC(nibName: "ConfirmationVC", bundle: nil)
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }else if data["code"].intValue == 50005 {
+                    Loader.stop()
+                    Alert.showAlert(forState: .error, message: "Foydalanuvchi topilmadi")
+                }else {
+                    Loader.stop()
+                    Alert.showAlert(forState: .error, message: "Nomalum xato")
+                }
+            }
+        }
+    }
 }

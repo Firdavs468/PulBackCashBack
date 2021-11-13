@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct GetBanner {
+struct GetBannerNews {
     var _id : String
     var created_at : String
     var title : String

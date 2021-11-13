@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         GMSServices.provideAPIKey("AIzaSyDOyOZf1XkqaKBKS5ZOS4PuSI95jha56N0")
         UITabBar.appearance().tintColor = UIColor(red: 0.278, green: 0.749, blue: 0.639, alpha: 1)
         UINavigationBar.appearance().setBackgroundImage(UIImage(named:"frame"),
@@ -28,11 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.overrideUserInterfaceStyle = .light
         }
         let main = MainVC(nibName: "MainVC", bundle: nil)
-        let tabbar = TabBarController()
-        window?.rootViewController = main
+        let pin = PinVC(nibName: "PinVC", bundle: nil)
+        if Cache.isUserLogged() {
+            let nav = UINavigationController(rootViewController: pin)
+            window?.rootViewController = nav
+        }else {
+            window?.rootViewController = main
+        }
+        //        let tabbar = TabBarController()
         window?.makeKeyAndVisible()
         
-
+        
         return true
     }
 }

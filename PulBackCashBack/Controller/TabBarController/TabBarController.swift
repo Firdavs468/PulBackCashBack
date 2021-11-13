@@ -8,15 +8,24 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    
+    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.backgroundImage = UIImage(named: "background")
         setupTabBar()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let newTabBarHeight = defaultTabBarHeight + 76.0
+        var newFrame = tabBar.frame
+        newFrame.size.height = newTabBarHeight
+        newFrame.origin.y = view.frame.size.height - newTabBarHeight
+        tabBar.frame = newFrame
     }
     
     func setupTabBar() {
         let home = HomeVC(nibName: "HomeVC", bundle: nil)
-        home.title = "Добрый день,Муроджон Турсунов!"
         home.tabBarItem.image = UIImage(named: "home")
         home.tabBarItem.title = "Главная"
         let navHome =  UINavigationController(rootViewController: home)

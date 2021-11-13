@@ -8,7 +8,8 @@
 import UIKit
 
 class BalanceCell: UITableViewCell {
-
+    
+    @IBOutlet weak var balancLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     static func nib() -> UINib {
@@ -18,11 +19,12 @@ class BalanceCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = containerView.frame.height/6
-        containerView.layer.shadowColor = UIColor.systemGray.cgColor
+        balancLabel.textColor = UIColor(red: 0.09, green: 0.549, blue: 0.514, alpha: 1)
+        containerView.layer.cornerRadius = containerView.frame.height/15
+        containerView.layer.shadowColor = UIColor.lightGray.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        containerView.layer.shadowRadius = 2
-        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.shadowRadius = 100
+        containerView.layer.shadowOpacity = 0.3
     }
     
 }

@@ -21,11 +21,11 @@ class OpenBeetoCell: UITableViewCell {
     var delegate : OpenBeeto? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = containerView.frame.height/8
-        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.cornerRadius = containerView.frame.height/15
+        containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
         containerView.layer.shadowColor = UIColor.systemGray.cgColor
-        containerView.layer.shadowRadius = 2
+        containerView.layer.shadowRadius = 10
     }
     func open(_ url: URL,
       options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:],

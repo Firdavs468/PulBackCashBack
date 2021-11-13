@@ -56,6 +56,11 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        Cache.saveUserDefaults("22", forKey: "22")
+        let phoneNumber = phoneNumberTF.text?.replacingOccurrences(of: "+998", with: "").replacingOccurrences(of: " ", with:"").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
+        if let number = phoneNumber {
+            Cache.saveUserDefaults(number, forKey: Keys.phone_number)
+        }
         userLogin()
     }
     
@@ -165,34 +170,33 @@ extension LoginVC {
     func userLogin() {
         let phoneNumber = phoneNumberTF.text?.replacingOccurrences(of: "+998", with: "").replacingOccurrences(of: " ", with:"").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
         if let number = phoneNumber {
-            print(number)
             let param = [
                 "phone" : number
             ]
-            let headers : HTTPHeaders = [
-                "Content-Type": "application/json"
-            ]
-            
-            Networking.fetchRequest(urlAPI: API.signInUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+            Networking.fetchRequest(urlAPI: API.signInUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: Net.commonHeader) { data in
                 if let data = data {
                     Loader.start()
                     print(JSON(data))
-                    let jsonData = JSON(data)
-                    if jsonData["code"].intValue == 0 {
+                    if data["code"].intValue == 0 {
                         Loader.stop()
-                        Cache.saveUserDefaults(Keys.phone_number, forKey:number)
+                        Cache.saveUserDefaults(data["code"].intValue, forKey: Keys.code)
                         let vc = ConfirmationVC(nibName: "ConfirmationVC", bundle: nil)
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true, completion: nil)
-                    }else if jsonData["code"].intValue == 50000 {
+                    }else if data["code"].intValue == 50000 {
+                        Cache.saveUserDefaults(data["code"].intValue, forKey: Keys.code)
                         Loader.stop()
-                        Alert.showAlert(forState: .error, message: "Registratsiyadan o'ting")
+                        Alert.showAlert(forState: .warning, message: "Registratsiyadan o'ting")
                         let vc = ProfileVC(nibName: "ProfileVC", bundle: nil)
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true, completion: nil)
-                    }else if jsonData["code"].intValue == 50005 {
+                    }else if data["code"].intValue == 50005 {
+                        Cache.saveUserDefaults(data["code"].intValue, forKey: Keys.code)
                         Loader.stop()
                         Alert.showAlert(forState: .error, message: "Tasdiqlash kodinin jo'natib bo'lmadi")
+                    }else {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Nomalum xato")
                     }
                 }
             }

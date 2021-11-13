@@ -96,7 +96,7 @@ class CustomTF:UIView {
             return self.rightButton.imageView?.image
         }set(newValue){
             if let img = newValue{
-//                rightButton.tintColor = .systemGray
+                //                rightButton.tintColor = .systemGray
                 rightButton.setImage(img, for: .normal)
                 horizontalStackView.addArrangedSubview(rightButton)
             }
@@ -154,7 +154,7 @@ class CustomTF:UIView {
         }
     }
     
-     var textInputView : UIView? {
+    var textInputView : UIView? {
         get {
             return self.textField.inputView
         }set(newValue) {
@@ -246,9 +246,10 @@ class CustomTF:UIView {
     }
     
     @objc func rightButtonTapped() {
-        self.textField.text = ""
+        textField.text = ""
     }
     
 }
+
 
 

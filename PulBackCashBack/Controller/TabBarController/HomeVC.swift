@@ -9,9 +9,19 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var userLabel: UILabel! {
+        didSet {
+            userLabel.lineBreakMode = .byCharWrapping
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.22
+            userLabel.numberOfLines = 0
+            userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\nМуроджон Турсунов!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        }
+    }
     @IBOutlet weak var table_view: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         setupTableView()
     }
     
@@ -53,9 +63,9 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            return 100
+            return 130
         }else if indexPath.row == 0 {
-            return 150
+            return 200
         }else {
             return 380
         }

@@ -25,10 +25,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hy1-gE-KuE">
-                            <rect key="frame" x="10" y="10" width="300" height="468"/>
+                            <rect key="frame" x="10" y="10" width="300" height="456.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-Mh-XBt">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="208"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="196.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-Mp-Yvr">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="64.5"/>
@@ -39,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Сообщение*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-ux-Kpa">
-                                            <rect key="frame" x="0.0" y="94.5" width="300" height="113.5"/>
+                                            <rect key="frame" x="0.0" y="94.5" width="300" height="102"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -47,11 +47,11 @@
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZi-91-hYm">
-                                    <rect key="frame" x="0.0" y="238" width="300" height="165"/>
+                                    <rect key="frame" x="0.0" y="226.5" width="300" height="165"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-SM-EnA">
-                                    <rect key="frame" x="0.0" y="433" width="300" height="35"/>
+                                    <rect key="frame" x="0.0" y="421.5" width="300" height="35"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <state key="normal" title="Отправить ">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                 <constraint firstItem="j10-a2-w7D" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.85" id="6Mp-wk-abM"/>
                 <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.29" id="HOt-HQ-FVi"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vds-vz-6Ns"/>
-                <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="Vx9-5V-8rr"/>
+                <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="Vx9-5V-8rr"/>
                 <constraint firstAttribute="trailing" secondItem="j10-a2-w7D" secondAttribute="trailing" id="b8X-kJ-6iX"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nfG-c2-3t0"/>
             </constraints>

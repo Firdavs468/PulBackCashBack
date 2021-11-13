@@ -8,10 +8,12 @@
 import UIKit
 import SDWebImage
 class NewsCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     
     static func nib() -> UINib {
         return UINib(nibName: "NewsCell", bundle: nil)
@@ -27,8 +29,11 @@ class NewsCell: UICollectionViewCell {
         containerView.layer.shadowOpacity = 0.5
     }
     
-    func updateCell(img:String, date:String) {
-        self.img.sd_setImage(with: URL(string: API.base_url))
+    func updateCell(img:String, date:String,content:String, title:String) {
+        let urlString = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? img
+        self.img.sd_setImage(with: URL(string:"http://89.223.71.112:9494/image?path="+urlString))
         self.dateLabel.text = date
+        self.titleLabel.text = title
+        self.contentLabel.text = content
     }
 }
