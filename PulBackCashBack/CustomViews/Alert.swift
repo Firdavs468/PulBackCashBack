@@ -79,8 +79,8 @@ class Alert {
             }else{
                 make.left.top.equalToSuperview().offset(20)
             }
-            make.right.equalTo(closeBtn.snp.left).offset(-10)
-            make.bottom.equalToSuperview().offset(-10)
+//            make.right.equalTo(closeBtn.snp.left).offset(-5)
+//            make.bottom.equalToSuperview().offset(-5)
         }
         alertView.tag = 9981
         

@@ -10,13 +10,22 @@ import Alamofire
 import SwiftyJSON
 class LoginVC: UIViewController {
     
+    @IBOutlet weak var textFieldContainerView: UIView! {
+        didSet {
+            textFieldContainerView.layer.cornerRadius = textFieldContainerView.frame.height/9
+        }
+    }
     @IBOutlet weak var tiinMarketLabel: UILabel!
-    @IBOutlet weak var nextButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var uncheckButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var phoneNumberTF: CustomTF!
     @IBOutlet weak var fullTextLabel: UILabel!
+    @IBOutlet weak var phoneNumberTF: UITextField!
+    @IBOutlet weak var phoneLabel: UILabel! {
+        didSet {
+            phoneLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+    }
     
     
     var isPressed1 : Bool = false
@@ -35,12 +44,21 @@ class LoginVC: UIViewController {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
     }
     
+    @IBAction func clearTextButtonPressed(_ sender: Any) {
+        phoneNumberTF.text = ""
+    }
+    
+    
     @IBAction func uncheckButtonPressed(_ sender: Any) {
         if !isPressed1 {
             checkButton.setImage(UIImage(named: "check"), for: .normal)
             isPressed1 = true
+            if isPressed2 {
+                nextButton.backgroundColor = UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1)
+            }
         }else {
-            checkButton.setImage(UIImage(named: "uncheck"), for: .normal)
+            nextButton.backgroundColor = .lightGray
+            checkButton.setImage(UIImage(systemName: "rectangle"), for: .normal)
             isPressed1 = false
         }
     }
@@ -49,24 +67,33 @@ class LoginVC: UIViewController {
         if !isPressed2 {
             uncheckButton.setImage(UIImage(named: "check"), for: .normal)
             isPressed2 = true
+            if isPressed1 {
+                nextButton.backgroundColor = UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1)
+            }
         }else {
-            uncheckButton.setImage(UIImage(named: "uncheck"), for: .normal)
+            nextButton.backgroundColor = .lightGray
+            uncheckButton.setImage(UIImage(systemName: "rectangle"), for: .normal)
             isPressed2 = false
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        Cache.saveUserDefaults("22", forKey: "22")
+        Cache.saveUserDefaults(phoneNumberTF.text, forKey: "phone")
         let phoneNumber = phoneNumberTF.text?.replacingOccurrences(of: "+998", with: "").replacingOccurrences(of: " ", with:"").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
         if let number = phoneNumber {
             Cache.saveUserDefaults(number, forKey: Keys.phone_number)
         }
-        userLogin()
+        if isPressed1 && isPressed2 && !phoneNumberTF.text!.isEmpty {
+            userLogin()
+        }else if phoneNumberTF.text!.isEmpty {
+            Alert.showAlert(forState:.error, message: "Telefon raqam kiriting")
+        }else {
+            Alert.showAlert(forState: .error, message: "Foydalanuvchi shartnomasiga rozilik bering")
+        }
     }
     
     //Custom Text Field setup
     func setupTextField() {
-        phoneNumberTF.title = "Номер мобильного"
         phoneNumberTF.placeholder = "+998"
         phoneNumberTF.keyboardType = .phonePad
         phoneNumberTF.delegate = self
@@ -76,10 +103,10 @@ class LoginVC: UIViewController {
     func multipleFontColorsSingleLabel() {
         
         //fullTextLabel
-        let yourAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
-        let yourOtherAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)] as [NSAttributedString.Key : Any]
-        let yourAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
-        let yourOtherAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)] as [NSAttributedString.Key : Any]
+        let yourAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
+        let yourOtherAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
+        let yourAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
+        let yourOtherAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
         
         let partOne = NSMutableAttributedString(string: "Я согласен с ", attributes: yourAttributes)
         let partTwo = NSMutableAttributedString(string: " Пользовательским соглашением", attributes: yourOtherAttributes)
@@ -94,8 +121,8 @@ class LoginVC: UIViewController {
         fullTextLabel.attributedText = combination
         
         //tiinMarketLabel
-        let tiinAtributs = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .regular)]
-        let tiinAtributs2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .bold)]
+        let tiinAtributs = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .regular)]
+        let tiinAtributs2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold)]
         
         let part1 = NSMutableAttributedString(string: "Я согласен с на получение сообшений об акциях, скидках и других рекламных уведомлений Tiin ", attributes: tiinAtributs)
         let part2 = NSMutableAttributedString(string: "Tiin Market", attributes: tiinAtributs2)
@@ -118,15 +145,6 @@ extension LoginVC : UITextFieldDelegate {
         textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
         return false
     }
-    
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if ((textField.text?.isEmpty) != nil) {
-            phoneNumberTF.rightButtonIcon = UIImage(systemName:"xmark.circle.fill")
-        }else {
-            phoneNumberTF.rightButtonIcon = UIImage(systemName: "")
-        }
-    }
-    
     func tapGesture(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)

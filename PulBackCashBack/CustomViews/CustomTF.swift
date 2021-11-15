@@ -17,9 +17,9 @@ class CustomTF:UIView {
     private let textField = UITextField()
     private let titleLbl = UILabel()
     private let containerView = UIView()
-    private let verticalStackView = UIStackView(views: [], axis: .vertical, spacing: 5, alignment: .fill, distribution: .fill)
-    private let horizontalStackView = UIStackView(views: [], axis: .horizontal, spacing: 5, alignment: .center, distribution: .fill)
-    private let topHorizontalStackView = UIStackView(views: [], axis: .horizontal, spacing: 5, alignment: .fill, distribution: .fill)
+    private let verticalStackView = UIStackView(views: [], axis: .vertical, spacing: 7, alignment: .fill, distribution: .fill)
+    private let horizontalStackView = UIStackView(views: [], axis: .horizontal, spacing: 7, alignment: .center, distribution: .fill)
+    private let topHorizontalStackView = UIStackView(views: [], axis: .horizontal, spacing: 7, alignment: .fill, distribution: .fill)
     
     
     var placeholder : String?{
@@ -199,11 +199,11 @@ class CustomTF:UIView {
         
         rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         
-        containerView.layer.borderWidth = 1
+        containerView.layer.borderWidth = 0
         containerView.layer.borderColor = UIColor.lightGray.cgColor
         containerView.clipsToBounds = true
-        containerView.layer.cornerRadius = 8
-        containerView.backgroundColor = #colorLiteral(red: 0.9449954033, green: 0.9451572299, blue: 0.9449852109, alpha: 1)
+        containerView.layer.cornerRadius = 7
+        containerView.backgroundColor = .systemGray6
         
         self.backgroundColor = .clear
         
@@ -230,7 +230,7 @@ class CustomTF:UIView {
             }else if isSmalScreen736 {
                 make.height.equalTo(40)
             }else {
-                make.height.equalTo(44)
+                make.height.equalTo(46)
             }
         }
         addSubview(verticalStackView)

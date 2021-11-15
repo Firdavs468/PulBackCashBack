@@ -21,6 +21,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var familyStatusTextField: UITextField!
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
     
     let datePicker = UIDatePicker()
     
@@ -35,7 +36,11 @@ class ProfileVC: UIViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.surname)
-        continueSignUp()
+        if nameTextField.text!.isEmpty || birthdayTextField.text!.isEmpty {
+            Alert.showAlert(forState: .error, message: "Ma'lumotlarni to'ldiring")
+        }else {
+            continueSignUp()
+        }
     }
     
     //TextField right button pressed
@@ -57,13 +62,13 @@ class ProfileVC: UIViewController {
     
     //gender button pressed
     @IBAction func genderButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Jinsigizni tanlang", message: nil, preferredStyle: .actionSheet)
-        let male = UIAlertAction(title: "Erkak", style: .default) { [self] _ in
-            genderTextField.text = "Erkak"
+        let alert = UIAlertController(title: "Пол", message: nil, preferredStyle: .actionSheet)
+        let male = UIAlertAction(title: "Мужчина", style: .default) { [self] _ in
+            genderTextField.text = "Мужчина"
             Cache.saveUserDefaults(1, forKey: Keys.gender)
         }
-        let femele = UIAlertAction(title: "Ayol", style: .default) { [self] _ in
-            genderTextField.text = "Ayol"
+        let femele = UIAlertAction(title: "Женщина", style: .default) { [self] _ in
+            genderTextField.text = "Женщина"
             Cache.saveUserDefaults(2, forKey: Keys.gender)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
@@ -77,13 +82,13 @@ class ProfileVC: UIViewController {
     
     //familiy status button pressed
     @IBAction func familyStatusButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Oilaviy xolatingizni tanlang", message: nil, preferredStyle: .actionSheet)
-        let male = UIAlertAction(title: "Turmush qurgan", style: .default) { _ in
-            self.familyStatusTextField.text = "Turmush qurgan"
+        let alert = UIAlertController(title: "Семеное положение", message: nil, preferredStyle: .actionSheet)
+        let male = UIAlertAction(title: "Женатый", style: .default) { _ in
+            self.familyStatusTextField.text = "Женатый"
             Cache.saveUserDefaults(2, forKey: Keys.family_status)
         }
-        let female = UIAlertAction(title: "Turmush qurmagan", style: .default) { _ in
-            self.familyStatusTextField.text = "Turmush qurmagan"
+        let female = UIAlertAction(title: "Незамужняя", style: .default) { _ in
+            self.familyStatusTextField.text = "Незамужняя"
             Cache.saveUserDefaults(1, forKey: Keys.family_status)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
@@ -141,10 +146,12 @@ class ProfileVC: UIViewController {
         
         //Setup constraint
         if isSmalScreen568 {
+            containerViewHeight.constant = 20
             labelsStack.spacing = 15
             textFieldsStack.spacing = 10
             allStack.spacing = 20
         }else {
+            containerViewHeight.constant = 0.06
             labelsStack.spacing = 20
             textFieldsStack.spacing = 15
             allStack.spacing = 25
@@ -211,8 +218,10 @@ extension ProfileVC {
         UIView.animate(withDuration: 0.5) {
             if isSmalScreen568 {
                 self.view.transform = CGAffineTransform(translationX: 0, y: -160)
-            }else{
+            }else if isSmalScreen736 {
                 self.view.transform = CGAffineTransform(translationX: 0, y: -100)
+            }else {
+                self.view.transform = CGAffineTransform(translationX: 0, y: -70)
             }
         }
     }

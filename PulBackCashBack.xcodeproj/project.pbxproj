@@ -191,6 +191,13 @@
 			path = "Lottie Files";
 			sourceTree = "<group>";
 		};
+		C7732245273FEECE008ACA82 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C77F7BF5273166E8003B3FAE /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +230,7 @@
 				C785A212272ACB9E0061B719 /* LoginVC.xib */,
 				C7E0B439272F9A2B00FE4F78 /* ConfirmationVC.xib */,
 				C7E0B4462730180F00FE4F78 /* ProfileVC.xib */,
+				C7732245273FEECE008ACA82 /* New Group */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -334,7 +342,6 @@
 				C7E0B443272FA0F100FE4F78 /* Loader.swift */,
 				C7E0B441272FA0E900FE4F78 /* Alert.swift */,
 				C785A215272ACCBE0061B719 /* CustomTF.swift */,
-				C785A218272ACCE20061B719 /* Extension.swift */,
 				C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */,
 				C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */,
 			);
@@ -382,6 +389,7 @@
 			children = (
 				C7E0B43D272F9E4900FE4F78 /* Keys.swift */,
 				C7E0B43F272F9ED000FE4F78 /* Cache.swift */,
+				C785A218272ACCE20061B719 /* Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

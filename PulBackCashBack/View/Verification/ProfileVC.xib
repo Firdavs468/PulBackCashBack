@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="allStack" destination="U2T-Zd-49J" id="iDs-cK-4c1"/>
                 <outlet property="birthdayTextField" destination="gW1-pV-x2s" id="g66-OX-QAM"/>
+                <outlet property="containerViewHeight" destination="NcT-85-SM9" id="ar2-K7-PvX"/>
                 <outlet property="familyStatusTextField" destination="ZGX-Wb-yUV" id="Sf6-pI-F8U"/>
                 <outlet property="genderTextField" destination="R2J-Yo-1SQ" id="r76-O5-JUE"/>
                 <outlet property="labelsStack" destination="1uu-u1-NKR" id="OmI-Ti-fqW"/>
@@ -32,11 +33,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHI-tT-7Vk">
-                    <rect key="frame" x="0.0" y="44" width="414" height="1344"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHI-tT-7Vk">
+                    <rect key="frame" x="0.0" y="44" width="414" height="824.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-Zd-49J">
-                            <rect key="frame" x="20" y="30" width="374" height="598"/>
+                            <rect key="frame" x="20" y="30" width="374" height="592"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1uu-u1-NKR">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="153"/>
@@ -75,12 +76,15 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4q-6L-ZTm">
                                                             <rect key="frame" x="0.0" y="0.0" width="319" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjj-m4-lZr">
                                                             <rect key="frame" x="329" y="0.0" width="20" height="46"/>
-                                                            <state key="normal" image="x.circle.fill" catalog="system"/>
+                                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" image="x.circle.fill" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="nameButtonPressed:" destination="-1" eventType="touchUpInside" id="N24-si-Cri"/>
                                                             </connections>
@@ -104,12 +108,15 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cy6-8M-UQv">
                                                             <rect key="frame" x="0.0" y="0.0" width="319" height="45.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-5A-7Tn">
                                                             <rect key="frame" x="329" y="0.0" width="20" height="45.5"/>
-                                                            <state key="normal" image="x.circle.fill" catalog="system"/>
+                                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" image="x.circle.fill" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="surnameButtonPressed:" destination="-1" eventType="touchUpInside" id="sne-ok-nmz"/>
                                                             </connections>
@@ -131,9 +138,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="miH-Sv-85M">
                                                     <rect key="frame" x="15" y="4" width="349" height="46"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-pV-x2s">
+                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-pV-x2s">
                                                             <rect key="frame" x="0.0" y="0.0" width="320.5" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjV-n2-TtG">
@@ -160,9 +167,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="92C-8L-Z39">
                                                     <rect key="frame" x="15" y="4" width="349" height="45.5"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пол" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-Yo-1SQ">
+                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пол" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-Yo-1SQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="320.5" height="45.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZO-js-o7w">
@@ -189,9 +196,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aVZ-hS-nVo">
                                                     <rect key="frame" x="15" y="4" width="349" height="46"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Семеное положение" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-Wb-yUV">
+                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Семеное положение" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-Wb-yUV">
                                                             <rect key="frame" x="0.0" y="0.0" width="320.5" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0de-dT-tV4">
@@ -215,23 +222,23 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Aq-oS-BSE">
-                                    <rect key="frame" x="0.0" y="532" width="374" height="66"/>
+                                    <rect key="frame" x="0.0" y="532" width="374" height="60"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продолжить" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ec-fP-Vcv">
-                                            <rect key="frame" x="0.0" y="0.0" width="298" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="304" height="60"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-6t-NGT">
-                                            <rect key="frame" x="308" y="0.0" width="66" height="66"/>
+                                            <rect key="frame" x="314" y="0.0" width="60" height="60"/>
                                             <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="66" id="X2x-Wn-Xu8"/>
+                                                <constraint firstAttribute="width" constant="60" id="X2x-Wn-Xu8"/>
                                                 <constraint firstAttribute="width" secondItem="Q7u-6t-NGT" secondAttribute="height" id="p9L-zg-hMD"/>
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <state key="normal" image="chevron.right" catalog="system">
+                                            <state key="normal" image="chevron">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
                                             <connections>
@@ -255,7 +262,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HHI-tT-7Vk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1.5" id="DCb-T3-OfW"/>
+                <constraint firstItem="HHI-tT-7Vk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.92" id="DCb-T3-OfW"/>
                 <constraint firstItem="2Kv-Ja-LUL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="NcT-85-SM9"/>
                 <constraint firstItem="HHI-tT-7Vk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ToI-3d-I8W"/>
                 <constraint firstAttribute="trailing" secondItem="HHI-tT-7Vk" secondAttribute="trailing" id="ZIm-Cx-8fu"/>
@@ -265,8 +272,8 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron" width="19" height="15"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

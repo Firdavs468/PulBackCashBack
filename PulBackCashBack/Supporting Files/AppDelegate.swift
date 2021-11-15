@@ -31,17 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let main = MainVC(nibName: "MainVC", bundle: nil)
         let pin = PinVC(nibName: "PinVC", bundle: nil)
-        if Cache.isUserLogged() {
-            let nav = UINavigationController(rootViewController: pin)
-            window?.rootViewController = nav
-        }else {
-            window?.rootViewController = main
-        }
-        //        let tabbar = TabBarController()
+        //        let news = NewsVC(nibName: "NewsVC", bundle: nil)
+        //        if Cache.isUserLogged() {
+        let nav = UINavigationController(rootViewController: pin)
+        //            window?.rootViewController = nav
+        //        }else {
+        //            window?.rootViewController = main
+        //        }
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        
-        
         return true
     }
+    /// set orientations you want to be allowed in this property by default
+    var orientationLock = UIInterfaceOrientationMask.all
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return self.orientationLock
+    }
 }
-

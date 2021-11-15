@@ -41,17 +41,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>Access camera</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Library</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>googlechromes</string>
-        <string>comgooglemaps</string>
-    </array>
-
+	<key>NSCameraUsageDescription</key>
+	<string>Access camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Library</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>NSFaceIDUsageDescription</key>
-	<string></string>
+	<string>Identify yourself!</string>
 </dict>
 </plist>

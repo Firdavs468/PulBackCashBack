@@ -15,22 +15,31 @@ import SwiftyJSON
 //My Telegram code - 3434
 class ConfirmationVC: UIViewController {
     
+    @IBOutlet weak var textFieldContainerView: UIView!
     @IBOutlet weak var otpLabel: UILabel!
-    @IBOutlet weak var otpTF: CustomTF!
+    @IBOutlet weak var otpTF: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var nextButtonWidth: NSLayoutConstraint!
-    
+
     var counter = 59
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
         setupTextField()
         tapGesture()
-        phoneNumberLabel.text = "Номер мобильного" +  Cache.getUserDefaultsString(forKey: Keys.phone_number)
+        phoneNumberLabel.text = "Номер мобильного  " +  Cache.getUserDefaultsString(forKey:"phone")
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
+    
+    override func viewDidLayoutSubviews() {
+        nextButton.layer.cornerRadius = nextButton.frame.height/2
+    }
+    
+    @IBAction func clearTextButtonPressed(_ sender: Any) {
+        otpTF.text = ""
+    }
+    
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if UserDefaults.standard.integer(forKey: Keys.code) == 0 {
@@ -53,24 +62,22 @@ class ConfirmationVC: UIViewController {
     
     
     func cornerView() {
-        nextButton.layer.cornerRadius = nextButton.frame.height/2
-        
+        textFieldContainerView.layer.cornerRadius = textFieldContainerView.frame.height/10
         //Setup Constraint
         if isSmalScreen568 {
-            otpLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-            timerLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+            otpLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            timerLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         }else if isSmalScreen736 {
-            otpLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
-            timerLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+            otpLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+            timerLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         }else {
-            otpLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-            timerLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+            otpLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            timerLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         }
     }
     
     //OTP customTF setup
     func setupTextField() {
-        otpTF.title = "Код из СМС"
         otpTF.placeholder = "Код подтверждения"
         otpTF.textContentType = .oneTimeCode
         otpTF.keyboardType = .numberPad
@@ -96,13 +103,6 @@ extension ConfirmationVC : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return range.location < 4
-    }
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if ((textField.text?.isEmpty) != nil) {
-            otpTF.rightButtonIcon = UIImage(systemName:"xmark.circle.fill")
-        }else {
-            otpTF.rightButtonIcon = UIImage(systemName: "")
-        }
     }
 }
 

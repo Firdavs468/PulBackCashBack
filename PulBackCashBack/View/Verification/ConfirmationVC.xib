@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
                 <outlet property="nextButton" destination="2WF-WQ-GmZ" id="ImF-bG-b3G"/>
-                <outlet property="nextButtonWidth" destination="dqm-ff-f7R" id="1a1-bw-GIg"/>
                 <outlet property="otpLabel" destination="9ir-2X-c3O" id="ZaD-Kv-4S8"/>
-                <outlet property="otpTF" destination="dLo-pU-hlT" id="sxm-r6-yMg"/>
+                <outlet property="otpTF" destination="eaJ-k9-BCw" id="cHZ-2c-zpG"/>
                 <outlet property="phoneNumberLabel" destination="cvx-wO-U0f" id="6QY-UQ-sOZ"/>
+                <outlet property="textFieldContainerView" destination="Gkl-YL-M4X" id="PL3-hr-CuE"/>
                 <outlet property="timerLabel" destination="crT-yd-0Q1" id="dto-TF-tom"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="alY-VC-mc0">
-                    <rect key="frame" x="15" y="308.5" width="384" height="219"/>
+                    <rect key="frame" x="15" y="297" width="384" height="242"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z3c-qc-WDd">
                             <rect key="frame" x="0.0" y="0.0" width="384" height="75"/>
@@ -44,42 +44,80 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ome-1e-Lcr">
-                            <rect key="frame" x="0.0" y="105" width="384" height="66"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QmH-D5-usH">
+                            <rect key="frame" x="0.0" y="105" width="384" height="89"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-pU-hlT" customClass="CustomTF" customModule="PulBackCashBack" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="313" height="66"/>
-                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-WQ-GmZ">
-                                    <rect key="frame" x="318" y="0.0" width="66" height="66"/>
-                                    <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="66" id="dqm-ff-f7R"/>
-                                        <constraint firstAttribute="width" secondItem="2WF-WQ-GmZ" secondAttribute="height" id="sLC-TI-mal"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="chevron.right" catalog="system">
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="6xF-bw-2y2"/>
-                                    </connections>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Код из СМС" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kT-di-tDj">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ome-1e-Lcr">
+                                    <rect key="frame" x="0.0" y="26.5" width="384" height="62.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkl-YL-M4X">
+                                            <rect key="frame" x="0.0" y="0.0" width="316.5" height="62.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-6J-taE">
+                                                    <rect key="frame" x="15" y="4" width="291.5" height="54.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-k9-BCw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="256.5" height="54.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBr-M4-5nm">
+                                                            <rect key="frame" x="266.5" y="0.0" width="25" height="54.5"/>
+                                                            <color key="tintColor" systemColor="systemGrayColor"/>
+                                                            <state key="normal" image="x.circle.fill" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="clearTextButtonPressed:" destination="-1" eventType="touchUpInside" id="5jW-9j-uRY"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KwJ-6J-taE" secondAttribute="trailing" constant="10" id="JOQ-Wr-pl5"/>
+                                                <constraint firstItem="KwJ-6J-taE" firstAttribute="top" secondItem="Gkl-YL-M4X" secondAttribute="top" constant="4" id="K9T-j3-6th"/>
+                                                <constraint firstItem="KwJ-6J-taE" firstAttribute="leading" secondItem="Gkl-YL-M4X" secondAttribute="leading" constant="15" id="ROM-y6-mK1"/>
+                                                <constraint firstAttribute="bottom" secondItem="KwJ-6J-taE" secondAttribute="bottom" constant="4" id="RQY-Ql-aRq"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-WQ-GmZ">
+                                            <rect key="frame" x="321.5" y="0.0" width="62.5" height="62.5"/>
+                                            <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="2WF-WQ-GmZ" secondAttribute="height" id="sLC-TI-mal"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" image="chevron">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="6xF-bw-2y2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-gi-dBk">
-                            <rect key="frame" x="0.0" y="201" width="384" height="18"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-gi-dBk">
+                            <rect key="frame" x="0.0" y="224" width="384" height="18"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Повторно отправить код можно через" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ir-2X-c3O">
-                                    <rect key="frame" x="0.0" y="0.0" width="322" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторно отправить код можно череz                  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ir-2X-c3O">
+                                    <rect key="frame" x="0.0" y="0.0" width="323.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59 сек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="crT-yd-0Q1">
-                                    <rect key="frame" x="322" y="0.0" width="62" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59 сек" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="crT-yd-0Q1">
+                                    <rect key="frame" x="323.5" y="0.0" width="60.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -91,20 +129,25 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Gkl-YL-M4X" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.07" id="iFR-Pt-iMn"/>
                 <constraint firstItem="alY-VC-mc0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="jdF-p1-kH6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="alY-VC-mc0" secondAttribute="trailing" constant="15" id="jqD-Og-20L"/>
                 <constraint firstItem="alY-VC-mc0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-30" id="nj3-Ds-0Pa"/>
             </constraints>
-            <point key="canvasLocation" x="29" y="61"/>
+            <point key="canvasLocation" x="28.985507246376812" y="60.9375"/>
         </view>
     </objects>
     <resources>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="chevron" width="19" height="15"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
