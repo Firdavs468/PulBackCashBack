@@ -24,11 +24,11 @@ class BonusesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         if isSmalScreen568 {
-            transformWidth = 150
+            transformWidth = 140
         }else if isSmalScreen736 {
-            transformWidth = 180
+            transformWidth = 170
         }else {
-            transformWidth = 205
+            transformWidth = 195
         }
         setupCollectionView()
     }

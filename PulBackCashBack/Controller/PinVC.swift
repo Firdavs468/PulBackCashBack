@@ -19,7 +19,6 @@ class PinVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ПИН-код"
-        navigationController?.navigationBar.barTintColor = UIColor.green
         cornerView()
         //        startAuthentication()
     }

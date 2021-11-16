@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         GMSServices.provideAPIKey("AIzaSyDOyOZf1XkqaKBKS5ZOS4PuSI95jha56N0")
         UITabBar.appearance().tintColor = UIColor(red: 0.278, green: 0.749, blue: 0.639, alpha: 1)
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named:"frame"),
+        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar")
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named:"navbar"),
                                                         for: .default)
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor.white
@@ -29,16 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.windows.forEach { window in
             window.overrideUserInterfaceStyle = .light
         }
-        let main = MainVC(nibName: "MainVC", bundle: nil)
-        let pin = PinVC(nibName: "PinVC", bundle: nil)
-        //        let news = NewsVC(nibName: "NewsVC", bundle: nil)
-        //        if Cache.isUserLogged() {
-        let nav = UINavigationController(rootViewController: pin)
-        //            window?.rootViewController = nav
-        //        }else {
-        //            window?.rootViewController = main
-        //        }
-        window?.rootViewController = nav
+        if Cache.isUserLogged() {
+            let tabbar = TabBarController()
+            let nav = UINavigationController(rootViewController: tabbar)
+            window?.rootViewController = nav
+        }else {
+            let main = MainVC(nibName: "MainVC", bundle: nil)
+            window?.rootViewController = main
+        }
         window?.makeKeyAndVisible()
         return true
     }

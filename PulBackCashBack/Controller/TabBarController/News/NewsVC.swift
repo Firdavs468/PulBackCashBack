@@ -50,6 +50,7 @@ class NewsVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setNeedsStatusBarAppearanceUpdate()
+        
     }
 }
 
@@ -193,9 +194,9 @@ extension NewsVC {
                             Loader.stop()
                             Alert.showAlert(forState: .error, message: "Nomalum xato")
                         }
-                        }
                 }
             }
         }
     }
+}
 

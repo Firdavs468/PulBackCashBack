@@ -20,11 +20,21 @@ class BalanceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         balancLabel.textColor = UIColor(red: 0.09, green: 0.549, blue: 0.514, alpha: 1)
-        containerView.layer.cornerRadius = containerView.frame.height/15
-        containerView.layer.shadowColor = UIColor.lightGray.cgColor
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        containerView.layer.shadowRadius = 100
-        containerView.layer.shadowOpacity = 0.3
+        //        containerView.layer.cornerRadius = containerView.frame.height/15
+        //        containerView.layer.shadowColor = UIColor.lightGray.cgColor
+        //        containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        //        containerView.layer.shadowRadius = 100
+        //        containerView.layer.shadowOpacity = 0.3
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 30
+        contentView.layer.shadowRadius = 5
+        contentView.layer.shadowColor = UIColor.systemGray.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        contentView.layer.shadowOpacity = 0.4
+    }
+    
+    func updateCell(balance:String) {
+        self.balancLabel.text = balance
     }
     
 }

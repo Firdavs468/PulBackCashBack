@@ -30,6 +30,10 @@ extension HomeCell : UITableViewDelegate, UITableViewDataSource {
         self.table_view.delegate = self
         self.table_view.dataSource = self
         self.table_view.tableFooterView = UIView()
+        self.table_view.layer.shadowColor = UIColor.systemGray.cgColor
+        self.table_view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.table_view.layer.shadowRadius = 2
+        self.table_view.layer.shadowOpacity = 0.4
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5

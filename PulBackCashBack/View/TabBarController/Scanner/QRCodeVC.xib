@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
                 <outlet property="barCodeLabel" destination="Ccp-Un-ogs" id="MJX-mf-alY"/>
+                <outlet property="containerHeight" destination="tYF-U1-7id" id="2Tn-ue-Zhk"/>
                 <outlet property="containerImage" destination="Ntd-3n-eTd" id="2kg-9h-EVA"/>
                 <outlet property="qrCodeContainerView" destination="2AM-Ia-0cL" id="vX6-mr-dFI"/>
                 <outlet property="qrCodeImage" destination="ycJ-IV-keI" id="s5c-op-CcC"/>
@@ -32,7 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="ijR-Xf-xRI">
-                            <rect key="frame" x="10" y="40" width="300" height="568"/>
+                            <rect key="frame" x="10" y="30" width="300" height="534"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AM-Ia-0cL">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="224"/>
@@ -61,16 +63,16 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-sH-y6F">
-                                    <rect key="frame" x="0.0" y="284" width="300" height="284"/>
+                                    <rect key="frame" x="0.0" y="284" width="300" height="250"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="Ntd-3n-eTd">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="284"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-wG-E4n">
-                                            <rect key="frame" x="15" y="15" width="270" height="239"/>
+                                            <rect key="frame" x="15" y="15" width="270" height="205"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCw-nu-460">
-                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="70"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="RCw-nu-460">
+                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="53"/>
                                                     <string key="text">Мгновенное
 сравнение цен</string>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
@@ -78,10 +80,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="barcode" translatesAutoresizingMaskIntoConstraints="NO" id="F8m-aM-vMx">
-                                                    <rect key="frame" x="0.0" y="85" width="270" height="102"/>
+                                                    <rect key="frame" x="0.0" y="68" width="270" height="85"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUg-xO-zaT">
-                                                    <rect key="frame" x="0.0" y="202" width="270" height="37"/>
+                                                    <rect key="frame" x="0.0" y="168" width="270" height="37"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <state key="normal" title="Сканировать баркод товара">
@@ -111,7 +113,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="ijR-Xf-xRI" secondAttribute="bottom" id="8ZP-0c-6nc"/>
                         <constraint firstItem="ijR-Xf-xRI" firstAttribute="leading" secondItem="61u-Ky-9mD" secondAttribute="leading" constant="10" id="OrD-Wh-Xie"/>
-                        <constraint firstItem="ijR-Xf-xRI" firstAttribute="top" secondItem="61u-Ky-9mD" secondAttribute="top" constant="40" id="ffB-OF-Rk8"/>
+                        <constraint firstItem="ijR-Xf-xRI" firstAttribute="top" secondItem="61u-Ky-9mD" secondAttribute="top" constant="30" id="ffB-OF-Rk8"/>
                         <constraint firstAttribute="trailing" secondItem="ijR-Xf-xRI" secondAttribute="trailing" id="iBs-It-Rmo"/>
                         <constraint firstItem="ijR-Xf-xRI" firstAttribute="centerX" secondItem="61u-Ky-9mD" secondAttribute="centerX" id="uln-U4-UFM"/>
                     </constraints>
@@ -123,11 +125,11 @@
                 <constraint firstItem="61u-Ky-9mD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9hd-Yp-TQn"/>
                 <constraint firstItem="5bn-M1-0bJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KiN-IM-jNS"/>
                 <constraint firstItem="5bn-M1-0bJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pdg-wh-gT9"/>
-                <constraint firstItem="F8m-aM-vMx" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="UpR-Kv-CFb"/>
+                <constraint firstItem="F8m-aM-vMx" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="UpR-Kv-CFb"/>
                 <constraint firstItem="61u-Ky-9mD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="a77-Am-GeT"/>
                 <constraint firstItem="61u-Ky-9mD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ctp-XA-XM0"/>
                 <constraint firstItem="NUg-xO-zaT" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.065" id="lL9-P8-jRP"/>
-                <constraint firstItem="8FR-sH-y6F" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="tYF-U1-7id"/>
+                <constraint firstItem="8FR-sH-y6F" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.44" id="tYF-U1-7id"/>
                 <constraint firstItem="5bn-M1-0bJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="xsK-Wk-dPl"/>
                 <constraint firstItem="61u-Ky-9mD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.85" id="y6j-6C-HOW"/>
                 <constraint firstItem="5bn-M1-0bJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ySU-Lv-y06"/>

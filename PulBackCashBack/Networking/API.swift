@@ -19,13 +19,15 @@ class API {
         static let continueSignUp = "/confirm"
         static let signUp = "/signUp"
         static let getBanner = "/banner"
+        static let getBalance = "/balance"
     }
     
-    static  var signInUrl: URL = URL(string: base_url + EndPoints.signIn)!
-    static  var verifyUrl: URL = URL(string: base_url + EndPoints.verify)!
-    static  var continueSignUpUrl: URL = URL(string: base_url + EndPoints.continueSignUp)!
-    static  var signUpUrl: URL = URL(string: base_url + EndPoints.signUp)!
-    static var getBannerUrl : URL = URL(string: base_url + EndPoints.getBanner)!
+    static  let signInUrl: URL = URL(string: base_url + EndPoints.signIn)!
+    static  let verifyUrl: URL = URL(string: base_url + EndPoints.verify)!
+    static  let continueSignUpUrl: URL = URL(string: base_url + EndPoints.continueSignUp)!
+    static  let signUpUrl: URL = URL(string: base_url + EndPoints.signUp)!
+    static let getBannerUrl : URL = URL(string: base_url + EndPoints.getBanner)!
+    static let getBalanceUrl : URL = URL(string: base_url + EndPoints.getBalance)!
     
     
     //MARK: - Get API

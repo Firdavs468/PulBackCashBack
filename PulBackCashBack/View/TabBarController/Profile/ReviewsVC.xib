@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,13 +26,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hy1-gE-KuE">
-                            <rect key="frame" x="10" y="10" width="300" height="456.5"/>
+                            <rect key="frame" x="15" y="10" width="290" height="433"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-Mh-XBt">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="196.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="196.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-Mp-Yvr">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="64.5"/>
                                             <string key="text">Любой ваш отзыв важен для нас.
 Поля, отмеченные (*), обязательны для заполнения.</string>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -39,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Сообщение*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-ux-Kpa">
-                                            <rect key="frame" x="0.0" y="94.5" width="300" height="102"/>
+                                            <rect key="frame" x="0.0" y="94.5" width="290" height="102"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -47,11 +48,11 @@
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZi-91-hYm">
-                                    <rect key="frame" x="0.0" y="226.5" width="300" height="165"/>
+                                    <rect key="frame" x="0.0" y="226.5" width="290" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-SM-EnA">
-                                    <rect key="frame" x="0.0" y="421.5" width="300" height="35"/>
+                                    <rect key="frame" x="0.0" y="398.5" width="290" height="34.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <state key="normal" title="Отправить ">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,10 +65,10 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="hy1-gE-KuE" secondAttribute="trailing" constant="10" id="A05-lV-Uqf"/>
+                        <constraint firstAttribute="trailing" secondItem="hy1-gE-KuE" secondAttribute="trailing" constant="15" id="A05-lV-Uqf"/>
                         <constraint firstItem="hy1-gE-KuE" firstAttribute="top" secondItem="j10-a2-w7D" secondAttribute="top" constant="10" id="MjD-j6-73Z"/>
                         <constraint firstItem="hy1-gE-KuE" firstAttribute="centerX" secondItem="j10-a2-w7D" secondAttribute="centerX" id="QTF-ZD-XlW"/>
-                        <constraint firstItem="hy1-gE-KuE" firstAttribute="leading" secondItem="j10-a2-w7D" secondAttribute="leading" constant="10" id="Suw-tE-eKP"/>
+                        <constraint firstItem="hy1-gE-KuE" firstAttribute="leading" secondItem="j10-a2-w7D" secondAttribute="leading" constant="15" id="Suw-tE-eKP"/>
                         <constraint firstAttribute="bottom" secondItem="hy1-gE-KuE" secondAttribute="bottom" id="ktV-LK-K1J"/>
                     </constraints>
                 </scrollView>
@@ -76,11 +77,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.85" id="6Mp-wk-abM"/>
-                <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.29" id="HOt-HQ-FVi"/>
+                <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="HOt-HQ-FVi"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vds-vz-6Ns"/>
                 <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="Vx9-5V-8rr"/>
                 <constraint firstAttribute="trailing" secondItem="j10-a2-w7D" secondAttribute="trailing" id="b8X-kJ-6iX"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nfG-c2-3t0"/>
+                <constraint firstItem="6MX-SM-EnA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="wjk-PP-K8r"/>
             </constraints>
             <point key="canvasLocation" x="79" y="-1804"/>
         </view>

@@ -36,6 +36,16 @@ class BranchesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(mapView)
+        setupMapView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.focusMapToShowAllMarkers()
+    }
+    
+    //setup MapView()
+    func setupMapView() {
         mapView.padding = UIEdgeInsets(top: 72, left: 25, bottom: 0, right: 25)
         mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -46,13 +56,7 @@ class BranchesVC: UIViewController {
         self.addMarkers()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.focusMapToShowAllMarkers()
-    }
-    
     func addMarkers() {
-        
         markers.removeAll()
         for (index, place) in places.enumerated() {
             let marker = GMSMarker()
@@ -101,7 +105,6 @@ extension BranchesVC: GMSMapViewDelegate {
             let height: CGFloat = 200
             let paddingWith = self.view.frame.width - 40
             infoWindow.frame = CGRect(x: self.view.frame.width-100, y: self.view.frame.height-20, width: getEstimatedWidthForMarker(place, padding: paddingWith) + paddingWith, height: height)
-            infoWindow.delegate = self
             infoWindow.imgView.image = UIImage(named: place.name!)
             infoWindow.txtLabel.text = place.name
             infoWindow.subtitleLabel.text = place.address
@@ -139,8 +142,3 @@ extension String {
     }
 }
 
-extension BranchesVC : MapMarkerDelegate {
-    func didTapInfoButton() {
-        print("didTapInfoButton")
-    }
-}

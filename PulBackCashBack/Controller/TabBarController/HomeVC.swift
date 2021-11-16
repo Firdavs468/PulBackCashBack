@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class HomeVC: UIViewController {
     
     @IBOutlet weak var userLabel: UILabel! {
@@ -19,10 +20,14 @@ class HomeVC: UIViewController {
         }
     }
     @IBOutlet weak var table_view: UITableView!
+    
+    var 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         setupTableView()
+        getBalance()
+        //        navBarBackground()
+        //        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
 }
@@ -98,4 +103,29 @@ extension HomeVC : OpenBeeto {
             // Here you can handle the case when your other application cannot be opened for any reason.
         }
     }
+}
+//MARK: - Navigation Controller Barbackground
+extension HomeVC {
+    func navBarBackground(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded();      self.navigationItem.hidesBackButton = true
+    }
+}
+
+//MARK: - Get Balance API
+extension HomeVC {
+    func getBalance() {
+            if let token = Cache.getUserToken() {
+                let headers :HTTPHeaders =
+                [
+                    "Authorization": "\(token)"
+                ]
+                Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { data in
+                    if let data = data {
+                        print(data)
+                    }
+                }
+            }
+        }
 }
