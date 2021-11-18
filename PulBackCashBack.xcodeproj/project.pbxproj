@@ -13,9 +13,19 @@
 		C711393B273D3860007B74EE /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = C711393A273D3860007B74EE /* done.json */; };
 		C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */; };
 		C73A1BC627342E78009E6D1D /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */; };
+		C753C4E52743D756004D3C18 /* Pays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E42743D756004D3C18 /* Pays.swift */; };
+		C753C4E82743DF28004D3C18 /* BonusesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */; };
+		C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */; };
+		C753C4EC2743E0AC004D3C18 /* PurchasesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4EA2743E0AC004D3C18 /* PurchasesTableCell.swift */; };
+		C753C4ED2743E0AC004D3C18 /* PurchasesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4EB2743E0AC004D3C18 /* PurchasesTableCell.xib */; };
+		C753C4EF2743EBAD004D3C18 /* Branches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4EE2743EBAD004D3C18 /* Branches.swift */; };
+		C753C4F22743FD74004D3C18 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4F02743FD74004D3C18 /* ReviewsCell.swift */; };
+		C753C4F32743FD74004D3C18 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4F12743FD74004D3C18 /* ReviewsCell.xib */; };
 		C766CB3527302F4700DB0E1A /* PinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766CB3327302F4700DB0E1A /* PinVC.swift */; };
 		C766CB3627302F4700DB0E1A /* PinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C766CB3427302F4700DB0E1A /* PinVC.xib */; };
 		C766CB382730EAF900DB0E1A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C766CB372730EAF900DB0E1A /* LocalAuthentication.framework */; };
+		C772A75F27451C6A00B5F5BF /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772A75E27451C6A00B5F5BF /* AppColor.swift */; };
+		C772A7612745305400B5F5BF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772A7602745305400B5F5BF /* UserData.swift */; };
 		C77784B6273AA4D3002B1534 /* PurchasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77784B4273AA4D3002B1534 /* PurchasesCell.swift */; };
 		C77784B7273AA4D3002B1534 /* PurchasesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77784B5273AA4D3002B1534 /* PurchasesCell.xib */; };
 		C778AD6A273D3AB500991C77 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778AD69273D3AB500991C77 /* Net.swift */; };
@@ -84,9 +94,19 @@
 		C711393A273D3860007B74EE /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = done.json; path = "../../../Bananjon/Bananjon/Lottie Files/done.json"; sourceTree = "<group>"; };
 		C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerInfoWindow.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerInfoWindow.swift"; sourceTree = "<group>"; };
 		C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerView.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerView.swift"; sourceTree = "<group>"; };
+		C753C4E42743D756004D3C18 /* Pays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pays.swift; sourceTree = "<group>"; };
+		C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesTableCell.swift; sourceTree = "<group>"; };
+		C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BonusesTableCell.xib; sourceTree = "<group>"; };
+		C753C4EA2743E0AC004D3C18 /* PurchasesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesTableCell.swift; sourceTree = "<group>"; };
+		C753C4EB2743E0AC004D3C18 /* PurchasesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchasesTableCell.xib; sourceTree = "<group>"; };
+		C753C4EE2743EBAD004D3C18 /* Branches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branches.swift; sourceTree = "<group>"; };
+		C753C4F02743FD74004D3C18 /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
+		C753C4F12743FD74004D3C18 /* ReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
 		C766CB3327302F4700DB0E1A /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
 		C766CB3427302F4700DB0E1A /* PinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinVC.xib; sourceTree = "<group>"; };
 		C766CB372730EAF900DB0E1A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		C772A75E27451C6A00B5F5BF /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		C772A7602745305400B5F5BF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C77784B4273AA4D3002B1534 /* PurchasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesCell.swift; sourceTree = "<group>"; };
 		C77784B5273AA4D3002B1534 /* PurchasesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchasesCell.xib; sourceTree = "<group>"; };
 		C778AD69273D3AB500991C77 /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Net.swift; path = "../../../Last version of PulBack/PulBack/PulBack/Net/Net.swift"; sourceTree = "<group>"; };
@@ -243,6 +263,9 @@
 				C7D0C2622732C92B00AE06CB /* BonusesCell.xib */,
 				C7FE1F2E2733ECEB004337ED /* SettingsCell.xib */,
 				C7FE1F322733F320004337ED /* ProfileCell.xib */,
+				C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */,
+				C753C4EB2743E0AC004D3C18 /* PurchasesTableCell.xib */,
+				C753C4F12743FD74004D3C18 /* ReviewsCell.xib */,
 			);
 			path = "TableView Cell";
 			sourceTree = "<group>";
@@ -266,6 +289,9 @@
 				C7D0C2612732C92B00AE06CB /* BonusesCell.swift */,
 				C7FE1F2D2733ECEB004337ED /* SettingsCell.swift */,
 				C7FE1F312733F320004337ED /* ProfileCell.swift */,
+				C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */,
+				C753C4EA2743E0AC004D3C18 /* PurchasesTableCell.swift */,
+				C753C4F02743FD74004D3C18 /* ReviewsCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -308,6 +334,9 @@
 			children = (
 				C7CCBFB0273AF18100A8D5ED /* CarouselData.swift */,
 				C78F2C3A273E1EE500EF6AF3 /* GetBannerNews.swift */,
+				C753C4E42743D756004D3C18 /* Pays.swift */,
+				C753C4EE2743EBAD004D3C18 /* Branches.swift */,
+				C772A7602745305400B5F5BF /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +419,7 @@
 				C7E0B43D272F9E4900FE4F78 /* Keys.swift */,
 				C7E0B43F272F9ED000FE4F78 /* Cache.swift */,
 				C785A218272ACCE20061B719 /* Extension.swift */,
+				C772A75E27451C6A00B5F5BF /* AppColor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -521,6 +551,7 @@
 				C7FE1F422734139B004337ED /* NewsCell.xib in Resources */,
 				C77F7BF4273166DB003B3FAE /* MyProfileVC.xib in Resources */,
 				C7FE1F302733ECEB004337ED /* SettingsCell.xib in Resources */,
+				C753C4F32743FD74004D3C18 /* ReviewsCell.xib in Resources */,
 				C7FC64D82736B02900A80D4B /* ProductsCell.xib in Resources */,
 				C785A203272AC7FB0061B719 /* LaunchScreen.storyboard in Resources */,
 				C77F7BED27316671003B3FAE /* QRCodeVC.xib in Resources */,
@@ -540,6 +571,8 @@
 				C785A200272AC7FB0061B719 /* Assets.xcassets in Resources */,
 				C7FE1F2A2733EC61004337ED /* Settings.xib in Resources */,
 				C7E08A60273A313A00C15A74 /* NewsTappedVC.xib in Resources */,
+				C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */,
+				C753C4ED2743E0AC004D3C18 /* PurchasesTableCell.xib in Resources */,
 				C7D0C2642732C92B00AE06CB /* BonusesCell.xib in Resources */,
 				C77784B7273AA4D3002B1534 /* PurchasesCell.xib in Resources */,
 				C7FC64DD2736D13C00A80D4B /* HomeCell.xib in Resources */,
@@ -615,12 +648,16 @@
 				C7FE1F2F2733ECEB004337ED /* SettingsCell.swift in Sources */,
 				C7E08A5F273A313A00C15A74 /* NewsTappedVC.swift in Sources */,
 				C77F7BEC27316671003B3FAE /* QRCodeVC.swift in Sources */,
+				C772A7612745305400B5F5BF /* UserData.swift in Sources */,
 				C77F7BFB27318B06003B3FAE /* BalanceCell.swift in Sources */,
 				C78F2C3B273E1EE600EF6AF3 /* GetBannerNews.swift in Sources */,
 				C77F7BE827316650003B3FAE /* BranchesVC.swift in Sources */,
 				C7E0B442272FA0E900FE4F78 /* Alert.swift in Sources */,
 				C77F7BE427316628003B3FAE /* HomeVC.swift in Sources */,
+				C753C4F22743FD74004D3C18 /* ReviewsCell.swift in Sources */,
+				C772A75F27451C6A00B5F5BF /* AppColor.swift in Sources */,
 				C77F7BE1273165E7003B3FAE /* TabBarController.swift in Sources */,
+				C753C4EF2743EBAD004D3C18 /* Branches.swift in Sources */,
 				C785A1F7272AC7F60061B719 /* AppDelegate.swift in Sources */,
 				C77784B6273AA4D3002B1534 /* PurchasesCell.swift in Sources */,
 				C7FE1F292733EC61004337ED /* Settings.swift in Sources */,
@@ -628,6 +665,7 @@
 				C7FE1F3827340771004337ED /* ReviewsVC.swift in Sources */,
 				C766CB3527302F4700DB0E1A /* PinVC.swift in Sources */,
 				C785A20F272AC8860061B719 /* MainVC.swift in Sources */,
+				C753C4E52743D756004D3C18 /* Pays.swift in Sources */,
 				C7E0B440272F9ED000FE4F78 /* Cache.swift in Sources */,
 				C7E0B444272FA0F100FE4F78 /* Loader.swift in Sources */,
 				C7B1063C27369FDF004A0CD5 /* ProductsVC.swift in Sources */,
@@ -639,10 +677,12 @@
 				C77F7C0127318C5A003B3FAE /* OpenBeetoCell.swift in Sources */,
 				C7FE1F3C273412C7004337ED /* NewsVC.swift in Sources */,
 				C778AD6A273D3AB500991C77 /* Net.swift in Sources */,
+				C753C4EC2743E0AC004D3C18 /* PurchasesTableCell.swift in Sources */,
 				C7E0B43E272F9E4900FE4F78 /* Keys.swift in Sources */,
 				C785A213272ACB9E0061B719 /* LoginVC.swift in Sources */,
 				C7CCBFB1273AF18100A8D5ED /* CarouselData.swift in Sources */,
 				C7113932273D3551007B74EE /* Reachability.swift in Sources */,
+				C753C4E82743DF28004D3C18 /* BonusesTableCell.swift in Sources */,
 				C7FE1F332733F320004337ED /* ProfileCell.swift in Sources */,
 				C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */,
 				C778AD6C273D3AF300991C77 /* API.swift in Sources */,

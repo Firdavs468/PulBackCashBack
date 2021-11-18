@@ -21,8 +21,9 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-
+    
     var counter = 59
+    var userData : UserData! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
@@ -34,6 +35,7 @@ class ConfirmationVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
+        nextButton.backgroundColor = AppColor.appColor
     }
     
     @IBAction func clearTextButtonPressed(_ sender: Any) {
@@ -53,7 +55,7 @@ class ConfirmationVC: UIViewController {
     //OTP timer
     @objc func updateCounter() {
         //example functionality
-        if counter > 0 {
+        if counter >= 0 {
             timerLabel.text = "00:\(counter) сек"
             counter -= 1
         }
@@ -123,6 +125,8 @@ extension ConfirmationVC {
                     if data["code"].intValue == 0 {
                         Cache.saveUserToken(token: data["data"]["token"].stringValue)
                         Loader.stop()
+                        Cache.saveUserDefaults(data["data"]["first_name"].stringValue, forKey: Keys.name)
+                        Cache.saveUserDefaults(data["data"]["last_name"].stringValue, forKey: Keys.surname)
                         let vc = PinVC(nibName: "PinVC", bundle: nil)
                         let window = UIApplication.shared.keyWindow
                         let nav = UINavigationController(rootViewController: vc)
@@ -173,6 +177,9 @@ extension ConfirmationVC {
                     if jsonData["code"].intValue == 0 {
                         Cache.saveUserToken(token: data["data"]["token"].stringValue)
                         Loader.stop()
+                        let dat = jsonData["data"]
+                        Cache.saveUserDefaults(dat["first_name"].stringValue, forKey: Keys.name)
+                        Cache.saveUserDefaults(dat["last_name"].stringValue, forKey: Keys.surname)
                         let vc = PinVC(nibName: "PinVC", bundle: nil)
                         let window = UIApplication.shared.keyWindow
                         let nav = UINavigationController(rootViewController: vc)

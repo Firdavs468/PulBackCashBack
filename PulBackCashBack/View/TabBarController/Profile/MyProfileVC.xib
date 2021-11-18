@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CWx-tW-A4S">
-                            <rect key="frame" x="20" y="30" width="280" height="463.5"/>
+                            <rect key="frame" x="20" y="30" width="280" height="464"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-fw-4F9">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="104.5"/>
@@ -53,7 +53,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Муроджон Турсунов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-X5-5rW">
                                                             <rect key="frame" x="0.0" y="0.0" width="195.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                            <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="+998 (97) 707 02 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oep-CG-bDR">
@@ -73,27 +73,20 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-s4-u8l">
-                                    <rect key="frame" x="0.0" y="400" width="280" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="400" width="280" height="64"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Xe-6GL">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="33.5"/>
-                                            <state key="normal">
-                                                <attributedString key="attributedTitle">
-                                                    <fragment content="+998 94 555 58 92">
-                                                        <attributes>
-                                                            <color key="NSColor" systemColor="systemBlueColor"/>
-                                                            <font key="NSFont" metaFont="system" size="18"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Xe-6GL">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                            <state key="normal" title="+998 94 555 58 92">
+                                                <color key="titleColor" systemColor="systemBlueColor"/>
                                             </state>
                                             <connections>
                                                 <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="l7D-j5-s9m"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukZ-7g-sdO">
-                                            <rect key="frame" x="0.0" y="33.5" width="280" height="30"/>
+                                            <rect key="frame" x="0.0" y="34" width="280" height="30"/>
                                             <state key="normal" title="Служба поддержки"/>
                                             <connections>
                                                 <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="l2L-HL-KXD"/>

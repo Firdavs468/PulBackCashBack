@@ -15,4 +15,7 @@ class Keys {
     static let name = "name"
     static let surname = "surname"
     static let code = "code"
+    static let password = "password"
+    static let checkingPassword = "checkingPassword"
+    static let isLogged = "isLogged"
 }

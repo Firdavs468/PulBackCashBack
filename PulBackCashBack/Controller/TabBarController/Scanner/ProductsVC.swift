@@ -11,11 +11,10 @@ import BarcodeScanner
 class ProductsVC: UIViewController {
     
     @IBOutlet weak var collection_view: UICollectionView!
-    @IBOutlet weak var scanerButton: UIButton! {
-        didSet {
-            scanerButton.layer.cornerRadius = scanerButton.frame.height/6
-        }
-    }
+    @IBOutlet weak var scanerButton: UIButton!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var qrCodeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -26,6 +25,13 @@ class ProductsVC: UIViewController {
         viewController.errorDelegate = self
         viewController.dismissalDelegate = self
         present(viewController, animated: true, completion: nil)
+    }
+    
+    func setupUI() {
+        scanerButton.layer.cornerRadius = scanerButton.frame.height/6
+        scanerButton.backgroundColor = AppColor.appColor
+        qrCodeLabel.textColor = AppColor.appColor
+        numberLabel.textColor = AppColor.appColor
     }
 }
 

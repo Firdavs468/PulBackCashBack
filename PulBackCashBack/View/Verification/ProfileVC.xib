@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,16 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
-                <outlet property="allStack" destination="U2T-Zd-49J" id="iDs-cK-4c1"/>
                 <outlet property="birthdayTextField" destination="gW1-pV-x2s" id="g66-OX-QAM"/>
-                <outlet property="containerViewHeight" destination="NcT-85-SM9" id="ar2-K7-PvX"/>
                 <outlet property="familyStatusTextField" destination="ZGX-Wb-yUV" id="Sf6-pI-F8U"/>
                 <outlet property="genderTextField" destination="R2J-Yo-1SQ" id="r76-O5-JUE"/>
-                <outlet property="labelsStack" destination="1uu-u1-NKR" id="OmI-Ti-fqW"/>
                 <outlet property="nameTextField" destination="j4q-6L-ZTm" id="rK2-Ru-0Q8"/>
                 <outlet property="nextButton" destination="Q7u-6t-NGT" id="93o-Fh-aKd"/>
+                <outlet property="requiredLabel" destination="jvj-KX-22v" id="7po-1w-TTX"/>
                 <outlet property="surnameTextField" destination="cy6-8M-UQv" id="kK7-eK-Wcn"/>
-                <outlet property="textFieldsStack" destination="08G-8d-XTc" id="k4s-Pr-qdq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="containerView" destination="2Kv-Ja-LUL" collectionClass="NSMutableArray" id="qjA-Ca-NAQ"/>
                 <outletCollection property="containerView" destination="m5P-kB-c6D" collectionClass="NSMutableArray" id="XRp-xw-M17"/>
@@ -59,9 +55,9 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поля, отмеченные (*), обязательны для заполнения" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-KX-22v">
                                             <rect key="frame" x="0.0" y="136" width="374" height="17"/>
-                                            <color key="tintColor" red="0.2901960784" green="0.77176076169999996" blue="0.65385818480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                            <color key="textColor" red="0.2901960784" green="0.77176076169999996" blue="0.65385818480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -233,7 +229,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-6t-NGT">
                                             <rect key="frame" x="314" y="0.0" width="60" height="60"/>
-                                            <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="X2x-Wn-Xu8"/>
                                                 <constraint firstAttribute="width" secondItem="Q7u-6t-NGT" secondAttribute="height" id="p9L-zg-hMD"/>

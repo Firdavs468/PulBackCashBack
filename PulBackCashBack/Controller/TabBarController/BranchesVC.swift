@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
+import SwiftyJSON
 
 let primaryColor = UIColor(red:0.00, green:0.19, blue:0.56, alpha:1.0)
 
@@ -33,10 +35,13 @@ class BranchesVC: UIViewController {
         return v
     }()
     
+    var getBranches : [Branches] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(mapView)
         setupMapView()
+        getBranchesAPI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -139,6 +144,29 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.width)
+    }
+}
+
+//MARK: - Get Branches
+extension BranchesVC {
+    func getBranchesAPI() {
+        if let token = Cache.getUserToken() {
+            let headers : HTTPHeaders = [
+                "Authorization": "\(token)"
+            ]
+            Networking.fetchRequest(urlAPI: API.branchesUrl, method: .get, params: nil, encoding: JSONEncoding.default, headers: headers) { [self] data in
+                if let data = data {
+                    print("data= ",data)
+                    if data["code"].intValue == 0 {
+                        let jsonData = JSON(data["data"])
+                        for i in 0..<jsonData.count {
+                            let branches = Branches(_id: jsonData[i]["_id"].intValue, name: jsonData[i]["name"].stringValue, logo: jsonData[i]["logo"].stringValue, address: jsonData[i]["address"].stringValue, open_at: jsonData[i]["open_at"].stringValue, close_at: jsonData[i]["close_at"].stringValue, contact: jsonData[i]["contact"].stringValue, lat: jsonData[i]["lat"].doubleValue, long: jsonData[i]["long"].doubleValue)
+                            getBranches.append(branches)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -16,18 +16,17 @@ class HomeVC: UIViewController {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 1.22
             userLabel.numberOfLines = 0
-            userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\nМуроджон Турсунов!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\n\(Cache.getUserDefaultsString(forKey: Keys.name + " " + Cache.getUserDefaultsString(forKey: Keys.surname)))!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }
     }
     @IBOutlet weak var table_view: UITableView!
-    
-    var 
+    var pays : [Pays] = []
+    var balanceStr = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        getBalance()
-        //        navBarBackground()
-        //        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        getBalanceAPI()
+        
     }
     
 }
@@ -52,6 +51,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = self.table_view.dequeueReusableCell(withIdentifier: BalanceCell.identifier, for: indexPath) as! BalanceCell
+            cell.updateCell(balance: "\(balanceStr)")
             cell.selectionStyle = .none
             return cell
         }else if indexPath.row == 1 {
@@ -115,17 +115,22 @@ extension HomeVC {
 
 //MARK: - Get Balance API
 extension HomeVC {
-    func getBalance() {
-            if let token = Cache.getUserToken() {
-                let headers :HTTPHeaders =
+    func getBalanceAPI() {
+        if let token = Cache.getUserToken() {
+            let headers :HTTPHeaders =
                 [
                     "Authorization": "\(token)"
                 ]
-                Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { data in
-                    if let data = data {
-                        print(data)
+            Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { [self] data in
+                if let data = data {
+                    print(data)
+                    let jsonData = JSON(data["data"])
+                    if data["code"].intValue == 0 {
+                        balanceStr = jsonData["balance"].intValue
+                        self.table_view.reloadData()
                     }
                 }
             }
         }
+    }
 }

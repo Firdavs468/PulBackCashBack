@@ -30,21 +30,29 @@ class MyProfileVC: UIViewController {
         UIImage(named: "wifi")!,
         UIImage(named: "message")!
     ]
-    
+    let userData : UserData! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Профиль"
         setupTableView()
+        setupUI()
     }
     
+ 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        userNameLabel.textColor = AppColor.appColor
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.frame.height/2
     }
     
     @IBAction func callCenterButtonPressed(_ sender: Any) {
         callNumber(phoneNumber: "+998945555892")
+    }
+    func setupUI() {
+        userNameLabel.textColor = AppColor.appColor
+        userNameLabel.text = Cache.getUserDefaultsString(forKey: Keys.name) + " " + Cache.getUserDefaultsString(forKey: Keys.surname)
+        phoneNumberLabel.text = Cache.getUserDefaultsString(forKey: "phone")
     }
     
 }

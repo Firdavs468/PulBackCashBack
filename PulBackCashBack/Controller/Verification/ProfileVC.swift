@@ -11,17 +11,14 @@ import SwiftyJSON
 
 class ProfileVC: UIViewController {
     
-    @IBOutlet weak var allStack: UIStackView!
+    @IBOutlet weak var requiredLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var labelsStack: UIStackView!
-    @IBOutlet weak var textFieldsStack: UIStackView!
     @IBOutlet var containerView: [UIView]!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var familyStatusTextField: UITextField!
-    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
     
     let datePicker = UIDatePicker()
     
@@ -31,12 +28,13 @@ class ProfileVC: UIViewController {
         tapGesture()
         registerKeyboardNotifications()
         showDatePicker()
+        newAppColor()
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.surname)
-        if nameTextField.text!.isEmpty || birthdayTextField.text!.isEmpty {
+        if nameTextField.text!.isEmpty {
             Alert.showAlert(forState: .error, message: "Ma'lumotlarni to'ldiring")
         }else {
             continueSignUp()
@@ -100,6 +98,11 @@ class ProfileVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    //new app color
+    func newAppColor() {
+        requiredLabel.textColor = AppColor.appColor
+        nextButton.tintColor = AppColor.appColor
+    }
     
     //birthday. DatePicker
     func showDatePicker(){
@@ -142,19 +145,6 @@ class ProfileVC: UIViewController {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
         for container in containerView {
             container.layer.cornerRadius = container.frame.height/10
-        }
-        
-        //Setup constraint
-        if isSmalScreen568 {
-            containerViewHeight.constant = 20
-            labelsStack.spacing = 15
-            textFieldsStack.spacing = 10
-            allStack.spacing = 20
-        }else {
-            containerViewHeight.constant = 0.06
-            labelsStack.spacing = 20
-            textFieldsStack.spacing = 15
-            allStack.spacing = 25
         }
     }
     

@@ -41,7 +41,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.26179999999999998" green="0.77000000000000002" blue="0.73612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="GCQ-ff-Kab" firstAttribute="leading" secondItem="Y8e-rL-rZ0" secondAttribute="leading" constant="10" id="reK-bG-oug"/>
                                     <constraint firstItem="GCQ-ff-Kab" firstAttribute="centerY" secondItem="Y8e-rL-rZ0" secondAttribute="centerY" id="rmG-Zt-NMA"/>
@@ -78,6 +78,7 @@
             <size key="customSize" width="230" height="96"/>
             <connections>
                 <outlet property="containerView" destination="RQx-4O-te5" id="RfV-Os-Crx"/>
+                <outlet property="countContainerView" destination="Y8e-rL-rZ0" id="0Je-ke-G98"/>
                 <outlet property="countLabel" destination="GEJ-GZ-KVk" id="ttN-YV-gxe"/>
                 <outlet property="summaLabel" destination="Voj-9m-UDf" id="Uev-Ja-9Ow"/>
             </connections>

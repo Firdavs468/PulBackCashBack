@@ -35,8 +35,8 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         tapGesture()
         setupTextField()
-        //        navBarBackground()
         multipleFontColorsSingleLabel()
+        newAppColor()
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,7 +54,7 @@ class LoginVC: UIViewController {
             checkButton.setImage(UIImage(named: "check"), for: .normal)
             isPressed1 = true
             if isPressed2 {
-                nextButton.backgroundColor = UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1)
+                nextButton.backgroundColor = AppColor.appColor
             }
         }else {
             nextButton.backgroundColor = .lightGray
@@ -68,7 +68,7 @@ class LoginVC: UIViewController {
             uncheckButton.setImage(UIImage(named: "check"), for: .normal)
             isPressed2 = true
             if isPressed1 {
-                nextButton.backgroundColor = UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1)
+                nextButton.backgroundColor = AppColor.appColor
             }
         }else {
             nextButton.backgroundColor = .lightGray
@@ -99,14 +99,20 @@ class LoginVC: UIViewController {
         phoneNumberTF.delegate = self
     }
     
+    //New App Color
+    func newAppColor() {
+        uncheckButton.tintColor = AppColor.appColor
+        checkButton.tintColor = AppColor.appColor
+    }
+    
     //Use multiple font colors in a single label
     func multipleFontColorsSingleLabel() {
         
         //fullTextLabel
         let yourAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
-        let yourOtherAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
+        let yourOtherAttributes = [NSAttributedString.Key.foregroundColor: AppColor.appColor.cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
         let yourAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
-        let yourOtherAttributes2 = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.271, green: 0.741, blue: 0.659, alpha: 1).cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
+        let yourOtherAttributes2 = [NSAttributedString.Key.foregroundColor: AppColor.appColor.cgColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)] as [NSAttributedString.Key : Any]
         
         let partOne = NSMutableAttributedString(string: "Я согласен с ", attributes: yourAttributes)
         let partTwo = NSMutableAttributedString(string: " Пользовательским соглашением", attributes: yourOtherAttributes)
@@ -184,6 +190,7 @@ extension LoginVC {
     
 }
 
+//MARK: - User Login API
 extension LoginVC {
     func userLogin() {
         let phoneNumber = phoneNumberTF.text?.replacingOccurrences(of: "+998", with: "").replacingOccurrences(of: " ", with:"").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
@@ -222,11 +229,3 @@ extension LoginVC {
     }
 }
 
-////MARK: - Navigation Controller Barbackground
-//extension LoginVC {
-//    func navBarBackground(){
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.layoutIfNeeded();      self.navigationItem.hidesBackButton = true
-//    }
-//}

@@ -13,21 +13,14 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.backgroundColor = .systemGray6
-        //        let bgView: UIImageView = UIImageView(image: UIImage(named: "tabbar"))
-        //        bgView.frame = CGRect(x: 0, y: self.view.frame.height-60, width: self.view.frame.width, height: 100) //you might need to modify this frame to your tabbar frame
-        //        self.view.addSubview(bgView)
-        //        tabBar.backgroundImage = UIImage(named: "tabbar")
+        //        let image = UIImage(named: "tabbar")
+        //        let imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         setupTabBar()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        //        let newTabBarHeight = defaultTabBarHeight + 76.0
-        //        var newFrame = tabBar.frame
-        //        newFrame.size.height = newTabBarHeight
-        //        newFrame.origin.y = view.frame.size.height - newTabBarHeight
-        //        tabBar.frame = newFrame
     }
     
     func setupTabBar() {
@@ -35,7 +28,7 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         home.tabBarItem.image = UIImage(named: "home")
         home.tabBarItem.title = "Главная"
         //        let navHome =  UINavigationController(rootViewController: home)
-            
+        
         let branches = BranchesVC(nibName: "BranchesVC", bundle: nil)
         branches.title = "Филиалы"
         branches.tabBarItem.image = UIImage(named: "branches")
@@ -43,8 +36,9 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         let navbranches =  UINavigationController(rootViewController: branches)
         
         let qrcode = QRCodeVC(nibName: "QRCodeVC", bundle: nil)
-        qrcode.tabBarItem.image = UIImage(named: "scanner")
+        qrcode.tabBarItem.image = UIImage(named: "scaner")
         qrcode.tabBarItem.title = "QRCode"
+        qrcode.tabBarItem.image?.withTintColor(UIColor(red: 0.286, green: 0.549, blue: 0.271, alpha: 0.3))
         //        let navqrcode =  UINavigationController(rootViewController: qrcode)
         
         let news = NewsVC(nibName: "NewsVC", bundle: nil)

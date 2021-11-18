@@ -22,7 +22,7 @@ class QRCodeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
-//        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +39,7 @@ class QRCodeVC: UIViewController {
         self.present(vc, animated: true)
         
     }
-        
+    
     //setup view
     func cornerView() {
         containerImage.layer.cornerRadius = containerImage.frame.height/22
@@ -51,6 +51,7 @@ class QRCodeVC: UIViewController {
         qrCodeImage.layer.cornerRadius = qrCodeImage.frame.height/20
         qrCodeContainerView.layer.cornerRadius = qrCodeContainerView.frame.height/10
         scanerButton.layer.cornerRadius = scanerButton.frame.height/2.25
+        scanerButton.setTitleColor(AppColor.appColor, for: .normal)
         
         //setup constraint
         if isSmalScreen568 {

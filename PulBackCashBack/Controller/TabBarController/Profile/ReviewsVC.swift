@@ -18,12 +18,18 @@ class ReviewsVC: UIViewController {
         "Выберите филиал",
         "Прикрепить файл"
     ]
+    let cellButtonImage = [
+        UIImage(systemName: "chevron.right"),
+        UIImage(systemName: "chevron.right"),
+        UIImage(named: "upload")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Отзывы"
         cornerView()
         setupTableView()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
@@ -33,7 +39,7 @@ class ReviewsVC: UIViewController {
     func cornerView() {
         sendButton.layer.borderWidth = 2
         sendButton.layer.cornerRadius = sendButton.frame.height/6
-        sendButton.layer.borderColor = UIColor(red: 0.278, green: 0.749, blue: 0.639, alpha: 1).cgColor
+        sendButton.layer.borderColor = AppColor.appColor.cgColor
         
         textView.layer.borderColor = UIColor.systemGray3.cgColor
         textView.layer.borderWidth = 2
@@ -48,6 +54,7 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
         self.table_view.delegate = self
         self.table_view.dataSource = self
         self.table_view.tableFooterView = UIView()
+        self.table_view.register(ReviewsCell.nib(), forCellReuseIdentifier: ReviewsCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,10 +62,9 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = cellLabelArray[indexPath.row]
-        cell.textLabel?.font = .systemFont(ofSize: 18, weight: .regular)
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        let cell = self.table_view.dequeueReusableCell(withIdentifier: ReviewsCell.identifier, for: indexPath) as! ReviewsCell
+        cell.selectionStyle = .none
+        cell.updateCell(lbl: cellLabelArray[indexPath.row], buttonImage: cellButtonImage[indexPath.row]!)
         return cell
     }
     
@@ -75,6 +81,5 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
             return 65
         }
     }
-    
     
 }

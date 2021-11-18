@@ -90,7 +90,7 @@
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-WQ-GmZ">
                                             <rect key="frame" x="321.5" y="0.0" width="62.5" height="62.5"/>
-                                            <color key="backgroundColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="2WF-WQ-GmZ" secondAttribute="height" id="sLC-TI-mal"/>
                                             </constraints>
