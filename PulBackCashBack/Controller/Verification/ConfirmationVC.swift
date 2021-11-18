@@ -177,9 +177,6 @@ extension ConfirmationVC {
                     if jsonData["code"].intValue == 0 {
                         Cache.saveUserToken(token: data["data"]["token"].stringValue)
                         Loader.stop()
-                        let dat = jsonData["data"]
-                        Cache.saveUserDefaults(dat["first_name"].stringValue, forKey: Keys.name)
-                        Cache.saveUserDefaults(dat["last_name"].stringValue, forKey: Keys.surname)
                         let vc = PinVC(nibName: "PinVC", bundle: nil)
                         let window = UIApplication.shared.keyWindow
                         let nav = UINavigationController(rootViewController: vc)

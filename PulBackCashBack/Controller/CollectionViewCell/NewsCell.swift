@@ -23,10 +23,10 @@ class NewsCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = containerView.frame.height/25
-        containerView.layer.shadowColor = UIColor.darkGray.cgColor
+        containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        containerView.layer.shadowRadius = 3
-        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.shadowRadius = 5
+        containerView.layer.shadowOpacity = 0.3
     }
     
     func updateCell(img:String, date:String,content:String, title:String) {

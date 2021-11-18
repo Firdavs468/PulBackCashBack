@@ -38,15 +38,16 @@ class NewsVC: UIViewController {
     }
     
     // MARK: - Properties
+    let flowLayout = ZoomAndSnapFlowLayout()
     var carouselData = [CarouselData]()
     private var currentPage = 0
     var imgArr = [1,2,3,4,4]
     var bannerArr : [GetBannerNews] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBanner()
         setupCollectionView()
+              
     }
     override func viewWillAppear(_ animated: Bool) {
         setNeedsStatusBarAppearanceUpdate()
@@ -61,27 +62,30 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         self.collection_view.delegate = self
         self.collection_view.dataSource = self
         self.collection_view.register(NewsCell.nib(), forCellWithReuseIdentifier: NewsCell.identifier)
+        collection_view.collectionViewLayout = flowLayout
+        collection_view.contentInsetAdjustmentBehavior = .always
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !bannerArr.isEmpty {
-            return bannerArr.count
-        }else {
-            return 0
-        }
-        
+//        if !bannerArr.isEmpty {
+//            return bannerArr.count
+//        }else {
+//            return 0
+//        }
+//
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collection_view.dequeueReusableCell(withReuseIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
-        if !bannerArr.isEmpty {
-            self.collection_view.isHidden = false
-            Loader.stop()
-            cell.updateCell(img: bannerArr[indexPath.row].image, date: bannerArr[indexPath.row].created_at, content: bannerArr[indexPath.row].content, title: bannerArr[indexPath.row].title)
-        }else {
-            self.collection_view.isHidden = true
-            Loader.start()
-        }
+//        if !bannerArr.isEmpty {
+//            self.collection_view.isHidden = false
+//            Loader.stop()
+//            cell.updateCell(img: bannerArr[indexPath.row].image, date: bannerArr[indexPath.row].created_at, content: bannerArr[indexPath.row].content, title: bannerArr[indexPath.row].title)
+//        }else {
+//            self.collection_view.isHidden = true
+//            Loader.start()
+//        }
         return cell
     }
     
@@ -90,7 +94,7 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collection_view.frame.width-10 , height:self.collection_view.frame.height-20 )
+        return CGSize(width: self.collection_view.frame.width-40 , height:self.collection_view.frame.height )
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -67,8 +67,8 @@ class PinVC: UIViewController {
                     Cache.saveUserDefaults(password, forKey: Keys.password)
                     print(Cache.getUserDefaultsString(forKey: Keys.password))
                     if count == 3 {
-                        Alert.showAlert(forState: .success, message: "Parol muvaffiqiyatli yaratildi")
                         Cache.saveUserDefaults(true, forKey: Keys.isLogged)
+                        Alert.showAlert(forState: .success, message: "Parol muvafaqiyatli yaratildi")
                         let vc = TabBarController()
                         vc.modalPresentationStyle = .fullScreen
                         present(vc, animated: true, completion: nil)
@@ -88,7 +88,6 @@ class PinVC: UIViewController {
                         let checking = Cache.getUserDefaultsString(forKey: Keys.checkingPassword)
                         let password = Cache.getUserDefaultsString(forKey: Keys.password)
                         if checking == password {
-                            Alert.showAlert(forState: .success, message: "parol to'gri")
                             Cache.saveUserDefaults(nil, forKey: Keys.checkingPassword)
                             let vc = TabBarController()
                             vc.modalPresentationStyle = .fullScreen

@@ -124,10 +124,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="72"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-Mb-smF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="19.5" height="72"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="25.5" height="72"/>
                                                     <color key="tintColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal">
-                                                        <imageReference key="image" image="checkmark.rectangle.portrait.fill" catalog="system" symbolScale="large"/>
+                                                        <imageReference key="image" image="rectangle" catalog="system" symbolScale="large"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                                     </state>
                                                     <connections>
@@ -135,7 +135,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Я согласен с Пользовательским соглашением и даю согласие на обработку персональных данных" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Vzh-xD-pxN">
-                                                    <rect key="frame" x="39.5" y="0.0" width="260.5" height="72"/>
+                                                    <rect key="frame" x="45.5" y="0.0" width="254.5" height="72"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -193,7 +193,6 @@ Tiin Market</string>
         </view>
     </objects>
     <resources>
-        <image name="checkmark.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <image name="chevron" width="19" height="15"/>
         <image name="rectangle" catalog="system" width="128" height="93"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>

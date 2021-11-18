@@ -25,11 +25,11 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prf-7t-VNR">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CWx-tW-A4S">
-                            <rect key="frame" x="20" y="30" width="280" height="464"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="CWx-tW-A4S">
+                            <rect key="frame" x="20" y="30" width="280" height="494"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-fw-4F9">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="104.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-fw-4F9">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="114.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой пофиль в Tiin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzA-7C-Dca">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
@@ -38,7 +38,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zkj-YE-kdT">
-                                            <rect key="frame" x="0.0" y="35.5" width="280" height="69"/>
+                                            <rect key="frame" x="0.0" y="45.5" width="280" height="69"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Betoo" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-LT-jxT">
                                                     <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
@@ -69,11 +69,11 @@
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-1S-zZk">
-                                    <rect key="frame" x="0.0" y="124.5" width="280" height="255.5"/>
+                                    <rect key="frame" x="0.0" y="144.5" width="280" height="255.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-s4-u8l">
-                                    <rect key="frame" x="0.0" y="400" width="280" height="64"/>
+                                    <rect key="frame" x="0.0" y="430" width="280" height="64"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Xe-6GL">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>

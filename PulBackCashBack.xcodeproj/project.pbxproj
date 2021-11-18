@@ -11,6 +11,7 @@
 		C7113932273D3551007B74EE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7113931273D3551007B74EE /* Reachability.swift */; };
 		C7113939273D384D007B74EE /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = C7113938273D384D007B74EE /* loader.json */; };
 		C711393B273D3860007B74EE /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = C711393A273D3860007B74EE /* done.json */; };
+		C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721A7F62746A5CD00DD82A5 /* Assets.xcassets */; };
 		C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */; };
 		C73A1BC627342E78009E6D1D /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */; };
 		C753C4E52743D756004D3C18 /* Pays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E42743D756004D3C18 /* Pays.swift */; };
@@ -43,8 +44,8 @@
 		C77F7BFC27318B06003B3FAE /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77F7BFA27318B06003B3FAE /* BalanceCell.xib */; };
 		C77F7C0127318C5A003B3FAE /* OpenBeetoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F7BFF27318C5A003B3FAE /* OpenBeetoCell.swift */; };
 		C77F7C0227318C5B003B3FAE /* OpenBeetoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77F7C0027318C5A003B3FAE /* OpenBeetoCell.xib */; };
+		C782EF3527465ABE00565EFD /* DoneAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C782EF3427465ABE00565EFD /* DoneAlert.swift */; };
 		C785A1F7272AC7F60061B719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785A1F6272AC7F60061B719 /* AppDelegate.swift */; };
-		C785A200272AC7FB0061B719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C785A1FF272AC7FB0061B719 /* Assets.xcassets */; };
 		C785A203272AC7FB0061B719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C785A201272AC7FB0061B719 /* LaunchScreen.storyboard */; };
 		C785A20F272AC8860061B719 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785A20D272AC8860061B719 /* MainVC.swift */; };
 		C785A210272AC8860061B719 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C785A20E272AC8860061B719 /* MainVC.xib */; };
@@ -92,6 +93,7 @@
 		C7113931273D3551007B74EE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../../../Bananjon/Bananjon/Networking/Reachability.swift; sourceTree = "<group>"; };
 		C7113938273D384D007B74EE /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loader.json; path = "../../../Bananjon/Bananjon/Lottie Files/loader.json"; sourceTree = "<group>"; };
 		C711393A273D3860007B74EE /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = done.json; path = "../../../Bananjon/Bananjon/Lottie Files/done.json"; sourceTree = "<group>"; };
+		C721A7F62746A5CD00DD82A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/PulBackCashBack-main 2/PulBackCashBack/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerInfoWindow.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerInfoWindow.swift"; sourceTree = "<group>"; };
 		C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerView.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerView.swift"; sourceTree = "<group>"; };
 		C753C4E42743D756004D3C18 /* Pays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pays.swift; sourceTree = "<group>"; };
@@ -124,9 +126,9 @@
 		C77F7BFA27318B06003B3FAE /* BalanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
 		C77F7BFF27318C5A003B3FAE /* OpenBeetoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBeetoCell.swift; sourceTree = "<group>"; };
 		C77F7C0027318C5A003B3FAE /* OpenBeetoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenBeetoCell.xib; sourceTree = "<group>"; };
+		C782EF3427465ABE00565EFD /* DoneAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneAlert.swift; path = "../../../Bananjon/Bananjon/Custom Views/DoneAlert.swift"; sourceTree = "<group>"; };
 		C785A1F3272AC7F60061B719 /* PulBackCashBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulBackCashBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C785A1F6272AC7F60061B719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C785A1FF272AC7FB0061B719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C785A1F6272AC7F60061B719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../New Group/AppDelegate.swift"; sourceTree = "<group>"; };
 		C785A202272AC7FB0061B719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C785A204272AC7FB0061B719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C785A20D272AC8860061B719 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		C785A1F5272AC7F60061B719 /* PulBackCashBack */ = {
 			isa = PBXGroup;
 			children = (
+				C7B025BF27469C45009AA4C9 /* Main */,
 				C7113930273D3543007B74EE /* Networking */,
 				C785A20A272AC8260061B719 /* Model */,
 				C7E0B43C272F9E3800FE4F78 /* Helpers */,
@@ -325,6 +328,7 @@
 				C785A20C272AC8300061B719 /* Controller */,
 				C785A20B272AC82C0061B719 /* View */,
 				C7FE1F352733FB85004337ED /* Supporting Files */,
+				C7B025C027469C58009AA4C9 /* Resources */,
 			);
 			path = PulBackCashBack;
 			sourceTree = "<group>";
@@ -373,8 +377,26 @@
 				C785A215272ACCBE0061B719 /* CustomTF.swift */,
 				C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */,
 				C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */,
+				C782EF3427465ABE00565EFD /* DoneAlert.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		C7B025BF27469C45009AA4C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C785A1F6272AC7F60061B719 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C7B025C027469C58009AA4C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C721A7F62746A5CD00DD82A5 /* Assets.xcassets */,
+				C785A201272AC7FB0061B719 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C7B1063927369F08004A0CD5 /* Scanner */ = {
@@ -447,9 +469,6 @@
 		C7FE1F352733FB85004337ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C785A1F6272AC7F60061B719 /* AppDelegate.swift */,
-				C785A1FF272AC7FB0061B719 /* Assets.xcassets */,
-				C785A201272AC7FB0061B719 /* LaunchScreen.storyboard */,
 				C785A204272AC7FB0061B719 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -550,6 +569,7 @@
 				C785A210272AC8860061B719 /* MainVC.xib in Resources */,
 				C7FE1F422734139B004337ED /* NewsCell.xib in Resources */,
 				C77F7BF4273166DB003B3FAE /* MyProfileVC.xib in Resources */,
+				C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */,
 				C7FE1F302733ECEB004337ED /* SettingsCell.xib in Resources */,
 				C753C4F32743FD74004D3C18 /* ReviewsCell.xib in Resources */,
 				C7FC64D82736B02900A80D4B /* ProductsCell.xib in Resources */,
@@ -568,7 +588,6 @@
 				C7FE1F3D273412C7004337ED /* NewsVC.xib in Resources */,
 				C7FE1F342733F320004337ED /* ProfileCell.xib in Resources */,
 				C7E0B4482730180F00FE4F78 /* ProfileVC.xib in Resources */,
-				C785A200272AC7FB0061B719 /* Assets.xcassets in Resources */,
 				C7FE1F2A2733EC61004337ED /* Settings.xib in Resources */,
 				C7E08A60273A313A00C15A74 /* NewsTappedVC.xib in Resources */,
 				C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */,
@@ -687,6 +706,7 @@
 				C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */,
 				C778AD6C273D3AF300991C77 /* API.swift in Sources */,
 				C7E0B4472730180F00FE4F78 /* ProfileVC.swift in Sources */,
+				C782EF3527465ABE00565EFD /* DoneAlert.swift in Sources */,
 				C7FE1F412734139B004337ED /* NewsCell.swift in Sources */,
 				C785A219272ACCE20061B719 /* Extension.swift in Sources */,
 				C7FC64D72736B02900A80D4B /* ProductsCell.swift in Sources */,

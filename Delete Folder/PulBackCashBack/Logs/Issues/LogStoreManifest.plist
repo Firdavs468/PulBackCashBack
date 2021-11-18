@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>1E05703E-32FE-4FF7-8CE1-904AC2AE7D14</key>
+		<key>0B1B9D79-3491-4989-9360-16CE7E6DCC68</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,175 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
 			<key>fileName</key>
-			<string>1E05703E-32FE-4FF7-8CE1-904AC2AE7D14.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>Alamofire-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658899985.39062297</real>
-			<key>timeStoppedRecording</key>
-			<real>658900012.82832003</real>
-			<key>title</key>
-			<string>Build target Alamofire</string>
-			<key>uniqueIdentifier</key>
-			<string>1E05703E-32FE-4FF7-8CE1-904AC2AE7D14</string>
-		</dict>
-		<key>2DDAF5CC-6F0F-417B-8694-11C79AE545AF</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.bundle</string>
-			<key>fileName</key>
-			<string>2DDAF5CC-6F0F-417B-8694-11C79AE545AF.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>BarcodeScanner-BarcodeScanner-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658899979.84312499</real>
-			<key>timeStoppedRecording</key>
-			<real>658900000.92790401</real>
-			<key>title</key>
-			<string>Build target BarcodeScanner-BarcodeScanner</string>
-			<key>uniqueIdentifier</key>
-			<string>2DDAF5CC-6F0F-417B-8694-11C79AE545AF</string>
-		</dict>
-		<key>40F22E2D-2781-4021-ADE9-DC742B7D6D0A</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>40F22E2D-2781-4021-ADE9-DC742B7D6D0A.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>PulBackCashBack-bjtpvxqxmjzkqcbvvzoiepeciexi</string>
-			<key>timeStartedRecording</key>
-			<real>658900484.72489095</real>
-			<key>timeStoppedRecording</key>
-			<real>658900487.36553395</real>
-			<key>title</key>
-			<string>Build target PulBackCashBack</string>
-			<key>uniqueIdentifier</key>
-			<string>40F22E2D-2781-4021-ADE9-DC742B7D6D0A</string>
-		</dict>
-		<key>424E21C7-1734-4598-946C-3BF9353BB999</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>424E21C7-1734-4598-946C-3BF9353BB999.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>SnapKit-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658899979.79057801</real>
-			<key>timeStoppedRecording</key>
-			<real>658900000.69841695</real>
-			<key>title</key>
-			<string>Build target SnapKit</string>
-			<key>uniqueIdentifier</key>
-			<string>424E21C7-1734-4598-946C-3BF9353BB999</string>
-		</dict>
-		<key>6816964E-2823-4338-8C28-DCE3DDD36EC8</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>6816964E-2823-4338-8C28-DCE3DDD36EC8.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>SDWebImage-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658899985.40064895</real>
-			<key>timeStoppedRecording</key>
-			<real>658900000.87432504</real>
-			<key>title</key>
-			<string>Build target SDWebImage</string>
-			<key>uniqueIdentifier</key>
-			<string>6816964E-2823-4338-8C28-DCE3DDD36EC8</string>
-		</dict>
-		<key>6C30A061-50DC-4B0E-8E99-941137C52BED</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>6C30A061-50DC-4B0E-8E99-941137C52BED.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>BarcodeScanner-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658900484.46168995</real>
-			<key>timeStoppedRecording</key>
-			<real>658900484.63940001</real>
-			<key>title</key>
-			<string>Build target BarcodeScanner</string>
-			<key>uniqueIdentifier</key>
-			<string>6C30A061-50DC-4B0E-8E99-941137C52BED</string>
-		</dict>
-		<key>6CE08EB6-EA89-41DB-A40F-0A79A16CABEC</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>6CE08EB6-EA89-41DB-A40F-0A79A16CABEC.xcactivitylog</string>
+			<string>0B1B9D79-3491-4989-9360-16CE7E6DCC68.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -194,15 +26,43 @@
 			<key>signature</key>
 			<string>Pods-PulBackCashBack-egzrlmbpmghjrrfgeucpnelsonva</string>
 			<key>timeStartedRecording</key>
-			<real>658900012.20268404</real>
+			<real>658939433.13006604</real>
 			<key>timeStoppedRecording</key>
-			<real>658900012.87612998</real>
+			<real>658939433.20991898</real>
 			<key>title</key>
 			<string>Build target Pods-PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>6CE08EB6-EA89-41DB-A40F-0A79A16CABEC</string>
+			<string>0B1B9D79-3491-4989-9360-16CE7E6DCC68</string>
 		</dict>
-		<key>76473FA6-21EA-4D86-9558-1BB2DACA64F6</key>
+		<key>340EF6E1-1217-422F-865A-90940D32AD94</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>340EF6E1-1217-422F-865A-90940D32AD94.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>SDWebImage-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658939433.00155199</real>
+			<key>timeStoppedRecording</key>
+			<real>658939433.16462898</real>
+			<key>title</key>
+			<string>Build target SDWebImage</string>
+			<key>uniqueIdentifier</key>
+			<string>340EF6E1-1217-422F-865A-90940D32AD94</string>
+		</dict>
+		<key>5B01C159-7B94-4C2B-85C3-D6A627C6C2CD</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -211,7 +71,91 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.bundle</string>
 			<key>fileName</key>
-			<string>76473FA6-21EA-4D86-9558-1BB2DACA64F6.xcactivitylog</string>
+			<string>5B01C159-7B94-4C2B-85C3-D6A627C6C2CD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>BarcodeScanner-BarcodeScanner-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658939432.85432196</real>
+			<key>timeStoppedRecording</key>
+			<real>658939432.86146498</real>
+			<key>title</key>
+			<string>Build target BarcodeScanner-BarcodeScanner</string>
+			<key>uniqueIdentifier</key>
+			<string>5B01C159-7B94-4C2B-85C3-D6A627C6C2CD</string>
+		</dict>
+		<key>7892BAB7-EC5C-43F0-8877-C9B72485DA12</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>7892BAB7-EC5C-43F0-8877-C9B72485DA12.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Alamofire-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658939432.79996598</real>
+			<key>timeStoppedRecording</key>
+			<real>658939433.13439202</real>
+			<key>title</key>
+			<string>Build target Alamofire</string>
+			<key>uniqueIdentifier</key>
+			<string>7892BAB7-EC5C-43F0-8877-C9B72485DA12</string>
+		</dict>
+		<key>93EBDC67-6FFE-4ED0-9A04-8E87B159AE32</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>93EBDC67-6FFE-4ED0-9A04-8E87B159AE32.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>SnapKit-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658939433.05986094</real>
+			<key>timeStoppedRecording</key>
+			<real>658939433.17569804</real>
+			<key>title</key>
+			<string>Build target SnapKit</string>
+			<key>uniqueIdentifier</key>
+			<string>93EBDC67-6FFE-4ED0-9A04-8E87B159AE32</string>
+		</dict>
+		<key>94C514AA-F722-4B31-A259-441F7F78C27D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.bundle</string>
+			<key>fileName</key>
+			<string>94C514AA-F722-4B31-A259-441F7F78C27D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -222,15 +166,15 @@
 			<key>signature</key>
 			<string>BarcodeScanner-Localization-egzrlmbpmghjrrfgeucpnelsonva</string>
 			<key>timeStartedRecording</key>
-			<real>658899979.79895198</real>
+			<real>658939432.86520696</real>
 			<key>timeStoppedRecording</key>
-			<real>658900000.86907303</real>
+			<real>658939432.87010396</real>
 			<key>title</key>
 			<string>Build target BarcodeScanner-Localization</string>
 			<key>uniqueIdentifier</key>
-			<string>76473FA6-21EA-4D86-9558-1BB2DACA64F6</string>
+			<string>94C514AA-F722-4B31-A259-441F7F78C27D</string>
 		</dict>
-		<key>ADF67885-463B-4617-B48E-27DB72E8EF92</key>
+		<key>9F12E5D7-6EE8-49B3-B23B-6A0CB0B8206B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -239,7 +183,35 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
 			<key>fileName</key>
-			<string>ADF67885-463B-4617-B48E-27DB72E8EF92.xcactivitylog</string>
+			<string>9F12E5D7-6EE8-49B3-B23B-6A0CB0B8206B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>BarcodeScanner-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658939432.84057403</real>
+			<key>timeStoppedRecording</key>
+			<real>658939433.13688195</real>
+			<key>title</key>
+			<string>Build target BarcodeScanner</string>
+			<key>uniqueIdentifier</key>
+			<string>9F12E5D7-6EE8-49B3-B23B-6A0CB0B8206B</string>
+		</dict>
+		<key>BF131E64-14CF-4908-B815-B6DB9DE2B533</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>BF131E64-14CF-4908-B815-B6DB9DE2B533.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -250,15 +222,43 @@
 			<key>signature</key>
 			<string>SwiftyJSON-egzrlmbpmghjrrfgeucpnelsonva</string>
 			<key>timeStartedRecording</key>
-			<real>658899979.78422403</real>
+			<real>658939433.07124996</real>
 			<key>timeStoppedRecording</key>
-			<real>658900000.60747695</real>
+			<real>658939433.17870998</real>
 			<key>title</key>
 			<string>Build target SwiftyJSON</string>
 			<key>uniqueIdentifier</key>
-			<string>ADF67885-463B-4617-B48E-27DB72E8EF92</string>
+			<string>BF131E64-14CF-4908-B815-B6DB9DE2B533</string>
 		</dict>
-		<key>BFCB233D-8588-4EA7-8159-AF1DA7ACFAD9</key>
+		<key>E481D369-0C0E-4EDF-A423-CB219A676195</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>E481D369-0C0E-4EDF-A423-CB219A676195.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>PulBackCashBack-bjtpvxqxmjzkqcbvvzoiepeciexi</string>
+			<key>timeStartedRecording</key>
+			<real>658939433.22954297</real>
+			<key>timeStoppedRecording</key>
+			<real>658939436.45171499</real>
+			<key>title</key>
+			<string>Build target PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>E481D369-0C0E-4EDF-A423-CB219A676195</string>
+		</dict>
+		<key>EAA9BCFD-DCCF-44E1-AD3B-F99398DDDD7C</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -267,7 +267,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
 			<key>fileName</key>
-			<string>BFCB233D-8588-4EA7-8159-AF1DA7ACFAD9.xcactivitylog</string>
+			<string>EAA9BCFD-DCCF-44E1-AD3B-F99398DDDD7C.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -278,13 +278,13 @@
 			<key>signature</key>
 			<string>lottie-ios-egzrlmbpmghjrrfgeucpnelsonva</string>
 			<key>timeStartedRecording</key>
-			<real>658899979.78728604</real>
+			<real>658939433.12284994</real>
 			<key>timeStoppedRecording</key>
-			<real>658900010.49761498</real>
+			<real>658939433.19681203</real>
 			<key>title</key>
 			<string>Build target lottie-ios</string>
 			<key>uniqueIdentifier</key>
-			<string>BFCB233D-8588-4EA7-8159-AF1DA7ACFAD9</string>
+			<string>EAA9BCFD-DCCF-44E1-AD3B-F99398DDDD7C</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

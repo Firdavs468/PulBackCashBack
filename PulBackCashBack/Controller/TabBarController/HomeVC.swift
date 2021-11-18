@@ -26,7 +26,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setupTableView()
         getBalanceAPI()
-        
+        print(Cache.getUserDefaultsString(forKey: Keys.name),"name")
     }
     
 }

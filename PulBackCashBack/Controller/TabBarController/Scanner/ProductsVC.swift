@@ -18,6 +18,7 @@ class ProductsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupUI()
     }
     @IBAction func scanerButtonPressed(_ sender: Any) {
         let viewController = BarcodeScannerViewController()
@@ -62,6 +63,8 @@ extension ProductsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
         
 }
+
+//MARK: - BarCode delegate
 extension ProductsVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print(code)

@@ -13,6 +13,7 @@ class Settings: UIViewController {
     
     let cellNamesArr = [
         "Изменить ПИН-код",
+        "Изменить ПИН-код",
         "Удалить ПИН-код",
         "Выберите язык"
     ]
@@ -55,8 +56,11 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.table_view.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0 {
-
+        if indexPath.row == 2 {
+            Cache.saveUserDefaults(nil, forKey: Keys.password)
+        }else if indexPath.row == 1 {
+            let vc = PinVC(nibName: "PinVC", bundle: nil)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

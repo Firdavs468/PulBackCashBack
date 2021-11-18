@@ -223,7 +223,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uan-De-gAR">
                                             <rect key="frame" x="180.5" y="0.0" width="70.5" height="70.5"/>
                                             <color key="tintColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" image="xmark.rectangle.fill" catalog="system">
+                                            <state key="normal" image="delet">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                             </state>
                                             <connections>
@@ -250,8 +250,8 @@
     </objects>
     <resources>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="delet" width="32" height="18.5"/>
         <image name="fingerprints" width="170.5" height="170.5"/>
-        <image name="xmark.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

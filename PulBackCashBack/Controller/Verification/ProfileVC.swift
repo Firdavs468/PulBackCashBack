@@ -33,7 +33,7 @@ class ProfileVC: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
-        Cache.saveUserDefaults(nameTextField.text, forKey: Keys.surname)
+        Cache.saveUserDefaults(surnameTextField.text, forKey: Keys.surname)
         if nameTextField.text!.isEmpty {
             Alert.showAlert(forState: .error, message: "Ma'lumotlarni to'ldiring")
         }else {
