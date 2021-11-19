@@ -6,34 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>0B1B9D79-3491-4989-9360-16CE7E6DCC68</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>0B1B9D79-3491-4989-9360-16CE7E6DCC68.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>Pods-PulBackCashBack-egzrlmbpmghjrrfgeucpnelsonva</string>
-			<key>timeStartedRecording</key>
-			<real>658939433.13006604</real>
-			<key>timeStoppedRecording</key>
-			<real>658939433.20991898</real>
-			<key>title</key>
-			<string>Build target Pods-PulBackCashBack</string>
-			<key>uniqueIdentifier</key>
-			<string>0B1B9D79-3491-4989-9360-16CE7E6DCC68</string>
-		</dict>
 		<key>340EF6E1-1217-422F-865A-90940D32AD94</key>
 		<dict>
 			<key>className</key>
@@ -61,6 +33,90 @@
 			<string>Build target SDWebImage</string>
 			<key>uniqueIdentifier</key>
 			<string>340EF6E1-1217-422F-865A-90940D32AD94</string>
+		</dict>
+		<key>4E76D67D-0D8A-41B5-9510-976055C0B5CE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>4E76D67D-0D8A-41B5-9510-976055C0B5CE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>ScalingCarousel-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658943551.456671</real>
+			<key>timeStoppedRecording</key>
+			<real>658943552.55720496</real>
+			<key>title</key>
+			<string>Build target ScalingCarousel</string>
+			<key>uniqueIdentifier</key>
+			<string>4E76D67D-0D8A-41B5-9510-976055C0B5CE</string>
+		</dict>
+		<key>504D917E-7072-413D-8F86-7E6EE1A2D4AA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>504D917E-7072-413D-8F86-7E6EE1A2D4AA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>PulBackCashBack-bjtpvxqxmjzkqcbvvzoiepeciexi</string>
+			<key>timeStartedRecording</key>
+			<real>658990756.95451701</real>
+			<key>timeStoppedRecording</key>
+			<real>658990762.82275999</real>
+			<key>title</key>
+			<string>Build target PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>504D917E-7072-413D-8F86-7E6EE1A2D4AA</string>
+		</dict>
+		<key>56B6CEC0-D14A-429F-A2D0-92C0992249B8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>56B6CEC0-D14A-429F-A2D0-92C0992249B8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Pods-PulBackCashBack-egzrlmbpmghjrrfgeucpnelsonva</string>
+			<key>timeStartedRecording</key>
+			<real>658943552.41482699</real>
+			<key>timeStoppedRecording</key>
+			<real>658943552.72717202</real>
+			<key>title</key>
+			<string>Build target Pods-PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>56B6CEC0-D14A-429F-A2D0-92C0992249B8</string>
 		</dict>
 		<key>5B01C159-7B94-4C2B-85C3-D6A627C6C2CD</key>
 		<dict>
@@ -229,34 +285,6 @@
 			<string>Build target SwiftyJSON</string>
 			<key>uniqueIdentifier</key>
 			<string>BF131E64-14CF-4908-B815-B6DB9DE2B533</string>
-		</dict>
-		<key>E481D369-0C0E-4EDF-A423-CB219A676195</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>E481D369-0C0E-4EDF-A423-CB219A676195.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>PulBackCashBack-bjtpvxqxmjzkqcbvvzoiepeciexi</string>
-			<key>timeStartedRecording</key>
-			<real>658939433.22954297</real>
-			<key>timeStoppedRecording</key>
-			<real>658939436.45171499</real>
-			<key>title</key>
-			<string>Build target PulBackCashBack</string>
-			<key>uniqueIdentifier</key>
-			<string>E481D369-0C0E-4EDF-A423-CB219A676195</string>
 		</dict>
 		<key>EAA9BCFD-DCCF-44E1-AD3B-F99398DDDD7C</key>
 		<dict>

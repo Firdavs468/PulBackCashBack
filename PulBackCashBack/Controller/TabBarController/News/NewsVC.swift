@@ -8,93 +8,179 @@
 import UIKit
 import  Alamofire
 import SwiftyJSON
+import ScalingCarousel
+import SnapKit
+class CodeCell: ScalingCarouselCell {
+    
+    var image : UIImageView = {
+        let i = UIImageView()
+        i.contentMode = .scaleToFill
+        i.image = UIImage(named: "navbar")
+        return i
+    }()
+    
+    var dateLabel : UILabel = {
+        let l = UILabel()
+        l.text = "21.06.2021"
+        l.numberOfLines = 0
+        return l
+    }()
+    
+    var titleLabel : UILabel = {
+        let l = UILabel()
+        l.numberOfLines = 0
+        l.text = "21.06.2021"
+        return l
+    }()
+    
+    var contentLabel : UILabel = {
+        let l = UILabel()
+        l.numberOfLines = 0
+        l.text = "KOLBERG GROUP – многопрофильная группа компаний, ориентированных на дистрибьюцию товаров"
+        return l
+    }()
+    
+    var labelsStackView : UIStackView = {
+        let s = UIStackView()
+        s.spacing = 0
+        s.alignment = .fill
+        s.distribution = .fill
+        s.axis = .vertical
+        return s
+    }()
+    
+    var scrollView : UIScrollView = {
+        let s = UIScrollView()
+        return s
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI() {
+        mainView = UIView(frame: contentView.bounds)
+        contentView.addSubview(mainView)
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            mainView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        mainView.addSubview(image)
+        image.snp.makeConstraints { make in
+            make.height.equalToSuperview().multipliedBy(0.8)
+            make.left.right.top.equalToSuperview().offset(0)
+        }
+        
+        mainView.addSubview(labelsStackView)
+        labelsStackView.addArrangedSubview(dateLabel)
+        labelsStackView.addArrangedSubview(titleLabel)
+        labelsStackView.addArrangedSubview(contentLabel)
+        labelsStackView.snp.makeConstraints { make in
+            make.top.equalTo(image.snp.bottom).offset(10)
+            make.left.right.bottom.equalToSuperview().offset(0)
+        }
+    }
+    
+    func updateCell(image:UIImage) {
+        self.image.image = image
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 class NewsVC: UIViewController {
     
-    @IBOutlet weak var collection_view: UICollectionView!
+    @IBOutlet weak var collection_view: ScalingCarouselView!
+    
+    @IBOutlet weak var collectionTop: NSLayoutConstraint!
+    @IBOutlet weak var collectionBottom: NSLayoutConstraint!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
     }
-    @IBOutlet weak var collectionTop: NSLayoutConstraint! {
-        didSet {
-            if isSmalScreen568 {
-                collectionTop.constant = 30
-            }else if isSmalScreen736 {
-                collectionTop.constant = 50
-            }else {
-                collectionTop.constant = 70
-            }
-        }
-    }
-    @IBOutlet weak var collectionBottom: NSLayoutConstraint! {
-        didSet {
-            if isSmalScreen568 {
-                collectionBottom.constant = 30
-            }else if isSmalScreen736 {
-                collectionBottom.constant = 50
-            }else {
-                collectionBottom.constant = 70
-            }
-        }
-    }
     
     // MARK: - Properties
-    let flowLayout = ZoomAndSnapFlowLayout()
-    var carouselData = [CarouselData]()
-    private var currentPage = 0
-    var imgArr = [1,2,3,4,4]
     var bannerArr : [GetBannerNews] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBanner()
         setupCollectionView()
-              
+        setupConstraint()
     }
     override func viewWillAppear(_ animated: Bool) {
         setNeedsStatusBarAppearanceUpdate()
         
     }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if collection_view != nil {
+            collection_view.deviceRotated()
+        }
+    }
+    
+    func setupConstraint() {
+        if isSmalScreen568 {
+            collectionTop.constant = 30
+            collectionBottom.constant = 30
+        }else if isSmalScreen736 {
+            collectionTop.constant = 50
+            collectionBottom.constant = 50
+        }else {
+            collectionTop.constant = 70
+            collectionBottom.constant = 70
+        }
+    }
 }
 
 //MARK: - CollectionView delegate methods
-extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupCollectionView() {
         self.collection_view.delegate = self
         self.collection_view.dataSource = self
         self.collection_view.register(NewsCell.nib(), forCellWithReuseIdentifier: NewsCell.identifier)
-        collection_view.collectionViewLayout = flowLayout
+        self.collection_view.register(CodeCell.self, forCellWithReuseIdentifier: "cell")
         collection_view.contentInsetAdjustmentBehavior = .always
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if !bannerArr.isEmpty {
-//            return bannerArr.count
-//        }else {
-//            return 0
-//        }
-//
-        return 5
+        //        if !bannerArr.isEmpty {
+        //            return bannerArr.count
+        //        }else {
+        //            return 0
+        //        }
+        //
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collection_view.dequeueReusableCell(withReuseIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
-//        if !bannerArr.isEmpty {
-//            self.collection_view.isHidden = false
-//            Loader.stop()
-//            cell.updateCell(img: bannerArr[indexPath.row].image, date: bannerArr[indexPath.row].created_at, content: bannerArr[indexPath.row].content, title: bannerArr[indexPath.row].title)
-//        }else {
-//            self.collection_view.isHidden = true
-//            Loader.start()
-//        }
+        //        let cell = self.collection_view.dequeueReusableCell(withReuseIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
+        //        if !bannerArr.isEmpty {
+        //            self.collection_view.isHidden = false
+        //            Loader.stop()
+        //            cell.updateCell(img: bannerArr[indexPath.row].image, date: bannerArr[indexPath.row].created_at, content: bannerArr[indexPath.row].content, title: bannerArr[indexPath.row].title)
+        //
+        //        }else {
+        //            self.collection_view.isHidden = true
+        //            Loader.start()
+        //        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
+        if let scalingCell = cell as? ScalingCarouselCell {
+            scalingCell.mainView.backgroundColor = .blue
+        }
+        DispatchQueue.main.async {
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+        }
+        
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collection_view.frame.width-40 , height:self.collection_view.frame.height )
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -102,74 +188,24 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    //scroll
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentPage = getCurrentPage()
+}
+//CollectionView flowLayout
+extension NewsVC : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        currentPage = getCurrentPage()
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        currentPage = getCurrentPage()
-    }
-    
-}
-
-//CarouselView
-/// Osha indexpath ga keganda collectionni cell i kattalashib asosiy cellga aylanishi kerak
-extension NewsVC {
-    public func configureView(with data: [CarouselData]) {
-        let cellPadding = (self.collection_view.frame.width - 300) / 2
-        let carouselLayout = UICollectionViewFlowLayout()
-        carouselLayout.scrollDirection = .horizontal
-        carouselLayout.itemSize = .init(width: 300, height: 400)
-        carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
-        carouselLayout.minimumLineSpacing = self.collection_view.frame.width - 300
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        collection_view.collectionViewLayout = carouselLayout
-        carouselData = data
-        collection_view.reloadData()
+        return 0
     }
-}
-
-//MARK: - Helpers
-private extension NewsVC {
-    func getCurrentPage() -> Int {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        let visibleRect = CGRect(origin: collection_view.contentOffset, size: collection_view.bounds.size)
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        if let visibleIndexPath = collection_view.indexPathForItem(at: visiblePoint) {
-            return visibleIndexPath.row
-        }
-        
-        return currentPage
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
-
-//MARK: -
-extension NewsVC {
-    func scrollToItem() {
-        let visibleItems: NSArray = self.collection_view.indexPathsForVisibleItems as NSArray
-        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
-        let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-        //            let nextItem : IndexPath = IndexPath(item: 1, section: 0)
-        if nextItem.row < imgArr.count {
-            let cellPadding = (self.collection_view.frame.width - 300) / 2
-            let carouselLayout = UICollectionViewFlowLayout()
-            carouselLayout.itemSize = CGSize(width: 600, height: 400)
-            carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
-            carouselLayout.minimumLineSpacing = self.collection_view.frame.width - 300
-            
-            collection_view.collectionViewLayout = carouselLayout
-            collection_view.reloadData()
-            
-            //        self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
-        }
-    }
-}
-
 
 //MARK: - GetBanner
 extension NewsVC {
