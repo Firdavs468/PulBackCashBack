@@ -83,8 +83,6 @@
 		C7FE1F3927340771004337ED /* ReviewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FE1F3727340771004337ED /* ReviewsVC.xib */; };
 		C7FE1F3C273412C7004337ED /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE1F3A273412C7004337ED /* NewsVC.swift */; };
 		C7FE1F3D273412C7004337ED /* NewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FE1F3B273412C7004337ED /* NewsVC.xib */; };
-		C7FE1F412734139B004337ED /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE1F3F2734139B004337ED /* NewsCell.swift */; };
-		C7FE1F422734139B004337ED /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FE1F402734139B004337ED /* NewsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,8 +165,6 @@
 		C7FE1F3727340771004337ED /* ReviewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsVC.xib; sourceTree = "<group>"; };
 		C7FE1F3A273412C7004337ED /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		C7FE1F3B273412C7004337ED /* NewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewsVC.xib; path = "../New Group/NewsVC.xib"; sourceTree = "<group>"; };
-		C7FE1F3F2734139B004337ED /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		C7FE1F402734139B004337ED /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		F2206563A276C828035D9849 /* Pods_PulBackCashBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulBackCashBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -479,7 +475,6 @@
 			children = (
 				C7FC64DA2736D13C00A80D4B /* HomeCell.swift */,
 				C77784B4273AA4D3002B1534 /* PurchasesCell.swift */,
-				C7FE1F3F2734139B004337ED /* NewsCell.swift */,
 				C7FC64D52736B02900A80D4B /* ProductsCell.swift */,
 			);
 			path = CollectionViewCell;
@@ -490,7 +485,6 @@
 			children = (
 				C7FC64DB2736D13C00A80D4B /* HomeCell.xib */,
 				C77784B5273AA4D3002B1534 /* PurchasesCell.xib */,
-				C7FE1F402734139B004337ED /* NewsCell.xib */,
 				C7FC64D62736B02900A80D4B /* ProductsCell.xib */,
 			);
 			path = CollectionViewCell;
@@ -567,7 +561,6 @@
 			files = (
 				C7FE1F3927340771004337ED /* ReviewsVC.xib in Resources */,
 				C785A210272AC8860061B719 /* MainVC.xib in Resources */,
-				C7FE1F422734139B004337ED /* NewsCell.xib in Resources */,
 				C77F7BF4273166DB003B3FAE /* MyProfileVC.xib in Resources */,
 				C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */,
 				C7FE1F302733ECEB004337ED /* SettingsCell.xib in Resources */,
@@ -707,7 +700,6 @@
 				C778AD6C273D3AF300991C77 /* API.swift in Sources */,
 				C7E0B4472730180F00FE4F78 /* ProfileVC.swift in Sources */,
 				C782EF3527465ABE00565EFD /* DoneAlert.swift in Sources */,
-				C7FE1F412734139B004337ED /* NewsCell.swift in Sources */,
 				C785A219272ACCE20061B719 /* Extension.swift in Sources */,
 				C7FC64D72736B02900A80D4B /* ProductsCell.swift in Sources */,
 			);

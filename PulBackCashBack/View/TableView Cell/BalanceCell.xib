@@ -10,46 +10,99 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="169" id="KGk-i7-Jjw" customClass="BalanceCell" customModule="PulBackCashBack" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="245" id="KGk-i7-Jjw" customClass="BalanceCell" customModule="PulBackCashBack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="605" height="245"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                <rect key="frame" x="0.0" y="0.0" width="605" height="245"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-IN-ER3">
-                        <rect key="frame" x="0.0" y="0.0" width="315" height="159"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kk2-6h-kh2">
-                                <rect key="frame" x="20" y="20" width="198" height="119"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-SA-vfi">
+                                <rect key="frame" x="20" y="10" width="560" height="215"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На вашем балансе:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Nv-8m2">
-                                        <rect key="frame" x="0.0" y="0.0" width="198" height="59.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar-code" translatesAutoresizingMaskIntoConstraints="NO" id="ow0-je-v7i">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="170.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2932973237239" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-YV-Bxj">
+                                        <rect key="frame" x="0.0" y="180.5" width="560" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="376,650.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-Uc-zcZ">
-                                        <rect key="frame" x="0.0" y="59.5" width="198" height="59.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                        <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-j3-1WG">
+                                <rect key="frame" x="20" y="10" width="580" height="215"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-ui-IEb">
+                                        <rect key="frame" x="0.0" y="45" width="459" height="125"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Муроджон Турсунов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpL-Q7-J5X">
+                                                <rect key="frame" x="0.0" y="0.0" width="459" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kk2-6h-kh2">
+                                                <rect key="frame" x="0.0" y="60.5" width="459" height="64.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На вашем балансе:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Nv-8m2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="459" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="er3-ZN-2hn">
+                                                        <rect key="frame" x="0.0" y="21.5" width="459" height="43"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="376,650.00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-Uc-zcZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="219.5" height="43"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                                                <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-Il-oxv">
+                                                                <rect key="frame" x="239.5" y="0.0" width="219.5" height="43"/>
+                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Показать код"/>
+                                                                <connections>
+                                                                    <action selector="showCodeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JEf-gP-67J"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showCode" translatesAutoresizingMaskIntoConstraints="NO" id="iSH-3q-vDg">
+                                        <rect key="frame" x="459" y="22" width="121" height="171.5"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kk2-6h-kh2" firstAttribute="top" secondItem="5Ib-IN-ER3" secondAttribute="top" constant="20" id="GBH-iL-L9s"/>
-                            <constraint firstItem="kk2-6h-kh2" firstAttribute="leading" secondItem="5Ib-IN-ER3" secondAttribute="leading" constant="20" id="hyc-gt-YDH"/>
-                            <constraint firstAttribute="bottom" secondItem="kk2-6h-kh2" secondAttribute="bottom" constant="20" id="jqr-jT-rD3"/>
+                            <constraint firstAttribute="trailing" secondItem="LMg-j3-1WG" secondAttribute="trailing" id="7Ii-Za-l2w"/>
+                            <constraint firstItem="Y3Z-SA-vfi" firstAttribute="top" secondItem="5Ib-IN-ER3" secondAttribute="top" constant="10" id="ExQ-nl-t5z"/>
+                            <constraint firstItem="LMg-j3-1WG" firstAttribute="top" secondItem="5Ib-IN-ER3" secondAttribute="top" constant="10" id="PK4-Rf-5dG"/>
+                            <constraint firstItem="LMg-j3-1WG" firstAttribute="leading" secondItem="5Ib-IN-ER3" secondAttribute="leading" constant="20" id="U4y-eK-wYc"/>
+                            <constraint firstAttribute="bottom" secondItem="LMg-j3-1WG" secondAttribute="bottom" constant="10" id="dRU-qc-ruV"/>
+                            <constraint firstAttribute="bottom" secondItem="Y3Z-SA-vfi" secondAttribute="bottom" constant="10" id="sBN-kh-tww"/>
+                            <constraint firstItem="Y3Z-SA-vfi" firstAttribute="leading" secondItem="5Ib-IN-ER3" secondAttribute="leading" constant="20" id="x8Z-nk-8HQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Y3Z-SA-vfi" secondAttribute="trailing" constant="20" id="xse-iN-LTu"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="iSH-3q-vDg" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.7" id="1nM-qM-uGQ"/>
                     <constraint firstItem="5Ib-IN-ER3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5a5-3k-pCX"/>
                     <constraint firstAttribute="bottom" secondItem="5Ib-IN-ER3" secondAttribute="bottom" constant="10" id="9z1-2g-NxI"/>
+                    <constraint firstItem="iSH-3q-vDg" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="HiE-h5-tiR"/>
                     <constraint firstItem="5Ib-IN-ER3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XBD-HA-Ed2"/>
                     <constraint firstAttribute="trailing" secondItem="5Ib-IN-ER3" secondAttribute="trailing" constant="5" id="Z4h-fV-k9T"/>
                 </constraints>
@@ -57,12 +110,21 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="balancLabel" destination="pyi-Uc-zcZ" id="xwJ-kK-F6F"/>
+                <outlet property="barCodeImage" destination="ow0-je-v7i" id="Dlh-9u-Oav"/>
+                <outlet property="barCodeNumberLabel" destination="HQ8-YV-Bxj" id="Ybl-rQ-1cv"/>
+                <outlet property="barCodeStack" destination="Y3Z-SA-vfi" id="Fos-hS-CSh"/>
                 <outlet property="containerView" destination="5Ib-IN-ER3" id="HWg-EE-T1A"/>
+                <outlet property="nameStack" destination="LMg-j3-1WG" id="QUi-we-dLL"/>
+                <outlet property="showCodeButton" destination="BaF-Il-oxv" id="hWG-8J-fvV"/>
+                <outlet property="userNameLabel" destination="ZpL-Q7-J5X" id="Pce-E8-D5f"/>
+                <outlet property="yourBalanceLabel" destination="ajv-Nv-8m2" id="vz4-1q-nlP"/>
             </connections>
-            <point key="canvasLocation" x="28.985507246376812" y="102.79017857142857"/>
+            <point key="canvasLocation" x="123.91304347826087" y="126.89732142857142"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bar-code" width="170.5" height="170.5"/>
+        <image name="showCode" width="77" height="77"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

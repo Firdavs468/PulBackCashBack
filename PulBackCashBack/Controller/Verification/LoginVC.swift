@@ -69,9 +69,11 @@ class LoginVC: UIViewController {
             isPressed2 = true
             if isPressed1 {
                 nextButton.backgroundColor = AppColor.appColor
+                nextButton.isEnabled = true
             }
         }else {
             nextButton.backgroundColor = .lightGray
+            nextButton.isEnabled = false
             uncheckButton.setImage(UIImage(systemName: "rectangle"), for: .normal)
             isPressed2 = false
         }

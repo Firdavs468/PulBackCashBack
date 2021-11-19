@@ -70,7 +70,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             return 130
         }else if indexPath.row == 0 {
-            return 200
+            return 240
         }else {
             return 380
         }

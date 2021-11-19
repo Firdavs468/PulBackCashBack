@@ -13,7 +13,7 @@ public class Loader {
     
     ///Shows custom Alert for a while
     class func start() {
-
+        
         let loadV = UIView()
         loadV.tag = 19995
         loadV.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -27,7 +27,7 @@ public class Loader {
         customView.centerYAnchor.constraint(equalTo: loadV.centerYAnchor).isActive = true
         customView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         customView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-
+        
         customView.backgroundColor = .clear
         if let window = UIApplication.shared.windows.first(where: { (window) -> Bool in window.isKeyWindow}) {
             window.addSubview(loadV)
@@ -41,7 +41,7 @@ public class Loader {
             loadV.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35)
         }
     }
-
+    
     class func stop() {
         if let window = UIApplication.shared.windows.first(where: { (window) -> Bool in window.isKeyWindow}) {
             for i in window.subviews {

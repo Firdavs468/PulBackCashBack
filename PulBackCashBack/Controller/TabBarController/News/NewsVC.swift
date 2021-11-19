@@ -15,13 +15,14 @@ class CodeCell: ScalingCarouselCell {
     var image : UIImageView = {
         let i = UIImageView()
         i.contentMode = .scaleToFill
-        i.image = UIImage(named: "navbar")
+        i.image = UIImage(named: "news")
         return i
     }()
     
     var dateLabel : UILabel = {
         let l = UILabel()
         l.text = "21.06.2021"
+        l.textAlignment = .center
         l.numberOfLines = 0
         return l
     }()
@@ -29,7 +30,8 @@ class CodeCell: ScalingCarouselCell {
     var titleLabel : UILabel = {
         let l = UILabel()
         l.numberOfLines = 0
-        l.text = "21.06.2021"
+        //        l.text = "21.06.2021"
+        l.textAlignment = .center
         return l
     }()
     
@@ -37,6 +39,7 @@ class CodeCell: ScalingCarouselCell {
         let l = UILabel()
         l.numberOfLines = 0
         l.text = "KOLBERG GROUP – многопрофильная группа компаний, ориентированных на дистрибьюцию товаров"
+        l.textAlignment = .center
         return l
     }()
     
@@ -54,6 +57,17 @@ class CodeCell: ScalingCarouselCell {
         return s
     }()
     
+    
+    var titleLabelText : String? {
+        get {
+            return titleLabel.text
+        }set(newValue) {
+            if let titleText = newValue {
+                titleLabel.text = titleText
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -69,6 +83,7 @@ class CodeCell: ScalingCarouselCell {
             mainView.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
         mainView.addSubview(image)
         image.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(0.8)
@@ -84,7 +99,6 @@ class CodeCell: ScalingCarouselCell {
             make.left.right.bottom.equalToSuperview().offset(0)
         }
     }
-    
     func updateCell(image:UIImage) {
         self.image.image = image
     }
@@ -144,7 +158,6 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func setupCollectionView() {
         self.collection_view.delegate = self
         self.collection_view.dataSource = self
-        self.collection_view.register(NewsCell.nib(), forCellWithReuseIdentifier: NewsCell.identifier)
         self.collection_view.register(CodeCell.self, forCellWithReuseIdentifier: "cell")
         collection_view.contentInsetAdjustmentBehavior = .always
     }
@@ -173,7 +186,12 @@ extension NewsVC : UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
         if let scalingCell = cell as? ScalingCarouselCell {
-            scalingCell.mainView.backgroundColor = .blue
+            //            scalingCell.mainView.layer.cornerRadius = scalingCell.mainView.frame.height/20
+            //            scalingCell.mainView.layer.shadowColor = UIColor.gray.cgColor
+            //            scalingCell.mainView.layer.shadowOffset = CGSize(width: 0, height: 0)
+            //            scalingCell.mainView.layer.shadowOpacity = 0.4
+            //            scalingCell.mainView.layer.shadowRadius = 3
+            scalingCell.mainView.backgroundColor = .systemGray6
         }
         DispatchQueue.main.async {
             cell.setNeedsLayout()

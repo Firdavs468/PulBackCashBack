@@ -30,16 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.windows.forEach { window in
             window.overrideUserInterfaceStyle = .light
         }
-//        if Cache.isUserLogged() {
-//            let pin = PinVC(nibName: "PinVC", bundle: nil)
-//            window?.rootViewController = pin
-//        }else {
-//            let main = MainVC(nibName: "MainVC", bundle: nil)
-//            window?.rootViewController = main
-//        }
-        //        Cache.saveUserDefaults("4444", forKey: Keys.password)
-        let news = NewsVC(nibName: "NewsVC", bundle: nil)
-        window?.rootViewController = news
+                if Cache.isUserLogged() {
+                    let pin = PinVC(nibName: "PinVC", bundle: nil)
+                    window?.rootViewController = pin
+                }else {
+                    let main = MainVC(nibName: "MainVC", bundle: nil)
+                    window?.rootViewController = main
+                }
+//        Cache.saveUserDefaults("4444", forKey: Keys.password)
+//        let news = NewsVC(nibName: "NewsVC", bundle: nil)
+//        window?.rootViewController = news
         window?.makeKeyAndVisible()
         return true
     }
