@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ReviewsVC: UIViewController {
     
@@ -29,11 +31,10 @@ class ReviewsVC: UIViewController {
         title = "Отзывы"
         cornerView()
         setupTableView()
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        createFeedback()
     }
     
     func cornerView() {
@@ -54,6 +55,7 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
         self.table_view.delegate = self
         self.table_view.dataSource = self
         self.table_view.tableFooterView = UIView()
+        self.table_view.separatorStyle = .none
         self.table_view.register(ReviewsCell.nib(), forCellReuseIdentifier: ReviewsCell.identifier)
     }
     
@@ -82,4 +84,27 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+}
+
+//MARK: - Create feedback API
+extension ReviewsVC {
+    func createFeedback() {
+        if let token = Cache.getUserToken() {
+            let headers : HTTPHeaders = [
+                "Authorization": "\(token)",
+                "Content-Type": "application/json"
+            ]
+            let param : [String:Any] = [
+                "message": textView.text as Any,
+                "feedback_type": 1,
+                "branch": 1,
+                "image": "http://89.223.71.112:9494/image?path=temp-images/upload-3367296366.png"
+            ]
+            Networking.fetchRequest(urlAPI: API.feedbackUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+                if let data = data {
+                    print(data)
+                }
+            }
+        }
+    }
 }

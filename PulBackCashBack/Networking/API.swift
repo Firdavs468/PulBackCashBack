@@ -21,6 +21,7 @@ class API {
         static let getBanner = "/banner"
         static let getBalance = "/balance"
         static let branches = "/branches"
+        static let feedback = "/feedback"
     }
     
     static  let signInUrl: URL = URL(string: base_url + EndPoints.signIn)!
@@ -30,6 +31,8 @@ class API {
     static let getBannerUrl : URL = URL(string: base_url + EndPoints.getBanner)!
     static let getBalanceUrl : URL = URL(string: base_url + EndPoints.getBalance)!
     static let branchesUrl : URL = URL(string: base_url + EndPoints.branches)!
+    static let barCodUrl : URL = URL(string: "http://pos.inone.uz/client-api/item/get-by-barcode")!
+    static let feedbackUrl : URL = URL(string: base_url + EndPoints.feedback)!
     
     
     //MARK: - Get API

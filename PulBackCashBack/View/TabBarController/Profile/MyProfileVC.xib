@@ -26,10 +26,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="454.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="CWx-tW-A4S">
-                            <rect key="frame" x="20" y="30" width="280" height="494"/>
+                            <rect key="frame" x="20" y="30" width="280" height="505"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-fw-4F9">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="114.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="125.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой пофиль в Tiin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzA-7C-Dca">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
@@ -38,42 +38,48 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zkj-YE-kdT">
-                                            <rect key="frame" x="0.0" y="45.5" width="280" height="69"/>
+                                            <rect key="frame" x="0.0" y="45.5" width="280" height="80"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Betoo" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-LT-jxT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                                    <color key="backgroundColor" systemColor="linkColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noitem" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-LT-jxT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uMH-LT-jxT" secondAttribute="height" id="rWU-pB-6VI"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-IO-jQc">
-                                                    <rect key="frame" x="79" y="0.0" width="201" height="69"/>
+                                                    <rect key="frame" x="90" y="0.0" width="156" height="80"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Муроджон Турсунов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-X5-5rW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="195.5" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Муроджон Турсунов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-X5-5rW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="156" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <color key="textColor" red="0.30747473240000001" green="0.5970688462" blue="0.24362227319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="+998 (97) 707 02 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oep-CG-bDR">
-                                                            <rect key="frame" x="0.0" y="24" width="156" height="45"/>
+                                                            <rect key="frame" x="0.0" y="24" width="156" height="56"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On5-fk-Mdn">
+                                                    <rect key="frame" x="256" y="0.0" width="24" height="80"/>
+                                                    <state key="normal" image="login"/>
+                                                    <connections>
+                                                        <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="XXj-3A-QMw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-1S-zZk">
-                                    <rect key="frame" x="0.0" y="144.5" width="280" height="255.5"/>
+                                    <rect key="frame" x="0.0" y="155.5" width="280" height="255.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-s4-u8l">
-                                    <rect key="frame" x="0.0" y="430" width="280" height="64"/>
+                                    <rect key="frame" x="0.0" y="441" width="280" height="64"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Xe-6GL">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
@@ -112,17 +118,16 @@
                 <constraint firstItem="WaS-1S-zZk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="6Xh-LC-6Nk"/>
                 <constraint firstItem="Prf-7t-VNR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AX4-5p-VnJ"/>
                 <constraint firstAttribute="trailing" secondItem="Prf-7t-VNR" secondAttribute="trailing" id="Czw-4x-dAv"/>
+                <constraint firstItem="uMH-LT-jxT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.25" id="cdO-Ih-IBh"/>
                 <constraint firstItem="Prf-7t-VNR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="euK-dk-7jr"/>
                 <constraint firstItem="Prf-7t-VNR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="wi4-Yk-LsD"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="61"/>
+            <point key="canvasLocation" x="227" y="44"/>
         </view>
     </objects>
     <resources>
-        <image name="Betoo" width="69" height="58"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="login" width="24" height="24"/>
+        <image name="noitem" width="176.5" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>1131DEF2-4028-4A3B-A8A6-F3A0579B36E1</key>
+		<key>042EC225-A188-4E68-BADB-D0A4AF051A47</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>1131DEF2-4028-4A3B-A8A6-F3A0579B36E1.xcactivitylog</string>
+			<string>042EC225-A188-4E68-BADB-D0A4AF051A47.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659014812.86476505</real>
+			<real>659101312.15663803</real>
 			<key>timeStoppedRecording</key>
-			<real>659014883.73880303</real>
+			<real>659101427.49152601</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>1131DEF2-4028-4A3B-A8A6-F3A0579B36E1</string>
+			<string>042EC225-A188-4E68-BADB-D0A4AF051A47</string>
 		</dict>
-		<key>164519A7-579D-40DA-AFED-00AA1CD4A2B3</key>
+		<key>089686E7-2614-41D7-89E1-54501CC2A4C3</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>164519A7-579D-40DA-AFED-00AA1CD4A2B3.xcactivitylog</string>
+			<string>089686E7-2614-41D7-89E1-54501CC2A4C3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,15 +66,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659014078.10975897</real>
+			<real>659100126.88142097</real>
 			<key>timeStoppedRecording</key>
-			<real>659014650.6523</real>
+			<real>659100175.31482303</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>164519A7-579D-40DA-AFED-00AA1CD4A2B3</string>
+			<string>089686E7-2614-41D7-89E1-54501CC2A4C3</string>
 		</dict>
-		<key>16C754D0-4AF2-49F4-ABAD-680F3B3974A8</key>
+		<key>0CFA6F7E-F347-4F9D-A889-E6BB988A1CA8</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -83,7 +83,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>16C754D0-4AF2-49F4-ABAD-680F3B3974A8.xcactivitylog</string>
+			<string>0CFA6F7E-F347-4F9D-A889-E6BB988A1CA8.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -100,15 +100,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659009660.57598495</real>
+			<real>659099960.84477794</real>
 			<key>timeStoppedRecording</key>
-			<real>659010593.23775494</real>
+			<real>659100028.17375302</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>16C754D0-4AF2-49F4-ABAD-680F3B3974A8</string>
+			<string>0CFA6F7E-F347-4F9D-A889-E6BB988A1CA8</string>
 		</dict>
-		<key>180AE988-A613-4BC3-8913-43C76A8FC860</key>
+		<key>0F2AFEC3-7ECB-4E6A-A055-EE1AC212BA48</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -117,7 +117,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>180AE988-A613-4BC3-8913-43C76A8FC860.xcactivitylog</string>
+			<string>0F2AFEC3-7ECB-4E6A-A055-EE1AC212BA48.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -134,15 +134,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659012604.24026799</real>
+			<real>659099619.870875</real>
 			<key>timeStoppedRecording</key>
-			<real>659012673.52731705</real>
+			<real>659099663.65290999</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>180AE988-A613-4BC3-8913-43C76A8FC860</string>
+			<string>0F2AFEC3-7ECB-4E6A-A055-EE1AC212BA48</string>
 		</dict>
-		<key>47725DE0-10AF-4223-8467-A9213F90D3F1</key>
+		<key>19848CB8-8CD3-49C8-AEF5-E31D051AAF6E</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -151,7 +151,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>47725DE0-10AF-4223-8467-A9213F90D3F1.xcactivitylog</string>
+			<string>19848CB8-8CD3-49C8-AEF5-E31D051AAF6E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -168,15 +168,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659011899.22840798</real>
+			<real>659102057.91173697</real>
 			<key>timeStoppedRecording</key>
-			<real>659012591.43691099</real>
+			<real>659102076.15412998</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>47725DE0-10AF-4223-8467-A9213F90D3F1</string>
+			<string>19848CB8-8CD3-49C8-AEF5-E31D051AAF6E</string>
 		</dict>
-		<key>5B35B29D-BD94-4CA3-B242-EB16C28EB30A</key>
+		<key>1D9760C7-C658-40FA-99C8-2642004E3008</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -185,7 +185,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>5B35B29D-BD94-4CA3-B242-EB16C28EB30A.xcactivitylog</string>
+			<string>1D9760C7-C658-40FA-99C8-2642004E3008.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -202,15 +202,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659012683.10979998</real>
+			<real>659102084.61675704</real>
 			<key>timeStoppedRecording</key>
-			<real>659012739.71310306</real>
+			<real>659103370.29734302</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>5B35B29D-BD94-4CA3-B242-EB16C28EB30A</string>
+			<string>1D9760C7-C658-40FA-99C8-2642004E3008</string>
 		</dict>
-		<key>7C1FD6D7-E3CF-4F76-9046-A19126C176DF</key>
+		<key>1E28DC74-C07B-410C-880F-35BBCB587024</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -219,7 +219,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>7C1FD6D7-E3CF-4F76-9046-A19126C176DF.xcactivitylog</string>
+			<string>1E28DC74-C07B-410C-880F-35BBCB587024.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -236,15 +236,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659012860.19378495</real>
+			<real>659103381.75991404</real>
 			<key>timeStoppedRecording</key>
-			<real>659013764.38215196</real>
+			<real>659103481.59912395</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>7C1FD6D7-E3CF-4F76-9046-A19126C176DF</string>
+			<string>1E28DC74-C07B-410C-880F-35BBCB587024</string>
 		</dict>
-		<key>B345FECA-4D97-4EA8-B402-2587ACD62840</key>
+		<key>22CB425F-D9F6-4E6F-A6F0-6CAE5BEB430F</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -253,7 +253,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>B345FECA-4D97-4EA8-B402-2587ACD62840.xcactivitylog</string>
+			<string>22CB425F-D9F6-4E6F-A6F0-6CAE5BEB430F.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -270,15 +270,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659014662.47281206</real>
+			<real>659104740.66898501</real>
 			<key>timeStoppedRecording</key>
-			<real>659014806.73018003</real>
+			<real>659105005.95432198</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>B345FECA-4D97-4EA8-B402-2587ACD62840</string>
+			<string>22CB425F-D9F6-4E6F-A6F0-6CAE5BEB430F</string>
 		</dict>
-		<key>BE931C07-50F9-4F91-9AFF-22938BA4F86B</key>
+		<key>268A8D2D-DA42-4229-BEC2-B97FB875941E</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -287,7 +287,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>BE931C07-50F9-4F91-9AFF-22938BA4F86B.xcactivitylog</string>
+			<string>268A8D2D-DA42-4229-BEC2-B97FB875941E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -304,15 +304,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659013780.10273004</real>
+			<real>659105014.30250299</real>
 			<key>timeStoppedRecording</key>
-			<real>659014071.26651204</real>
+			<real>659105257.60488904</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>BE931C07-50F9-4F91-9AFF-22938BA4F86B</string>
+			<string>268A8D2D-DA42-4229-BEC2-B97FB875941E</string>
 		</dict>
-		<key>ED5DA01B-3001-4C12-B195-84C5052262D2</key>
+		<key>2818D3FB-500E-4DAD-B298-5918B2F0CCE6</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -321,7 +321,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>ED5DA01B-3001-4C12-B195-84C5052262D2.xcactivitylog</string>
+			<string>2818D3FB-500E-4DAD-B298-5918B2F0CCE6.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -338,15 +338,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659012751.91632903</real>
+			<real>659104525.96794605</real>
 			<key>timeStoppedRecording</key>
-			<real>659012855.91990697</real>
+			<real>659104646.65884805</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>ED5DA01B-3001-4C12-B195-84C5052262D2</string>
+			<string>2818D3FB-500E-4DAD-B298-5918B2F0CCE6</string>
 		</dict>
-		<key>F6876B63-C3A0-4E4D-9E2C-89A8FCDA446D</key>
+		<key>2CD2DBB1-7AD3-41C2-ADDC-CBCDB62C1EC7</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -355,7 +355,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>F6876B63-C3A0-4E4D-9E2C-89A8FCDA446D.xcactivitylog</string>
+			<string>2CD2DBB1-7AD3-41C2-ADDC-CBCDB62C1EC7.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -372,15 +372,15 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659014930.96454</real>
+			<real>659100999.49726701</real>
 			<key>timeStoppedRecording</key>
-			<real>659015004.78615105</real>
+			<real>659101113.00646806</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>F6876B63-C3A0-4E4D-9E2C-89A8FCDA446D</string>
+			<string>2CD2DBB1-7AD3-41C2-ADDC-CBCDB62C1EC7</string>
 		</dict>
-		<key>F9BA5B33-4ECD-4373-98E6-DCDD4870D879</key>
+		<key>46CA77EF-7C87-401A-8E40-1FAE03A9F78A</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -389,7 +389,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>F9BA5B33-4ECD-4373-98E6-DCDD4870D879.xcactivitylog</string>
+			<string>46CA77EF-7C87-401A-8E40-1FAE03A9F78A.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -406,13 +406,421 @@
 			<key>signature</key>
 			<string>Run PulBackCashBack</string>
 			<key>timeStartedRecording</key>
-			<real>659015008.60430801</real>
+			<real>659104653.86592698</real>
 			<key>timeStoppedRecording</key>
-			<real>659015405.303442</real>
+			<real>659104733.89813995</real>
 			<key>title</key>
 			<string>Run PulBackCashBack</string>
 			<key>uniqueIdentifier</key>
-			<string>F9BA5B33-4ECD-4373-98E6-DCDD4870D879</string>
+			<string>46CA77EF-7C87-401A-8E40-1FAE03A9F78A</string>
+		</dict>
+		<key>5271E345-5E40-4FB5-B853-1323917F502E</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>5271E345-5E40-4FB5-B853-1323917F502E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659101252.42357504</real>
+			<key>timeStoppedRecording</key>
+			<real>659101305.11106396</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>5271E345-5E40-4FB5-B853-1323917F502E</string>
+		</dict>
+		<key>648A1C41-AD10-4D33-A1E0-419D82B22710</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>648A1C41-AD10-4D33-A1E0-419D82B22710.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659100183.95219505</real>
+			<key>timeStoppedRecording</key>
+			<real>659100901.96881402</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>648A1C41-AD10-4D33-A1E0-419D82B22710</string>
+		</dict>
+		<key>65615345-BAF0-4ED9-88AA-0F68CB14BF1C</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>65615345-BAF0-4ED9-88AA-0F68CB14BF1C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659101870.20838594</real>
+			<key>timeStoppedRecording</key>
+			<real>659102029.70346701</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>65615345-BAF0-4ED9-88AA-0F68CB14BF1C</string>
+		</dict>
+		<key>8C3D9926-9CBE-45B0-BCA5-55E181719C84</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8C3D9926-9CBE-45B0-BCA5-55E181719C84.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659102036.22529399</real>
+			<key>timeStoppedRecording</key>
+			<real>659102051.86473703</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>8C3D9926-9CBE-45B0-BCA5-55E181719C84</string>
+		</dict>
+		<key>9F5BF366-55E7-4276-97AF-A5F61844825C</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>9F5BF366-55E7-4276-97AF-A5F61844825C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659101434.92603505</real>
+			<key>timeStoppedRecording</key>
+			<real>659101506.552809</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>9F5BF366-55E7-4276-97AF-A5F61844825C</string>
+		</dict>
+		<key>A6E14A5E-FE26-4A47-99FC-CB2B1B75770B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>A6E14A5E-FE26-4A47-99FC-CB2B1B75770B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659100911.81325197</real>
+			<key>timeStoppedRecording</key>
+			<real>659100992.24639797</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>A6E14A5E-FE26-4A47-99FC-CB2B1B75770B</string>
+		</dict>
+		<key>AA7DBFCB-84B9-4992-9B93-9F45E0C52984</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>AA7DBFCB-84B9-4992-9B93-9F45E0C52984.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659103497.49567604</real>
+			<key>timeStoppedRecording</key>
+			<real>659104513.778198</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>AA7DBFCB-84B9-4992-9B93-9F45E0C52984</string>
+		</dict>
+		<key>AB18D419-2235-42A3-8A40-ACD9D77AE153</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>AB18D419-2235-42A3-8A40-ACD9D77AE153.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659099670.82435</real>
+			<key>timeStoppedRecording</key>
+			<real>659099766.49555802</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>AB18D419-2235-42A3-8A40-ACD9D77AE153</string>
+		</dict>
+		<key>AE1FE254-98CA-4EB9-9E52-5E24A2AAF2A8</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>AE1FE254-98CA-4EB9-9E52-5E24A2AAF2A8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659100034.47140801</real>
+			<key>timeStoppedRecording</key>
+			<real>659100114.72618997</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>AE1FE254-98CA-4EB9-9E52-5E24A2AAF2A8</string>
+		</dict>
+		<key>EB46245A-7545-4B23-8B10-10C45A2A45CF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>EB46245A-7545-4B23-8B10-10C45A2A45CF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659099435.06782496</real>
+			<key>timeStoppedRecording</key>
+			<real>659099507.70738602</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>EB46245A-7545-4B23-8B10-10C45A2A45CF</string>
+		</dict>
+		<key>F3F3817A-1AA2-423B-BA89-41D14E965004</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F3F3817A-1AA2-423B-BA89-41D14E965004.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659101119.29138398</real>
+			<key>timeStoppedRecording</key>
+			<real>659101244.49056196</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>F3F3817A-1AA2-423B-BA89-41D14E965004</string>
+		</dict>
+		<key>FF78F80E-0A32-4175-A771-792F3EBA61EA</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>FF78F80E-0A32-4175-A771-792F3EBA61EA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>PulBackCashBack project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>PulBackCashBack</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run PulBackCashBack</string>
+			<key>timeStartedRecording</key>
+			<real>659101515.06717598</real>
+			<key>timeStoppedRecording</key>
+			<real>659101859.42152202</real>
+			<key>title</key>
+			<string>Run PulBackCashBack</string>
+			<key>uniqueIdentifier</key>
+			<string>FF78F80E-0A32-4175-A771-792F3EBA61EA</string>
 		</dict>
 	</dict>
 </dict>

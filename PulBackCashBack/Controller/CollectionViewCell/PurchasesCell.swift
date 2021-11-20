@@ -22,7 +22,7 @@ class PurchasesCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTableView()
-        emptyLabel.isHidden = true
+        emptyLabel.text = "Покупок нет"
     }
     
 }

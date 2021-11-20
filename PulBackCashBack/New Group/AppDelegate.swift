@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         
         
-        UIApplication.shared.statusBarStyle = .lightContent
         GMSServices.provideAPIKey("AIzaSyDOyOZf1XkqaKBKS5ZOS4PuSI95jha56N0")
         UITabBar.appearance().tintColor = AppColor.appColor
         //        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar")
@@ -37,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let main = MainVC(nibName: "MainVC", bundle: nil)
                     window?.rootViewController = main
                 }
-//        Cache.saveUserDefaults("4444", forKey: Keys.password)
+        Cache.saveUserDefaults("4444", forKey: Keys.password)
 //        let news = NewsVC(nibName: "NewsVC", bundle: nil)
 //        window?.rootViewController = news
         window?.makeKeyAndVisible()

@@ -58,7 +58,11 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
         self.table_view.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 2 {
             Cache.saveUserDefaults(nil, forKey: Keys.password)
+            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
+            DoneAlert.showAlert(title: "Пин-код был удален")
         }else if indexPath.row == 1 {
+            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
+            Cache.saveUserDefaults(nil, forKey: Keys.password)
             let vc = PinVC(nibName: "PinVC", bundle: nil)
             self.present(vc, animated: true, completion: nil)
         }

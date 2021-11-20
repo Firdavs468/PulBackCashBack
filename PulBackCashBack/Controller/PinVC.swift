@@ -11,6 +11,15 @@ import LocalAuthentication
 class PinVC: UIViewController {
     
     
+    @IBOutlet weak var buttonHeight: NSLayoutConstraint! {
+        didSet {
+            if isSmalScreen568 {
+                buttonHeight.constant = 0.15
+            }else {
+                buttonHeight.constant = 0.1
+        }
+    }
+    }
     @IBOutlet var circleImage: [UIImageView]!
     @IBOutlet weak var xButton: UIButton!
     @IBOutlet weak var touchIDButton: UIButton!
@@ -18,6 +27,7 @@ class PinVC: UIViewController {
     
     let circle  = UIImage(systemName: "circle")
     let circleFill = UIImage(systemName: "circle.fill")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ПИН-код"
@@ -68,7 +78,7 @@ class PinVC: UIViewController {
                     print(Cache.getUserDefaultsString(forKey: Keys.password))
                     if count == 3 {
                         Cache.saveUserDefaults(true, forKey: Keys.isLogged)
-                        Alert.showAlert(forState: .success, message: "Parol muvafaqiyatli yaratildi")
+                        Alert.showAlert(forState: .success, message: "Пароль успешно создан")
                         let vc = TabBarController()
                         vc.modalPresentationStyle = .fullScreen
                         present(vc, animated: true, completion: nil)
@@ -93,7 +103,7 @@ class PinVC: UIViewController {
                             vc.modalPresentationStyle = .fullScreen
                             present(vc, animated: true, completion: nil)
                         }else {
-                            Alert.showAlert(forState: .error, message: "Parol noto'g'ri kiritildi")
+                            Alert.showAlert(forState: .error, message: "Пароль введен неверно")
                             Cache.saveUserDefaults(nil, forKey: Keys.checkingPassword)
                             for i in circleImage {
                                 i.image = circle
@@ -113,6 +123,9 @@ class PinVC: UIViewController {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {success, authenticationError in
                 DispatchQueue.main.async {
                     if success {
+                        let vc = TabBarController()
+                        vc.modalPresentationStyle = .overFullScreen
+                        self.present(vc, animated: true, completion: nil)
                         print("success")
                     }else {
                         //error
@@ -134,7 +147,7 @@ class PinVC: UIViewController {
     func cornerView() {
         for number in numbersButton {
             number.tintColor = AppColor.appColor
-            number.layer.cornerRadius = number.frame.height/10
+            number.layer.cornerRadius = number.frame.height/1.2
         }
     }
     

@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
                 <outlet property="collection_view" destination="LVH-JI-2YT" id="OTi-BC-AV9"/>
+                <outlet property="itemImage" destination="sxS-yc-3NY" id="fgx-lb-SNG"/>
+                <outlet property="itemNameLabel" destination="Cu7-gn-NTl" id="N2C-7b-moZ"/>
                 <outlet property="numberLabel" destination="bpG-KT-eih" id="Tgt-74-ILy"/>
                 <outlet property="qrCodeLabel" destination="iNg-uF-UUF" id="k4C-dK-O46"/>
                 <outlet property="scanerButton" destination="5d8-w6-bLe" id="4xr-Vf-bo3"/>
@@ -22,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="sxS-yc-3NY">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noitem" translatesAutoresizingMaskIntoConstraints="NO" id="sxS-yc-3NY">
                     <rect key="frame" x="0.0" y="44" width="414" height="484"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pp5-M5-dxF">
@@ -98,7 +100,7 @@
         </view>
     </objects>
     <resources>
-        <image name="product" width="419" height="419"/>
+        <image name="noitem" width="176.5" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

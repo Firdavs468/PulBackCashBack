@@ -10,23 +10,28 @@ import Alamofire
 import SwiftyJSON
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var userLabel: UILabel! {
-        didSet {
-            userLabel.lineBreakMode = .byCharWrapping
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineHeightMultiple = 1.22
-            userLabel.numberOfLines = 0
-            userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\n\(Cache.getUserDefaultsString(forKey: Keys.name + " " + Cache.getUserDefaultsString(forKey: Keys.surname)))!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        }
-    }
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var table_view: UITableView!
+    
+    
     var pays : [Pays] = []
     var balanceStr = 0
+    let userName = BalanceCell.userName
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         getBalanceAPI()
-        print(Cache.getUserDefaultsString(forKey: Keys.name),"name")
+        setupUserLabel()
+        getBarCodeAPI()
+    }
+    
+    func setupUserLabel() {
+        userLabel.lineBreakMode = .byCharWrapping
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.22
+        userLabel.numberOfLines = 0
+        userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\n\(userName)!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
     
 }
@@ -104,6 +109,7 @@ extension HomeVC : OpenBeeto {
         }
     }
 }
+
 //MARK: - Navigation Controller Barbackground
 extension HomeVC {
     func navBarBackground(){
@@ -130,6 +136,27 @@ extension HomeVC {
                         self.table_view.reloadData()
                     }
                 }
+            }
+        }
+    }
+}
+
+
+
+//MARK: - Bar Code API
+extension HomeVC {
+    func getBarCodeAPI() {
+        let headers : HTTPHeaders = [
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiIrOTk4OTcxNTYwOTQ5Iiwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzMzUzODU2MCwiZXhwIjoxNjY1MDk2MTYwfQ.SzihTanBR0eugeEcRnsxiLf7h1CMD8CFJ_dKiQb0aeM",
+            "Content-Type": "application/json"
+        ]
+        let param : [String:Any] = [
+            "barcode" : "4780065640101"
+        ]
+        Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+            if let data = data {
+                print("data✅✅✅ = ",data)
+        
             }
         }
     }

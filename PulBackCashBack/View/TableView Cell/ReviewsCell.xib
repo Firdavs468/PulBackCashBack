@@ -22,16 +22,16 @@
                         <rect key="frame" x="10" y="5" width="300" height="89"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="faR-Qf-W3B">
-                                <rect key="frame" x="20" y="20" width="260" height="49"/>
+                                <rect key="frame" x="20" y="15" width="260" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="LabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLm-tM-ZE4">
-                                        <rect key="frame" x="0.0" y="0.0" width="235.5" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235.5" height="59"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whe-GZ-s1k">
-                                        <rect key="frame" x="245.5" y="0.0" width="14.5" height="49"/>
+                                        <rect key="frame" x="245.5" y="0.0" width="14.5" height="59"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <imageReference key="image" image="chevron.right" catalog="system" symbolScale="large"/>
@@ -43,10 +43,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="faR-Qf-W3B" secondAttribute="bottom" constant="20" id="7tA-KM-FDa"/>
+                            <constraint firstAttribute="bottom" secondItem="faR-Qf-W3B" secondAttribute="bottom" constant="15" id="7tA-KM-FDa"/>
                             <constraint firstAttribute="trailing" secondItem="faR-Qf-W3B" secondAttribute="trailing" constant="20" id="BBh-76-LVe"/>
                             <constraint firstItem="faR-Qf-W3B" firstAttribute="leading" secondItem="dvb-VQ-2cl" secondAttribute="leading" constant="20" id="Olw-zK-1Yv"/>
-                            <constraint firstItem="faR-Qf-W3B" firstAttribute="top" secondItem="dvb-VQ-2cl" secondAttribute="top" constant="20" id="YSn-7G-8Ud"/>
+                            <constraint firstItem="faR-Qf-W3B" firstAttribute="top" secondItem="dvb-VQ-2cl" secondAttribute="top" constant="15" id="YSn-7G-8Ud"/>
                         </constraints>
                     </view>
                 </subviews>

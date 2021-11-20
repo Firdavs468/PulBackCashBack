@@ -25,8 +25,8 @@ public class Loader {
         customView.translatesAutoresizingMaskIntoConstraints = false
         customView.centerXAnchor.constraint(equalTo: loadV.centerXAnchor).isActive = true
         customView.centerYAnchor.constraint(equalTo: loadV.centerYAnchor).isActive = true
-        customView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        customView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        customView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        customView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         customView.backgroundColor = .clear
         if let window = UIApplication.shared.windows.first(where: { (window) -> Bool in window.isKeyWindow}) {

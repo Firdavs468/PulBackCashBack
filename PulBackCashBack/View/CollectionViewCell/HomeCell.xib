@@ -24,21 +24,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="241" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-uU-LZE">
-                                <rect key="frame" x="100" y="80" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-uU-LZE">
+                                <rect key="frame" x="10" y="40" width="221" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1cZ-uU-LZE" firstAttribute="top" secondItem="chz-c9-fFP" secondAttribute="top" constant="40" id="3hX-LM-vgq"/>
                             <constraint firstItem="0DB-9g-3GM" firstAttribute="leading" secondItem="chz-c9-fFP" secondAttribute="leading" id="BKv-ig-mhw"/>
-                            <constraint firstItem="1cZ-uU-LZE" firstAttribute="centerY" secondItem="chz-c9-fFP" secondAttribute="centerY" id="LZT-to-MHz"/>
+                            <constraint firstAttribute="trailing" secondItem="1cZ-uU-LZE" secondAttribute="trailing" constant="10" id="JEg-bR-9UP"/>
+                            <constraint firstItem="1cZ-uU-LZE" firstAttribute="leading" secondItem="chz-c9-fFP" secondAttribute="leading" constant="10" id="QZB-pZ-93v"/>
                             <constraint firstItem="0DB-9g-3GM" firstAttribute="top" secondItem="chz-c9-fFP" secondAttribute="top" id="R52-ns-9p8"/>
                             <constraint firstAttribute="trailing" secondItem="0DB-9g-3GM" secondAttribute="trailing" id="bvJ-hl-CXn"/>
                             <constraint firstAttribute="bottom" secondItem="0DB-9g-3GM" secondAttribute="bottom" id="fQf-6p-Gz5"/>
-                            <constraint firstItem="1cZ-uU-LZE" firstAttribute="centerX" secondItem="chz-c9-fFP" secondAttribute="centerX" id="hpX-8d-9Lf"/>
                         </constraints>
                     </view>
                 </subviews>

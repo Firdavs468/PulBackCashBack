@@ -38,7 +38,7 @@ class MyProfileVC: UIViewController {
         setupUI()
     }
     
- 
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userNameLabel.textColor = AppColor.appColor
@@ -48,6 +48,24 @@ class MyProfileVC: UIViewController {
     
     @IBAction func callCenterButtonPressed(_ sender: Any) {
         callNumber(phoneNumber: "+998945555892")
+    }
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "выход ", message: "вы хотите выйти из своего профиля?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Да", style: .default) { _ in
+            Cache.saveUserToken(token: nil)
+            //            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
+            let window = UIApplication.shared.keyWindow
+            let vc = LoginVC(nibName: "LoginVC", bundle: nil)
+            DispatchQueue.main.async {
+                window!.rootViewController = vc
+                window!.makeKeyAndVisible()
+            }
+        }
+        
+        let no = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        alert.addAction(yes)
+        alert.addAction(no)
+        present(alert, animated: true, completion: nil)
     }
     func setupUI() {
         userNameLabel.textColor = AppColor.appColor
@@ -88,6 +106,9 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 3 {
             let vc = ReviewsVC(nibName: "ReviewsVC", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let scaner = ScannerViewController()
+            navigationController?.pushViewController(scaner, animated: true)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -133,7 +154,6 @@ extension MyProfileVC {
                     popup.sourceRect = CGRect(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 4, width: 0, height: 0)
                 }
             }
-            
             self.present(activityVC, animated: true, completion: nil)
         }
     }
