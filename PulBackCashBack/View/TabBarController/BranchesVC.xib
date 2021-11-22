@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="29" y="61"/>
+            <point key="canvasLocation" x="28.985507246376812" y="60.9375"/>
         </view>
     </objects>
     <resources>

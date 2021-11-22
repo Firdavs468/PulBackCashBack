@@ -7,8 +7,11 @@
 
 import UIKit
 import GoogleMaps
+import GoogleMapsCore
+import GooglePlaces
 import Alamofire
 import SwiftyJSON
+
 
 let primaryColor = UIColor(red:0.00, green:0.19, blue:0.56, alpha:1.0)
 
@@ -26,7 +29,6 @@ let customMarkerHeight: Int = 55
 class BranchesVC: UIViewController {
     
     var places = [SSPlace]()
-    
     var markers = [GMSMarker]()
     
     var mapView: GMSMapView = {
@@ -49,15 +51,19 @@ class BranchesVC: UIViewController {
         self.focusMapToShowAllMarkers()
     }
     
+    
     //setup MapView()
     func setupMapView() {
+//        mapView.setMinZoom(1, maxZoom: 100)
+        mapView.animate(toZoom: 4)
         mapView.padding = UIEdgeInsets(top: 72, left: 25, bottom: 0, right: 25)
         mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         mapView.delegate = self
-        places.append(SSPlace(name:  "Tiin Market Sayram", address: "Sayram St, 5/92, M.Ulugbek province", coordinates: (lat: 41.31130, lng: 69.280136)))
+        places.append(SSPlace(name:  "Tiin Market Sayramm", address: "Sayram St, 5/92, M.Ulugbek province", coordinates: (lat: 41.31130, lng: 69.280136)))
+//        places.append(SSPlace(name:  "Tiin Market Sayram", address: "Sayram St, 5/92, M.Ulugbek province", coordinates: (lat: 41.3281887, lng: 69)))
         self.addMarkers()
     }
     
@@ -166,6 +172,43 @@ extension BranchesVC {
                     }
                 }
             }
+        }
+    }
+}
+
+//Go To Beeto
+extension BranchesVC {
+    func openGoogleMap() {
+        if let UrlNavigation = URL.init(string: "comgooglemaps://") {
+            if UIApplication.shared.canOpenURL(UrlNavigation){
+                let lat = 69.3209524
+                let longi = 41.3281887
+                if let urlDestination = URL.init(string: "comgooglemaps://?saddr=&daddr=\(lat),\(longi)&directionsmode=driving") {
+                    UIApplication.shared.openURL(urlDestination)
+                }
+            }else {
+                NSLog("Can't use comgooglemaps://");
+                self.openTrackerInBrowser()
+            }
+        }else {
+            NSLog("Can't use comgooglemaps://");
+            self.openTrackerInBrowser()
+        }
+    }
+    
+    func openTrackerInBrowser(){
+        let lat = 30
+        let longi = 40
+        if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(lat),\(longi)&directionsmode=driving") {
+            UIApplication.shared.openURL(urlDestination)
+        }
+    }
+    
+    func openBeeto() {
+        if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
+            UIApplication.shared.open(URL(string:"comgooglemaps://?center=\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(41.3281887),\(69.3209524)")!, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.open(URL(string: "http://maps.google.com/maps?q=loc:\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(41.3281887),\(69.3209524)")!, options: [:], completionHandler: nil)
         }
     }
 }

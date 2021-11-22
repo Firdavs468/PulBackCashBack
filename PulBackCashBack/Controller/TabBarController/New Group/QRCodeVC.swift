@@ -67,7 +67,9 @@ extension QRCodeVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, Bar
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print(code)
         Cache.saveUserDefaults(code, forKey: Keys.bar_code)
-        controller.reset()
+        let vc = ProductsVC(nibName: "ProductsVC", bundle: nil)
+        present(vc, animated: true, completion: nil)
+//        controller.reset()
     }
     
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error){

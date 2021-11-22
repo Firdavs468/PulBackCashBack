@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-Pw-aaD">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-Pw-aaD">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiin" translatesAutoresizingMaskIntoConstraints="NO" id="a08-Mn-dis">
@@ -37,7 +37,7 @@
         </view>
     </objects>
     <resources>
-        <image name="login" width="428" height="927"/>
+        <image name="navbar" width="428" height="115"/>
         <image name="tiin" width="143.5" height="95"/>
     </resources>
 </document>

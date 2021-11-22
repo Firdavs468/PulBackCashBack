@@ -81,14 +81,19 @@ extension HomeCell {
             Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
                     print(data)
+                    Loader.start()
                     let jsonData = JSON(data["data"])
                     let jsonPays =  jsonData["pays"]
                     if data["code"].intValue == 0 {
+                        Loader.stop()
                         for i in 0..<jsonPays.count {
                             let pay = Pays(_id:jsonPays[i]["_id"].intValue , receipt: jsonPays[i]["receipt"].stringValue, value: jsonPays[i]["value"].intValue, total: jsonPays[i]["total"].intValue, created_date: jsonPays[i]["created_date"].stringValue)
                             self.pays.append(pay)
                             self.table_view.reloadData()
                         }
+                    }else if data["code"].intValue == 0 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Платежи не найдены")
                     }
                 }
             }

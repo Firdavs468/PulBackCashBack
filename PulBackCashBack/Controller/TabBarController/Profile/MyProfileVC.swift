@@ -53,7 +53,7 @@ class MyProfileVC: UIViewController {
         let alert = UIAlertController(title: "выход ", message: "вы хотите выйти из своего профиля?", preferredStyle: .alert)
         let yes = UIAlertAction(title: "Да", style: .default) { _ in
             Cache.saveUserToken(token: nil)
-            //            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
+            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
             let window = UIApplication.shared.keyWindow
             let vc = LoginVC(nibName: "LoginVC", bundle: nil)
             DispatchQueue.main.async {
@@ -106,9 +106,6 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 3 {
             let vc = ReviewsVC(nibName: "ReviewsVC", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
-        }else {
-            let scaner = ScannerViewController()
-            navigationController?.pushViewController(scaner, animated: true)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

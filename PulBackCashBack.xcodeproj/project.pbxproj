@@ -14,6 +14,8 @@
 		C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721A7F62746A5CD00DD82A5 /* Assets.xcassets */; };
 		C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */; };
 		C73A1BC627342E78009E6D1D /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */; };
+		C73AECF2274939FE00FDD8AB /* MapInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73AECF0274939FE00FDD8AB /* MapInfoWindow.swift */; };
+		C73AECF3274939FE00FDD8AB /* MapInfoWindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73AECF1274939FE00FDD8AB /* MapInfoWindowView.xib */; };
 		C753C4E52743D756004D3C18 /* Pays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E42743D756004D3C18 /* Pays.swift */; };
 		C753C4E82743DF28004D3C18 /* BonusesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */; };
 		C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */; };
@@ -22,7 +24,6 @@
 		C753C4EF2743EBAD004D3C18 /* Branches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4EE2743EBAD004D3C18 /* Branches.swift */; };
 		C753C4F22743FD74004D3C18 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4F02743FD74004D3C18 /* ReviewsCell.swift */; };
 		C753C4F32743FD74004D3C18 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4F12743FD74004D3C18 /* ReviewsCell.xib */; };
-		C757ECB32748DA5F008BE5E8 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C757ECB22748DA5F008BE5E8 /* Scanner.swift */; };
 		C757ECB52748F9A6008BE5E8 /* ItemGetByBarCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C757ECB42748F9A6008BE5E8 /* ItemGetByBarCode.swift */; };
 		C766CB3527302F4700DB0E1A /* PinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766CB3327302F4700DB0E1A /* PinVC.swift */; };
 		C766CB3627302F4700DB0E1A /* PinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C766CB3427302F4700DB0E1A /* PinVC.xib */; };
@@ -96,6 +97,8 @@
 		C721A7F62746A5CD00DD82A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/PulBackCashBack-main 2/PulBackCashBack/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerInfoWindow.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerInfoWindow.swift"; sourceTree = "<group>"; };
 		C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerView.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerView.swift"; sourceTree = "<group>"; };
+		C73AECF0274939FE00FDD8AB /* MapInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapInfoWindow.swift; path = "../../../../../../../Downloads/iOS-GoogleMaps-Custom-InfoWindow-master/GoogleMapsCustomInfoWindow/GoogleMapsCustomInfoWindow/MapInfoWindow.swift"; sourceTree = "<group>"; };
+		C73AECF1274939FE00FDD8AB /* MapInfoWindowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapInfoWindowView.xib; path = "../../../../../../../Downloads/iOS-GoogleMaps-Custom-InfoWindow-master/GoogleMapsCustomInfoWindow/GoogleMapsCustomInfoWindow/MapInfoWindowView.xib"; sourceTree = "<group>"; };
 		C753C4E42743D756004D3C18 /* Pays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pays.swift; sourceTree = "<group>"; };
 		C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesTableCell.swift; sourceTree = "<group>"; };
 		C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BonusesTableCell.xib; sourceTree = "<group>"; };
@@ -104,7 +107,6 @@
 		C753C4EE2743EBAD004D3C18 /* Branches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branches.swift; sourceTree = "<group>"; };
 		C753C4F02743FD74004D3C18 /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
 		C753C4F12743FD74004D3C18 /* ReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
-		C757ECB22748DA5F008BE5E8 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		C757ECB42748F9A6008BE5E8 /* ItemGetByBarCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGetByBarCode.swift; sourceTree = "<group>"; };
 		C766CB3327302F4700DB0E1A /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
 		C766CB3427302F4700DB0E1A /* PinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinVC.xib; sourceTree = "<group>"; };
@@ -213,13 +215,6 @@
 			path = "Lottie Files";
 			sourceTree = "<group>";
 		};
-		C7732245273FEECE008ACA82 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		C77F7BF5273166E8003B3FAE /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +247,6 @@
 				C785A212272ACB9E0061B719 /* LoginVC.xib */,
 				C7E0B439272F9A2B00FE4F78 /* ConfirmationVC.xib */,
 				C7E0B4462730180F00FE4F78 /* ProfileVC.xib */,
-				C7732245273FEECE008ACA82 /* New Group */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -366,7 +360,6 @@
 				C77F7BFD27318B21003B3FAE /* Verification */,
 				C77F7BF5273166E8003B3FAE /* TabBarController */,
 				C766CB3327302F4700DB0E1A /* PinVC.swift */,
-				C757ECB22748DA5F008BE5E8 /* Scanner.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -451,6 +444,8 @@
 		C7FE1F2B2733EC6A004337ED /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C73AECF0274939FE00FDD8AB /* MapInfoWindow.swift */,
+				C73AECF1274939FE00FDD8AB /* MapInfoWindowView.xib */,
 				C77F7BF1273166DB003B3FAE /* MyProfileVC.swift */,
 				C7FE1F272733EC61004337ED /* Settings.swift */,
 				C7FE1F3627340771004337ED /* ReviewsVC.swift */,
@@ -584,6 +579,7 @@
 				C77F7BE927316650003B3FAE /* BranchesVC.xib in Resources */,
 				C711393B273D3860007B74EE /* done.json in Resources */,
 				C7113939273D384D007B74EE /* loader.json in Resources */,
+				C73AECF3274939FE00FDD8AB /* MapInfoWindowView.xib in Resources */,
 				C7FE1F3D273412C7004337ED /* NewsVC.xib in Resources */,
 				C7FE1F342733F320004337ED /* ProfileCell.xib in Resources */,
 				C7E0B4482730180F00FE4F78 /* ProfileVC.xib in Resources */,
@@ -679,6 +675,7 @@
 				C753C4EF2743EBAD004D3C18 /* Branches.swift in Sources */,
 				C785A1F7272AC7F60061B719 /* AppDelegate.swift in Sources */,
 				C77784B6273AA4D3002B1534 /* PurchasesCell.swift in Sources */,
+				C73AECF2274939FE00FDD8AB /* MapInfoWindow.swift in Sources */,
 				C7FE1F292733EC61004337ED /* Settings.swift in Sources */,
 				C77F7BF3273166DB003B3FAE /* MyProfileVC.swift in Sources */,
 				C7FE1F3827340771004337ED /* ReviewsVC.swift in Sources */,
@@ -707,7 +704,6 @@
 				C778AD6C273D3AF300991C77 /* API.swift in Sources */,
 				C7E0B4472730180F00FE4F78 /* ProfileVC.swift in Sources */,
 				C782EF3527465ABE00565EFD /* DoneAlert.swift in Sources */,
-				C757ECB32748DA5F008BE5E8 /* Scanner.swift in Sources */,
 				C785A219272ACCE20061B719 /* Extension.swift in Sources */,
 				C7FC64D72736B02900A80D4B /* ProductsCell.swift in Sources */,
 			);

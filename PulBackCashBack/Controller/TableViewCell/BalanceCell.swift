@@ -35,6 +35,7 @@ class BalanceCell: UITableViewCell {
         containerView.addGestureRecognizer(tap)
     }
     
+    //flip card animation
     @IBAction func showCodeButtonPressed(_ sender: Any) {
         if isOpened {
             isOpened = false

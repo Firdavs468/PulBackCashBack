@@ -24,9 +24,9 @@ class BonusesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         if isSmalScreen568 {
-            transformWidth = 140
+            transformWidth = 125
         }else if isSmalScreen736 {
-            transformWidth = 185
+            transformWidth = 175
         }else {
             transformWidth = 195
         }
@@ -41,21 +41,20 @@ class BonusesCell: UITableViewCell {
     
     //Покупки button pressed
     @IBAction func purchasesButtonPressed(_ sender: Any) {
-        //        let visibleItems: NSArray = self.collection_view.indexPathsForVisibleItems as NSArray
-        //        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
-        //        let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
         let nextItem : IndexPath = IndexPath(item: 1, section: 0)
-        //               if nextItem.row < imgArr.count {
         self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
-        //        }
-        
+    }
+    
+    //collectionView scroll to item
+    func scrollToItem() {
+        let nextItem : IndexPath = IndexPath(item: 1, section: 0)
+        self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
     }
     
 }
 
 //MARK: - CollectionView delegate methods
 extension BonusesCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func setupCollectionView() {
         self.collection_view.delegate = self
         self.collection_view.dataSource = self
@@ -104,19 +103,5 @@ extension BonusesCell : UICollectionViewDelegate, UICollectionViewDataSource, UI
                 purchasesButton.setTitleColor(.black, for: .normal)
             }
         }
-    }
-}
-
-
-//MARK: - Collection View scroll to item
-extension BonusesCell {
-    func scrollToItem() {
-        //        let visibleItems: NSArray = self.collection_view.indexPathsForVisibleItems as NSArray
-        //        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
-        //        let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-        let nextItem : IndexPath = IndexPath(item: 1, section: 0)
-        //               if nextItem.row < imgArr.count {
-        self.collection_view.scrollToItem(at: nextItem, at: .left, animated: true)
-        //        }
     }
 }

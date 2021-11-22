@@ -8,6 +8,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AVKit
+import AVFoundation
 
 class ReviewsVC: UIViewController {
     
@@ -31,10 +33,17 @@ class ReviewsVC: UIViewController {
         title = "Отзывы"
         cornerView()
         setupTableView()
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            view.addGestureRecognizer(tapGesture)
+       
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
         createFeedback()
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     func cornerView() {
@@ -102,7 +111,24 @@ extension ReviewsVC {
             ]
             Networking.fetchRequest(urlAPI: API.feedbackUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
                 if let data = data {
+                    Loader.start()
                     print(data)
+                    if data["code"].intValue == 0 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .success, message: "Идея была успешно отправлена")
+                    }else if data["code"].intValue == 50003 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Неизвестная структура")
+                    }else if data["code"].intValue == 50019 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Филиал не найден")
+                    }else if data["code"].intValue == 50020 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Не удалось отправить отзыв в Telegram")
+                    }else {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "неизвестная ошибка")
+                    }
                 }
             }
         }

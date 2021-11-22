@@ -26,6 +26,7 @@ class HomeVC: UIViewController {
         getBarCodeAPI()
     }
     
+    //userLabel setup
     func setupUserLabel() {
         userLabel.lineBreakMode = .byCharWrapping
         let paragraphStyle = NSMutableParagraphStyle()
@@ -72,11 +73,22 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //card flip animation
         if indexPath.row == 1 {
             return 130
-        }else if indexPath.row == 0 {
-            return 240
-        }else {
+        }
+        //go to Beeto
+        else if indexPath.row == 0 {
+            if isSmalScreen568 {
+                return 200
+            }else if isSmalScreen736 {
+                return 220
+            }else {
+                return 240
+            }
+        }
+        //bonuses collection cell
+        else {
             return 380
         }
     }
@@ -130,8 +142,10 @@ extension HomeVC {
             Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
                     print(data)
+                    Loader.start()
                     let jsonData = JSON(data["data"])
                     if data["code"].intValue == 0 {
+                        Loader.stop()
                         balanceStr = jsonData["balance"].intValue
                         self.table_view.reloadData()
                     }
@@ -140,8 +154,6 @@ extension HomeVC {
         }
     }
 }
-
-
 
 //MARK: - Bar Code API
 extension HomeVC {
@@ -156,7 +168,7 @@ extension HomeVC {
         Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
             if let data = data {
                 print("data✅✅✅ = ",data)
-        
+                
             }
         }
     }

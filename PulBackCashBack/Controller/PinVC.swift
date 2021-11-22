@@ -17,8 +17,8 @@ class PinVC: UIViewController {
                 buttonHeight.constant = 0.15
             }else {
                 buttonHeight.constant = 0.1
+            }
         }
-    }
     }
     @IBOutlet var circleImage: [UIImageView]!
     @IBOutlet weak var xButton: UIButton!
@@ -31,15 +31,19 @@ class PinVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "ПИН-код"
-        cornerView()
         newAppColor()
         print(Cache.getUserDefaultsString(forKey: Keys.password), "password")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        cornerView()
     }
     
     @IBAction func touchIdButtonPressed(_ sender: Any) {
         startAuthentication()
     }
     
+    //pin code delete button
     @IBAction func xButtonPressed(_ sender: Any) {
         if !UserDefaults.standard.bool(forKey: Keys.isLogged) {
             var password = Cache.getUserDefaultsString(forKey: Keys.password)
@@ -64,6 +68,7 @@ class PinVC: UIViewController {
         }
     }
     
+    //0...9 numbers button
     @IBAction func numbersButtonPressed(_ sender: UIButton) {
         //button title
         if let text = sender.titleLabel?.text {
@@ -115,6 +120,7 @@ class PinVC: UIViewController {
         }
     }
     
+    //user touch id
     func   startAuthentication() {
         let context = LAContext()
         var error : NSError?
@@ -147,13 +153,13 @@ class PinVC: UIViewController {
     func cornerView() {
         for number in numbersButton {
             number.tintColor = AppColor.appColor
-            number.layer.cornerRadius = number.frame.height/1.2
         }
     }
     
     //New App Color
     func newAppColor() {
         for number in numbersButton {
+            number.layer.cornerRadius = number.frame.height/1.2
             number.tintColor = AppColor.appColor
         }
         touchIDButton.tintColor = AppColor.appColor

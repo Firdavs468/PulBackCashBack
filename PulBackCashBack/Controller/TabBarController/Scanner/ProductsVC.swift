@@ -20,8 +20,6 @@ class ProductsVC: UIViewController {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
     
-    var barCodeScanner = ScannerViewController()
-    var qrCode = ""
     var getPrices : [Prices] = []
     var itemGetByBarCode : ItemGetByBarCode!
     override func viewDidLoad() {
@@ -29,8 +27,7 @@ class ProductsVC: UIViewController {
         setupCollectionView()
         setupUI()
         getBarCodeAPI()
-        barCodeScanner.delegate = self
-        setupGetApiData()
+        //        setupGetApiData()
     }
     @IBAction func scanerButtonPressed(_ sender: Any) {
         let viewController = BarcodeScannerViewController()
@@ -46,12 +43,12 @@ class ProductsVC: UIViewController {
         qrCodeLabel.textColor = AppColor.appColor
         numberLabel.textColor = AppColor.appColor
     }
-    func setupGetApiData() {
-        numberLabel.text = "\(itemGetByBarCode.sku)"
-        qrCodeLabel.text = itemGetByBarCode.barCode
-        itemImage.sd_setImage(with: URL(string: API.base_url+itemGetByBarCode.representation), placeholderImage: UIImage(named: "noitem"))
-        itemNameLabel.text = itemGetByBarCode.name
-    }
+    //    func setupGetApiData() {
+    //        numberLabel.text = "\(itemGetByBarCode.sku)"
+    //        qrCodeLabel.text = itemGetByBarCode.barCode
+    //        itemImage.sd_setImage(with: URL(string: API.base_url+itemGetByBarCode.representation), placeholderImage: UIImage(named: "noitem"))
+    //        itemNameLabel.text = itemGetByBarCode.name
+    //    }
 }
 
 //MARK: - CollectionView delegate methods
@@ -102,7 +99,7 @@ extension ProductsVC {
             "Content-Type": "application/json"
         ]
         let param : [String:Any] = [
-            "barcode" : "4780065640101"
+            "barcode" : "4780101734276"
         ]
         Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { [self] data in
             if let data = data {
@@ -116,15 +113,7 @@ extension ProductsVC {
                         self.collection_view.reloadData()
                     }
                     //item data
-                    itemGetByBarCode._id = itemData["_id"].stringValue
-                    itemGetByBarCode.price = itemData["price"].intValue
-                    itemGetByBarCode.in_stock = itemData["in_stock"].intValue
-                    itemGetByBarCode.representation = itemData["representation"].stringValue
-                    itemGetByBarCode.sold_by = itemData["sold_by"].stringValue
-                    itemGetByBarCode.sku = itemData["sku"].intValue
-                    itemGetByBarCode.name = itemData["name"].stringValue
-                    itemGetByBarCode.prices = getPrices
-                    itemGetByBarCode.barCode = itemData["barcode"].stringValue
+                 let getItem = ItemGetByBarCode(prices: getPrices, name: itemData["name"].stringValue, in_stock: itemData["in_stock"].intValue, _id: itemData["_id"].stringValue, barCode: itemData["barcode"].stringValue, sold_by: itemData["sold_by"].stringValue, representation: itemData["representation"].stringValue, price: itemData["price"].intValue, sku: itemData["sku"].intValue, representation_type: "")
                     
                 }else if data["code"].intValue == 12000 {
                     Alert.showAlert(forState: .error, message: "Товар не найден")
@@ -134,12 +123,6 @@ extension ProductsVC {
     }
 }
 
-extension ProductsVC: ScannerViewDelegate {
-    func didFindScannedText(text: String) {
-        qrCode = text
-        navigationController?.popViewController(animated: true)
-    }
-}
 
 
 //MARK: - BarCode delegate
@@ -153,7 +136,6 @@ extension ProductsVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, B
     
     func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error){
         print(error)
-        
     }
     
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {

@@ -8,6 +8,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import GoogleMaps
+
 class LoginVC: UIViewController {
     
     @IBOutlet weak var textFieldContainerView: UIView! {
@@ -164,7 +166,6 @@ extension LoginVC : UITextFieldDelegate {
         self.view.endEditing(true)
     }
 }
-
 
 //MARK: - Phone Number formatter
 extension LoginVC {
