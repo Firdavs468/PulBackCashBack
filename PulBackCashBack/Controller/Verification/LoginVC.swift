@@ -53,21 +53,21 @@ class LoginVC: UIViewController {
     
     @IBAction func uncheckButtonPressed(_ sender: Any) {
         if !isPressed1 {
-            checkButton.setImage(UIImage(named: "check"), for: .normal)
+            checkButton.setImage(AppIcon.check, for: .normal)
             isPressed1 = true
             if isPressed2 {
                 nextButton.backgroundColor = AppColor.appColor
             }
         }else {
             nextButton.backgroundColor = .lightGray
-            checkButton.setImage(UIImage(systemName: "rectangle"), for: .normal)
+            checkButton.setImage(AppIcon.rectangle, for: .normal)
             isPressed1 = false
         }
     }
     
     @IBAction func checkButtonPressed(_ sender: Any) {
         if !isPressed2 {
-            uncheckButton.setImage(UIImage(named: "check"), for: .normal)
+            uncheckButton.setImage(AppIcon.check, for: .normal)
             isPressed2 = true
             if isPressed1 {
                 nextButton.backgroundColor = AppColor.appColor
@@ -76,7 +76,7 @@ class LoginVC: UIViewController {
         }else {
             nextButton.backgroundColor = .lightGray
             nextButton.isEnabled = false
-            uncheckButton.setImage(UIImage(systemName: "rectangle"), for: .normal)
+            uncheckButton.setImage(AppIcon.rectangle, for: .normal)
             isPressed2 = false
         }
     }

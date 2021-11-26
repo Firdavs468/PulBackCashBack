@@ -26,7 +26,7 @@ class BonusesCell: UITableViewCell {
         if isSmalScreen568 {
             transformWidth = 125
         }else if isSmalScreen736 {
-            transformWidth = 175
+            transformWidth = 170
         }else {
             transformWidth = 195
         }

@@ -20,14 +20,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-IN-ER3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                         <subviews>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-SA-vfi">
-                                <rect key="frame" x="20" y="10" width="560" height="215"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-SA-vfi">
+                                <rect key="frame" x="20" y="10" width="560" height="205"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar-code" translatesAutoresizingMaskIntoConstraints="NO" id="ow0-je-v7i">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="170.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bar-code" translatesAutoresizingMaskIntoConstraints="NO" id="ow0-je-v7i">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="176"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="2932973237239" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-YV-Bxj">
-                                        <rect key="frame" x="0.0" y="180.5" width="560" height="34.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2932973237239" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-YV-Bxj">
+                                        <rect key="frame" x="0.0" y="181" width="560" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="LMg-j3-1WG" firstAttribute="top" secondItem="5Ib-IN-ER3" secondAttribute="top" constant="10" id="PK4-Rf-5dG"/>
                             <constraint firstItem="LMg-j3-1WG" firstAttribute="leading" secondItem="5Ib-IN-ER3" secondAttribute="leading" constant="20" id="U4y-eK-wYc"/>
                             <constraint firstAttribute="bottom" secondItem="LMg-j3-1WG" secondAttribute="bottom" constant="10" id="dRU-qc-ruV"/>
-                            <constraint firstAttribute="bottom" secondItem="Y3Z-SA-vfi" secondAttribute="bottom" constant="10" id="sBN-kh-tww"/>
+                            <constraint firstAttribute="bottom" secondItem="Y3Z-SA-vfi" secondAttribute="bottom" constant="20" id="sBN-kh-tww"/>
                             <constraint firstItem="Y3Z-SA-vfi" firstAttribute="leading" secondItem="5Ib-IN-ER3" secondAttribute="leading" constant="20" id="x8Z-nk-8HQ"/>
                             <constraint firstAttribute="trailing" secondItem="Y3Z-SA-vfi" secondAttribute="trailing" constant="20" id="xse-iN-LTu"/>
                         </constraints>

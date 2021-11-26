@@ -18,17 +18,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="602"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j10-a2-w7D">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="511.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hy1-gE-KuE">
-                            <rect key="frame" x="15" y="10" width="290" height="444"/>
+                            <rect key="frame" x="15" y="10" width="290" height="461.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-Mh-XBt">
-                                    <rect key="frame" x="0.0" y="0.0" width="290" height="191"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="197"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-Mp-Yvr">
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="64.5"/>
@@ -39,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Сообщение*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-ux-Kpa">
-                                            <rect key="frame" x="0.0" y="94.5" width="290" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="94.5" width="290" height="102.5"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -48,11 +48,11 @@
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oZi-91-hYm">
-                                    <rect key="frame" x="0.0" y="221" width="290" height="159"/>
+                                    <rect key="frame" x="0.0" y="227" width="290" height="168.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-SM-EnA">
-                                    <rect key="frame" x="0.0" y="410" width="290" height="34"/>
+                                    <rect key="frame" x="0.0" y="425.5" width="290" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <state key="normal" title="Отправить ">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,19 +72,26 @@
                         <constraint firstAttribute="bottom" secondItem="hy1-gE-KuE" secondAttribute="bottom" id="ktV-LK-K1J"/>
                     </constraints>
                 </scrollView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6PJ-sa-cgt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="602"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.85" id="6Mp-wk-abM"/>
                 <constraint firstItem="oZi-91-hYm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.28" id="HOt-HQ-FVi"/>
+                <constraint firstItem="6PJ-sa-cgt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PTL-sM-hOX"/>
+                <constraint firstItem="6PJ-sa-cgt" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Tlr-ds-0LH"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vds-vz-6Ns"/>
                 <constraint firstItem="fGv-ux-Kpa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.17" id="Vx9-5V-8rr"/>
                 <constraint firstAttribute="trailing" secondItem="j10-a2-w7D" secondAttribute="trailing" id="b8X-kJ-6iX"/>
+                <constraint firstItem="6PJ-sa-cgt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fy6-gf-lxJ"/>
                 <constraint firstItem="j10-a2-w7D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nfG-c2-3t0"/>
                 <constraint firstItem="6MX-SM-EnA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="wjk-PP-K8r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6PJ-sa-cgt" secondAttribute="trailing" id="yjv-cw-fpV"/>
             </constraints>
-            <point key="canvasLocation" x="79" y="-1804"/>
+            <point key="canvasLocation" x="75" y="-1778.8732394366198"/>
         </view>
     </objects>
     <resources>

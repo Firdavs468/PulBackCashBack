@@ -7,10 +7,9 @@
 
 import UIKit
 import GoogleMaps
-import GoogleMapsCore
-import GooglePlaces
 import Alamofire
 import SwiftyJSON
+
 
 
 let primaryColor = UIColor(red:0.00, green:0.19, blue:0.56, alpha:1.0)
@@ -24,12 +23,14 @@ struct SSPlace {
 }
 
 let customMarkerWidth: Int = 50
-let customMarkerHeight: Int = 55
+let customMarkerHeight: Int = 56
 
 class BranchesVC: UIViewController {
     
     var places = [SSPlace]()
+    
     var markers = [GMSMarker]()
+    var getBranches = [Branches]()
     
     var mapView: GMSMapView = {
         let v = GMSMapView()
@@ -37,42 +38,50 @@ class BranchesVC: UIViewController {
         return v
     }()
     
-    var getBranches : [Branches] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(mapView)
-        setupMapView()
         getBranchesAPI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.focusMapToShowAllMarkers()
+        setupMapView()
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            self.focusMapToShowAllMarkers()
+        }
     }
     
-    
-    //setup MapView()
+    //mapView create, setup mapView
     func setupMapView() {
-//        mapView.setMinZoom(1, maxZoom: 100)
-        mapView.animate(toZoom: 4)
+        self.view.addSubview(mapView)
+        mapView.setMinZoom(1, maxZoom: 15)
         mapView.padding = UIEdgeInsets(top: 72, left: 25, bottom: 0, right: 25)
         mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         mapView.delegate = self
-        places.append(SSPlace(name:  "Tiin Market Sayramm", address: "Sayram St, 5/92, M.Ulugbek province", coordinates: (lat: 41.31130, lng: 69.280136)))
-//        places.append(SSPlace(name:  "Tiin Market Sayram", address: "Sayram St, 5/92, M.Ulugbek province", coordinates: (lat: 41.3281887, lng: 69)))
+        if !getBranches.isEmpty {
+            Loader.stop()
+            for i in 0..<getBranches.count {
+                places.append(SSPlace(name: getBranches[i].logo, address: getBranches[i].address, coordinates: (lat: getBranches[i].lat, lng: getBranches[i].long)))
+                print("places",places)
+            }
+        }else {
+            Loader.start()
+            print("no item places")
+            mapView.camera = GMSCameraPosition(latitude: 69, longitude: 41, zoom: 14)
+            places.removeAll()
+        }
         self.addMarkers()
     }
     
+    //marker add
     func addMarkers() {
         markers.removeAll()
         for (index, place) in places.enumerated() {
             let marker = GMSMarker()
             let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), imageName: place.name, borderColor: primaryColor, tag: index)
-            //            marker.iconView=customMarker
             marker.iconView = customMarker
             marker.position = CLLocationCoordinate2D(latitude: place.coordinates!.lat, longitude: place.coordinates!.lng)
             marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0)
@@ -90,12 +99,13 @@ class BranchesVC: UIViewController {
             for marker in markers {
                 bounds = bounds.includingCoordinate(marker.position)
             }
-            let update = GMSCameraUpdate.fit(bounds, withPadding: 10)
+            let update = GMSCameraUpdate.fit(bounds, withPadding: 20)
             self.mapView.animate(with: update)
         }
     }
 }
 
+//Map View delegate methods
 extension BranchesVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -103,7 +113,6 @@ extension BranchesVC: GMSMapViewDelegate {
         let imgName = customMarkerView.imageName
         let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), imageName: imgName, borderColor: secondaryColor, tag: customMarkerView.tag)
         marker.iconView = customMarker
-        print("didTap marker")
         return false
     }
     
@@ -113,21 +122,28 @@ extension BranchesVC: GMSMapViewDelegate {
             marker.tracksInfoWindowChanges = true
             let infoWindow = CustomMarkerInfoWindow()
             infoWindow.tag = 5555
-            let height: CGFloat = 200
-            let paddingWith = self.view.frame.width - 40
-            infoWindow.frame = CGRect(x: self.view.frame.width-100, y: self.view.frame.height-20, width: getEstimatedWidthForMarker(place, padding: paddingWith) + paddingWith, height: height)
-            infoWindow.imgView.image = UIImage(named: place.name!)
-            infoWindow.txtLabel.text = place.name
-            infoWindow.subtitleLabel.text = place.address
+            let height: CGFloat = 170
+            let paddingWith = self.view.frame.width-20
+            infoWindow.frame = CGRect(x: 0, y: 0, width: getEstimatedWidthForMarker(place, padding: paddingWith) + paddingWith, height: height)
+            for i in 0..<getBranches.count {
+                infoWindow.updateMarkerInfo(name: getBranches[i].name, address: getBranches[i].address, open_at: getBranches[i].open_at, close_at: getBranches[i].close_at, contact: getBranches[i].contact, logo: getBranches[i].logo)
+            }
             return infoWindow
         }
         return nil
     }
     
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        if let place = marker.userData as? SSPlace {
+            print("Info window tapped", place)
+            openGoogleMap()
+        }
+    }
     
     func mapView(_ mapView: GMSMapView, didCloseInfoWindowOf marker: GMSMarker) {
+        //        self.fetchSpots()
         guard let customMarkerView = marker.iconView as? CustomMarkerView else { return }
-        let imgName = customMarkerView.imageName
+        let imgName = getBranches[0].logo
         let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), imageName: imgName, borderColor: primaryColor, tag: customMarkerView.tag)
         marker.iconView = customMarker
     }
@@ -136,8 +152,8 @@ extension BranchesVC: GMSMapViewDelegate {
         var estimatedWidth: CGFloat = 0
         let infoWindow = CustomMarkerInfoWindow()
         let maxWidth = (UIDevice.current.userInterfaceIdiom == .pad ? UIScreen.main.bounds.width * 0.7 : UIScreen.main.bounds.width * 0.8) - padding
-        let titleWidth = (place.name ?? "").width(withConstrainedHeight: infoWindow.txtLabel.frame.height, font: infoWindow.txtLabel.font)
-        let subtitleWidth = (place.address ?? "").width(withConstrainedHeight: infoWindow.subtitleLabel.frame.height, font: infoWindow.subtitleLabel.font)
+        let titleWidth = (place.name ?? "").width(withConstrainedHeight: infoWindow.addressLabel.frame.height, font: infoWindow.addressLabel.font)
+        let subtitleWidth = (place.address ?? "").width(withConstrainedHeight: infoWindow.nameLabel.frame.height, font: infoWindow.nameLabel.font)
         estimatedWidth = min(maxWidth, max(titleWidth, subtitleWidth))
         return estimatedWidth
     }
@@ -197,14 +213,14 @@ extension BranchesVC {
     }
     
     func openTrackerInBrowser(){
-        let lat = 30
-        let longi = 40
+        let lat = 69.3209524
+        let longi = 41.3281887
         if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(lat),\(longi)&directionsmode=driving") {
             UIApplication.shared.openURL(urlDestination)
         }
     }
     
-    func openBeeto() {
+    func openGoogleDriveMap() {
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
             UIApplication.shared.open(URL(string:"comgooglemaps://?center=\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(41.3281887),\(69.3209524)")!, options: [:], completionHandler: nil)
         } else {

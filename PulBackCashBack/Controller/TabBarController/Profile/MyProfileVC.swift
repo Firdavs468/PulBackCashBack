@@ -10,11 +10,6 @@ import UIKit
 class MyProfileVC: UIViewController {
     
     @IBOutlet weak var table_view: UITableView!
-    @IBOutlet weak var userImage: UIImageView! {
-        didSet {
-            userImage.layer.cornerRadius = userImage.frame.height/2
-        }
-    }
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
@@ -24,12 +19,7 @@ class MyProfileVC: UIViewController {
         "Поделиться приложением",
         "Жалобы и предложения"
     ]
-    let imagesArr = [
-        UIImage(named: "setting")!,
-        UIImage(named: "information")!,
-        UIImage(named: "wifi")!,
-        UIImage(named: "message")!
-    ]
+    
     let userData : UserData! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +32,6 @@ class MyProfileVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userNameLabel.textColor = AppColor.appColor
-        userImage.layer.masksToBounds = true
-        userImage.layer.cornerRadius = userImage.frame.height/2
     }
     
     @IBAction func callCenterButtonPressed(_ sender: Any) {
@@ -92,7 +80,7 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.table_view.dequeueReusableCell(withIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
-        cell.updateCell(image:imagesArr[indexPath.row] , label: lblsArr[indexPath.row])
+        cell.updateCell(image:AppIcon.settingsImages[indexPath.row] , label: lblsArr[indexPath.row])
         return cell
     }
     
@@ -106,6 +94,9 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 3 {
             let vc = ReviewsVC(nibName: "ReviewsVC", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let product = ProductsVC(nibName: "ProductsVC", bundle: nil)
+            present(product, animated: true, completion: nil)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -141,7 +132,7 @@ extension MyProfileVC {
 //MARK: - Share App
 extension MyProfileVC {
     func shareApp() {
-        if let urlStr = NSURL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8") {
+        if let urlStr = NSURL(string: AppURL.shareMyApp) {
             let objectsToShare = [urlStr]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
@@ -155,3 +146,4 @@ extension MyProfileVC {
         }
     }
 }
+

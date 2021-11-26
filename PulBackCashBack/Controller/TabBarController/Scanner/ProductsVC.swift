@@ -19,6 +19,7 @@ class ProductsVC: UIViewController {
     @IBOutlet weak var qrCodeLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var goToBeeto: UIButton!
     
     var getPrices : [Prices] = []
     var itemGetByBarCode : ItemGetByBarCode!
@@ -27,8 +28,12 @@ class ProductsVC: UIViewController {
         setupCollectionView()
         setupUI()
         getBarCodeAPI()
-        //        setupGetApiData()
     }
+    
+    @IBAction func goToBeetoButtonPressed(_ sender: Any) {
+        openApp()
+    }
+    
     @IBAction func scanerButtonPressed(_ sender: Any) {
         let viewController = BarcodeScannerViewController()
         viewController.codeDelegate = self
@@ -40,15 +45,12 @@ class ProductsVC: UIViewController {
     func setupUI() {
         scanerButton.layer.cornerRadius = scanerButton.frame.height/6
         scanerButton.backgroundColor = AppColor.appColor
+        goToBeeto.setTitleColor(AppColor.appColor, for: .normal)
+        goToBeeto.layer.borderWidth = 2
+        goToBeeto.layer.borderColor = AppColor.appColor.cgColor
         qrCodeLabel.textColor = AppColor.appColor
         numberLabel.textColor = AppColor.appColor
     }
-    //    func setupGetApiData() {
-    //        numberLabel.text = "\(itemGetByBarCode.sku)"
-    //        qrCodeLabel.text = itemGetByBarCode.barCode
-    //        itemImage.sd_setImage(with: URL(string: API.base_url+itemGetByBarCode.representation), placeholderImage: UIImage(named: "noitem"))
-    //        itemNameLabel.text = itemGetByBarCode.name
-    //    }
 }
 
 //MARK: - CollectionView delegate methods
@@ -61,7 +63,7 @@ extension ProductsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !itemGetByBarCode.prices.isEmpty {
+        if !getPrices.isEmpty {
             return getPrices.count
         }else {
             return 0
@@ -73,7 +75,7 @@ extension ProductsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if !getPrices.isEmpty {
             self.collection_view.isHidden = false
             Loader.stop()
-            cell.updateCell(summa: "\(itemGetByBarCode.prices[indexPath.row].price)", count: "\(itemGetByBarCode.prices[indexPath.row].from)")
+            cell.updateCell(summa: "\(getPrices[indexPath.row].price)", count: "\(getPrices[indexPath.row].from)")
         }else {
             Loader.start()
             self.collection_view.isHidden = true
@@ -99,11 +101,11 @@ extension ProductsVC {
             "Content-Type": "application/json"
         ]
         let param : [String:Any] = [
-            "barcode" : "4780101734276"
+            "barcode" : Cache.getUserDefaultsString(forKey: Keys.bar_code) //"8714599107492" 
         ]
         Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { [self] data in
             if let data = data {
-                print("data✅✅✅ = ",data)
+                print(data)
                 let itemData = data["data"]
                 let dataPrices = data["data"]["prices"]
                 if data["code"].intValue == 0 {
@@ -113,9 +115,17 @@ extension ProductsVC {
                         self.collection_view.reloadData()
                     }
                     //item data
-                 let getItem = ItemGetByBarCode(prices: getPrices, name: itemData["name"].stringValue, in_stock: itemData["in_stock"].intValue, _id: itemData["_id"].stringValue, barCode: itemData["barcode"].stringValue, sold_by: itemData["sold_by"].stringValue, representation: itemData["representation"].stringValue, price: itemData["price"].intValue, sku: itemData["sku"].intValue, representation_type: "")
+                    numberLabel.text = "#\(itemData["sku"].intValue)"
+                    qrCodeLabel.text = Cache.getUserDefaultsString(forKey: Keys.bar_code)
+                    itemImage.sd_setImage(with: URL(string: itemData["representation"].stringValue), placeholderImage: UIImage(named: "noitem"))
+                    let img = itemData["representation"].stringValue
+                    let urlString = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? img
+                    self.itemImage.sd_setImage(with: URL(string:urlString))
+                    itemNameLabel.text = itemData["name"].stringValue
+                    //                                     let getItem = ItemGetByBarCode(prices: getPrices, name: itemData["name"].stringValue, in_stock: itemData["in_stock"].intValue, _id: itemData["_id"].stringValue, barCode: itemData["barcode"].stringValue, sold_by: itemData["sold_by"].stringValue, representation: itemData["representation"].stringValue, price: itemData["price"].intValue, sku: itemData["sku"].intValue, representation_type: "")
                     
                 }else if data["code"].intValue == 12000 {
+                    dismiss(animated: true, completion: nil)
                     Alert.showAlert(forState: .error, message: "Товар не найден")
                 }
             }
@@ -123,13 +133,12 @@ extension ProductsVC {
     }
 }
 
-
-
 //MARK: - BarCode delegate
 extension ProductsVC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print(code)
         //        controller.reset()
+        Cache.saveUserDefaults(code, forKey: Keys.bar_code)
         let vc = ProductsVC(nibName: "ProductsVC", bundle: nil)
         present(vc, animated: true, completion: nil)
     }

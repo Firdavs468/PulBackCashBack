@@ -9,8 +9,23 @@ import UIKit
 
 class NewsTappedVC: UIViewController {
     
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    var getBanner : GetBannerNews!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Новости"
+        setupGetBanner()
     }
+    
+    func setupGetBanner() {
+        img.sd_setImage(with: URL(string: API.EndPoints.getImage + getBanner.image), placeholderImage: AppIcon.noItem)
+        titleLabel.text = getBanner.title
+        contentLabel.text = getBanner.content
+        createdLabel.text = getBanner.created_at
+    }
+    
 }

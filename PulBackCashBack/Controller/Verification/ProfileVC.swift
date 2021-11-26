@@ -20,21 +20,22 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var familyStatusTextField: UITextField!
     
-    let datePicker = UIDatePicker()
-    
+    var picker = UIDatePicker()
+    var comp = NSDateComponents()
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
         tapGesture()
         registerKeyboardNotifications()
-        showDatePicker()
         newAppColor()
+        
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
         Cache.saveUserDefaults(surnameTextField.text, forKey: Keys.surname)
-        if nameTextField.text!.isEmpty {
+        Cache.saveUserDefaults(birthdayTextField.text!+"T14:58:29.134673671+05:00",forKey: Keys.bithday)
+        if nameTextField.text!.isEmpty || birthdayTextField.text!.isEmpty {
             Alert.showAlert(forState: .error, message: "Ma'lumotlarni to'ldiring")
         }else {
             continueSignUp()
@@ -55,7 +56,7 @@ class ProfileVC: UIViewController {
     
     //birthday button pressed
     @IBAction func birthdayButtonPressed(_ sender: Any) {
-        
+        showDatePicker()
     }
     
     //gender button pressed
@@ -101,43 +102,7 @@ class ProfileVC: UIViewController {
     //new app color
     func newAppColor() {
         requiredLabel.textColor = AppColor.appColor
-        nextButton.tintColor = AppColor.appColor
-    }
-    
-    //birthday. DatePicker
-    func showDatePicker(){
-        //Formate Date
-        datePicker.datePickerMode = .date
-        
-        //ToolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        
-        //done button & cancel button
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.bordered, target: self, action: "donedatePicker")
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.bordered, target: self, action: "cancelDatePicker")
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
-        // add toolbar to textField
-        //        birthdayTF.accessoryView = toolbar
-        // add datepicker to textField
-        //        birthdayTF.textInputView = datePicker
-        
-    }
-    
-    func donedatePicker(){
-        //For date formate
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MM yyyy"
-        //        birthdayTF.text = formatter.string(from: datePicker.date)
-        //dismiss date picker dialog
-        self.view.endEditing(true)
-    }
-    
-    func cancelDatePicker(){
-        //cancel button dismiss datepicker dialog
-        self.view.endEditing(true)
+        nextButton.backgroundColor = AppColor.appColor
     }
     
     //corner View /// corner Radius
@@ -149,6 +114,22 @@ class ProfileVC: UIViewController {
     }
     
     
+    // datePicker setup
+    func showDatePicker() {
+        //T14:58:29.134673671+05:00
+        picker = UIDatePicker()
+        birthdayTextField.inputView = picker
+        picker.addTarget(self, action: #selector(ProfileVC.handleDatePicker), for: UIControl.Event.valueChanged)
+        picker.datePickerMode = .date
+    }
+    
+    @objc func handleDatePicker() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        birthdayTextField.text = dateFormatter.string(from: picker.date)
+        birthdayTextField.resignFirstResponder()
+    }
+    
 }
 
 //MARK: - Text Field Delegate
@@ -159,8 +140,8 @@ extension ProfileVC : UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
@@ -234,7 +215,6 @@ extension ProfileVC {
         let param : [String : Any] = [
             "phone" : Cache.getUserDefaultsString(forKey: Keys.phone_number)
         ]
-        
         Networking.fetchRequest(urlAPI: API.continueSignUpUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: Net.commonHeader) { data in
             if let data = data {
                 Loader.start()

@@ -26,25 +26,24 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
     
     func setupTabBar() {
         let home = HomeVC(nibName: "HomeVC", bundle: nil)
-        home.tabBarItem.image = UIImage(named: "home")
+        home.tabBarItem.image = AppIcon.tabBarHome
         home.tabBarItem.title = "Главная"
-        //        let navHome =  UINavigationController(rootViewController: home)
         
         let branches = BranchesVC(nibName: "BranchesVC", bundle: nil)
         branches.title = "Филиалы"
-        branches.tabBarItem.image = UIImage(named: "branches")
+        branches.tabBarItem.image = AppIcon.tabBarBraches
         branches.tabBarItem.title = "Филиалы"
         let navbranches =  UINavigationController(rootViewController: branches)
         
         let viewController = BarcodeScannerViewController()
-        viewController.tabBarItem.image = UIImage(named: "scaner")
+        viewController.tabBarItem.image = AppIcon.tabBarScaner
         viewController.codeDelegate = self
         viewController.errorDelegate = self
         viewController.dismissalDelegate = self
         
         let news = NewsVC(nibName: "NewsVC", bundle: nil)
         news.title = "Новости"
-        news.tabBarItem.image = UIImage(named: "notification")
+        news.tabBarItem.image = AppIcon.tabBarNotification
         news.tabBarItem.title = "Новости"
         let navnews =  UINavigationController(rootViewController: news)
         
@@ -54,7 +53,7 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         profile.tabBarItem.title = "Профиль"
         let navprofile =  UINavigationController(rootViewController: profile)
         
-        viewControllers = [home,navbranches,viewController,navnews, navprofile]
+        viewControllers = [home, navbranches, viewController,  navnews, navprofile]
     }
     
     @objc func selector() {
@@ -66,7 +65,7 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
 extension TabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print(code)
-//        controller.reset()
+        //        controller.reset()
         Cache.saveUserDefaults(code, forKey: Keys.bar_code)
         let vc = ProductsVC(nibName: "ProductsVC", bundle: nil)
         present(vc, animated: true, completion: nil)
@@ -80,6 +79,18 @@ extension TabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDeleg
         controller.dismiss(animated: true, completion: nil)
     }
     
-    
 }
 
+extension TabBarController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        switch viewController {
+            case is BarcodeScannerViewController :
+                let vc = BarcodeScannerViewController(nibName: "BarcodeScannerViewController", bundle: nil)
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false, completion: nil)
+                return false
+            default:
+                return true
+        }
+    }
+}

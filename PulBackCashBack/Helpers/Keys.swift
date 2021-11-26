@@ -18,4 +18,6 @@ class Keys {
     static let password = "password"
     static let checkingPassword = "checkingPassword"
     static let isLogged = "isLogged"
+    static let card_id = "card_id"
+    static let bithday = "birthday"
 }

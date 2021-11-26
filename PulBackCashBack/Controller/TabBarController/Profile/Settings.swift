@@ -34,7 +34,7 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
     private func setupTableView() {
         self.table_view.delegate = self
         self.table_view.dataSource = self
-//        self.table_view.separatorStyle = .none
+        //        self.table_view.separatorStyle = .none
         self.table_view.tableFooterView = UIView()
         self.table_view.register(SettingsCell.nib(), forCellReuseIdentifier: SettingsCell.identifier)
     }
@@ -64,6 +64,7 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
             Cache.saveUserDefaults(false, forKey: Keys.isLogged)
             Cache.saveUserDefaults(nil, forKey: Keys.password)
             let vc = PinVC(nibName: "PinVC", bundle: nil)
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
     }

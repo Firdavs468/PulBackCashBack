@@ -32,15 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.overrideUserInterfaceStyle = .light
         }
         if Cache.isUserLogged() {
-            let pin = PinVC(nibName: "PinVC", bundle: nil)
-            window?.rootViewController = pin
+            //            let home = TabBarController(nibName: "TabBarController", bundle: nil)
+            let home = PinVC(nibName: "PinVC", bundle: nil)
+            window?.rootViewController = home
         }else {
             let main = MainVC(nibName: "MainVC", bundle: nil)
             window?.rootViewController = main
         }
-        //        Cache.saveUserDefaults("4444", forKey: Keys.password)
-        //        let news = NewsVC(nibName: "NewsVC", bundle: nil)
-        //        window?.rootViewController = news
         window?.makeKeyAndVisible()
         return true
     }

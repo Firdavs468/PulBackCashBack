@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class BalanceCell: UITableViewCell {
     
@@ -29,10 +30,12 @@ class BalanceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        barCodeNumberLabel.text = "\(UserDefaults.standard.integer(forKey: Keys.card_id))"
         userNameLabel.text = BalanceCell.userName
         let tap = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
         containerView.isUserInteractionEnabled = true
         containerView.addGestureRecognizer(tap)
+        barCodeImage.image = UIImage(barcode: barCodeNumberLabel.text!)
     }
     
     //flip card animation
@@ -106,6 +109,54 @@ class BalanceCell: UITableViewCell {
     
     func updateCell(balance:String) {
         self.balancLabel.text = balance
+    }
+    
+    
+}
+class BarcodeGenerator {
+    enum Descriptor: String {
+        case code128 = "CICode128BarcodeGenerator"
+        case pdf417 = "CIPDF417BarcodeGenerator"
+        case aztec = "CIAztecCodeGenerator"
+        case qr = "CIQRCodeGenerator"
+    }
+    
+    class func generate(from string: String, descriptor: Descriptor, size: CGSize) -> CIImage? {
+        let filterName = descriptor.rawValue
+        
+        guard let data = string.data(using: .ascii),
+              let filter = CIFilter(name: filterName) else {
+            return nil
+        }
+        
+        filter.setValue(data, forKey: "inputMessage")
+        
+        guard let image = filter.outputImage else {
+            return nil
+        }
+        
+        let imageSize = image.extent.size
+        
+        let transform = CGAffineTransform(scaleX: size.width / imageSize.width,
+                                          y: size.height / imageSize.height)
+        let scaledImage = image.transformed(by: transform)
+        
+        return scaledImage
+    }
+}
+
+extension UIImage {
+    
+    convenience init?(barcode: String) {
+        let data = barcode.data(using: .ascii)
+        guard let filter = CIFilter(name: "CICode128BarcodeGenerator") else {
+            return nil
+        }
+        filter.setValue(data, forKey: "inputMessage")
+        guard let ciImage = filter.outputImage else {
+            return nil
+        }
+        self.init(ciImage: ciImage)
     }
     
 }

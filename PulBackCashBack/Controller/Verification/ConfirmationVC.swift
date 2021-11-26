@@ -125,6 +125,7 @@ extension ConfirmationVC {
                     if data["code"].intValue == 0 {
                         Cache.saveUserToken(token: data["data"]["token"].stringValue)
                         Loader.stop()
+                        Cache.saveUserDefaults(data["data"]["card_id"].intValue, forKey: Keys.card_id)
                         Cache.saveUserDefaults(data["data"]["first_name"].stringValue, forKey: Keys.name)
                         Cache.saveUserDefaults(data["data"]["last_name"].stringValue, forKey: Keys.surname)
                         let vc = PinVC(nibName: "PinVC", bundle: nil)
@@ -162,7 +163,7 @@ extension ConfirmationVC {
             let param : [String : Any] = [
                 "first_name": Cache.getUserDefaultsString(forKey: Keys.name),
                 "last_name": Cache.getUserDefaultsString(forKey: Keys.surname),
-                "birth_date": "2003-11-11T14:58:29.134673671+05:00",
+                "birth_date": Cache.getUserDefaultsString(forKey: Keys.bithday),
                 "gender": UserDefaults.standard.integer(forKey: Keys.gender),
                 "family_status": UserDefaults.standard.integer(forKey: Keys.family_status),
                 "phone": Cache.getUserDefaultsString(forKey: Keys.phone_number),
@@ -176,6 +177,7 @@ extension ConfirmationVC {
                     let jsonData = JSON(data)
                     if jsonData["code"].intValue == 0 {
                         Cache.saveUserToken(token: data["data"]["token"].stringValue)
+                        Cache.saveUserDefaults(data["data"]["card_id"].intValue, forKey: Keys.card_id)
                         Loader.stop()
                         let vc = PinVC(nibName: "PinVC", bundle: nil)
                         let window = UIApplication.shared.keyWindow

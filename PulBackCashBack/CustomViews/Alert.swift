@@ -49,7 +49,7 @@ class Alert {
         let closeBtn = UIButton()
         closeBtn.backgroundColor = .clear
         if #available(iOS 13.0, *) {
-            closeBtn.setImage(UIImage(systemName: "x.circle")!.withRenderingMode(.alwaysTemplate), for: .normal)
+            closeBtn.setImage(AppIcon.circleImage.withRenderingMode(.alwaysTemplate), for: .normal)
             closeBtn.tintColor = .white
             closeBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             alertView.addSubview(closeBtn)

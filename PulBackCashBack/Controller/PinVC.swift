@@ -25,8 +25,8 @@ class PinVC: UIViewController {
     @IBOutlet weak var touchIDButton: UIButton!
     @IBOutlet var numbersButton: [UIButton]!
     
-    let circle  = UIImage(systemName: "circle")
-    let circleFill = UIImage(systemName: "circle.fill")
+    let circle  = AppIcon.circle
+    let circleFill = AppIcon.circleFill
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +153,7 @@ class PinVC: UIViewController {
     func cornerView() {
         for number in numbersButton {
             number.tintColor = AppColor.appColor
+            number.layer.cornerRadius = number.frame.height/2
         }
     }
     

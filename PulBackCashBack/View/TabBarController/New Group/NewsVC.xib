@@ -21,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QIs-B9-wqW" customClass="ScalingCarouselView" customModule="ScalingCarousel">
-                    <rect key="frame" x="0.0" y="54" width="414" height="738"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QIs-B9-wqW">
+                    <rect key="frame" x="0.0" y="54" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="i1W-dW-14z">
                         <size key="itemSize" width="128" height="128"/>
@@ -40,7 +40,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIs-B9-wqW" secondAttribute="bottom" constant="70" id="G7K-aT-G9K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIs-B9-wqW" secondAttribute="bottom" id="G7K-aT-G9K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QIs-B9-wqW" secondAttribute="trailing" id="GwM-jL-JGB"/>
                 <constraint firstItem="QIs-B9-wqW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="cfJ-3P-BN3"/>
                 <constraint firstItem="QIs-B9-wqW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oGV-ct-HiU"/>

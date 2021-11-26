@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, OpenBeeto {
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var table_view: UITableView!
@@ -82,7 +82,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             if isSmalScreen568 {
                 return 200
             }else if isSmalScreen736 {
-                return 220
+                return 200
             }else {
                 return 240
             }
@@ -101,15 +101,13 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: - Open app with URL
-extension HomeVC : OpenBeeto {
+//MARK: go to Beeto
+extension UIViewController {
     func openApp() {
-        let appURLScheme = "https://apps.apple.com/uz/app/payme-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8-%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%8B/id1093525667"
-        
+        let appURLScheme = AppURL.openBeeto
         guard let appURL = URL(string: appURLScheme) else {
             return
         }
-        
         if UIApplication.shared.canOpenURL(appURL) {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(appURL)
@@ -168,7 +166,6 @@ extension HomeVC {
         Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
             if let data = data {
                 print("data✅✅✅ = ",data)
-                
             }
         }
     }

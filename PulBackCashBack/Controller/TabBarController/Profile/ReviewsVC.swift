@@ -8,10 +8,11 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AVKit
+import Photos
 import AVFoundation
 
-class ReviewsVC: UIViewController {
+//https://youtu.be/1-xGerv5FOk
+class ReviewsVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
@@ -22,20 +23,17 @@ class ReviewsVC: UIViewController {
         "Выберите филиал",
         "Прикрепить файл"
     ]
-    let cellButtonImage = [
-        UIImage(systemName: "chevron.right"),
-        UIImage(systemName: "chevron.right"),
-        UIImage(named: "upload")
-    ]
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Отзывы"
         cornerView()
         setupTableView()
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-            view.addGestureRecognizer(tapGesture)
-       
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        textView.insertTextPlaceholder(with: CGSize(width: 10, height: 10))
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
@@ -75,7 +73,7 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.table_view.dequeueReusableCell(withIdentifier: ReviewsCell.identifier, for: indexPath) as! ReviewsCell
         cell.selectionStyle = .none
-        cell.updateCell(lbl: cellLabelArray[indexPath.row], buttonImage: cellButtonImage[indexPath.row]!)
+        cell.updateCell(lbl: cellLabelArray[indexPath.row], buttonImage: AppIcon.reviewsCellButtonImage[indexPath.row]!)
         return cell
     }
     
@@ -91,6 +89,9 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
         }else {
             return 65
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     }
     
 }
@@ -109,12 +110,13 @@ extension ReviewsVC {
                 "branch": 1,
                 "image": "http://89.223.71.112:9494/image?path=temp-images/upload-3367296366.png"
             ]
-            Networking.fetchRequest(urlAPI: API.feedbackUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+            Networking.fetchRequest(urlAPI: API.feedbackUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
                     Loader.start()
                     print(data)
                     if data["code"].intValue == 0 {
                         Loader.stop()
+                        textView.text = ""
                         Alert.showAlert(forState: .success, message: "Идея была успешно отправлена")
                     }else if data["code"].intValue == 50003 {
                         Loader.stop()
