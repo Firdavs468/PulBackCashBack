@@ -35,3 +35,19 @@ extension UILabel {
         self.attributedText = attribute
     }
 }
+
+// saved a photo to the gallery
+extension UIViewController {
+    func savedGallery() {
+        let selectedImage = UIImage() // tanlangan rasm
+        let imageData = selectedImage.jpegData(compressionQuality: 0.6)!
+        let compressedJPGImage = UIImage(data: imageData)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        
+        let alert = UIAlertView(title: "Wow",
+                                message: "Your image has been saved to Photo Library!",
+                                delegate: nil,
+                                cancelButtonTitle: "Ok")
+        alert.show()
+    }
+}

@@ -10,14 +10,11 @@
 		12AFCCD9BAF67994579D2546 /* Pods_PulBackCashBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2206563A276C828035D9849 /* Pods_PulBackCashBack.framework */; };
 		C7113932273D3551007B74EE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7113931273D3551007B74EE /* Reachability.swift */; };
 		C7113939273D384D007B74EE /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = C7113938273D384D007B74EE /* loader.json */; };
-		C711393B273D3860007B74EE /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = C711393A273D3860007B74EE /* done.json */; };
-		C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C721A7F62746A5CD00DD82A5 /* Assets.xcassets */; };
+		C7298D1427540A6F00638DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7298D1327540A6F00638DCD /* Assets.xcassets */; };
 		C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */; };
 		C73A1BC627342E78009E6D1D /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */; };
 		C73F67912750F8CD00C04775 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F67902750F8CD00C04775 /* AppURL.swift */; };
 		C73F67932750F96B00C04775 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F67922750F96B00C04775 /* AppIcon.swift */; };
-		C7455F0B274FC5B200F6B8F7 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7455F09274FC5B200F6B8F7 /* ImagePickerVC.swift */; };
-		C7455F0C274FC5B200F6B8F7 /* ImagePickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7455F0A274FC5B200F6B8F7 /* ImagePickerVC.xib */; };
 		C753C4E52743D756004D3C18 /* Pays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E42743D756004D3C18 /* Pays.swift */; };
 		C753C4E82743DF28004D3C18 /* BonusesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */; };
 		C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */; };
@@ -56,15 +53,19 @@
 		C785A214272ACB9E0061B719 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C785A212272ACB9E0061B719 /* LoginVC.xib */; };
 		C785A216272ACCBE0061B719 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785A215272ACCBE0061B719 /* CustomTF.swift */; };
 		C785A219272ACCE20061B719 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785A218272ACCE20061B719 /* Extension.swift */; };
+		C78BFCFF275B83DC000105F9 /* ProfileUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BFCFD275B83DB000105F9 /* ProfileUpdateVC.swift */; };
+		C78BFD00275B83DC000105F9 /* ProfileUpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78BFCFE275B83DC000105F9 /* ProfileUpdateVC.xib */; };
 		C78F2C3B273E1EE600EF6AF3 /* GetBannerNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78F2C3A273E1EE500EF6AF3 /* GetBannerNews.swift */; };
 		C7B1063C27369FDF004A0CD5 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B1063A27369FDF004A0CD5 /* ProductsVC.swift */; };
 		C7B1063D27369FDF004A0CD5 /* ProductsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B1063B27369FDF004A0CD5 /* ProductsVC.xib */; };
+		C7B8BF7427526F44000EFB3B /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8BF7327526F44000EFB3B /* CustomAlert.swift */; };
+		C7B8BF76275282A2000EFB3B /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B8BF75275282A2000EFB3B /* done.json */; };
 		C7CCBFB1273AF18100A8D5ED /* CarouselData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCBFB0273AF18100A8D5ED /* CarouselData.swift */; };
+		C7D079E82756554500B4A87D /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D079E72756554500B4A87D /* AppLanguage.swift */; };
 		C7D0C2632732C92B00AE06CB /* BonusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D0C2612732C92B00AE06CB /* BonusesCell.swift */; };
 		C7D0C2642732C92B00AE06CB /* BonusesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D0C2622732C92B00AE06CB /* BonusesCell.xib */; };
 		C7D320AE274CF68600DF180E /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D320AC274CF68600DF180E /* NewsCell.swift */; };
 		C7D320AF274CF68600DF180E /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D320AD274CF68600DF180E /* NewsCell.xib */; };
-		C7D320B1274CFBEA00DF180E /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D320B0274CFBEA00DF180E /* CodeCell.swift */; };
 		C7E08A5F273A313A00C15A74 /* NewsTappedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E08A5D273A313A00C15A74 /* NewsTappedVC.swift */; };
 		C7E08A60273A313A00C15A74 /* NewsTappedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E08A5E273A313A00C15A74 /* NewsTappedVC.xib */; };
 		C7E0B43A272F9A2B00FE4F78 /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0B438272F9A2B00FE4F78 /* ConfirmationVC.swift */; };
@@ -96,14 +97,11 @@
 		A6194DD12C370CC913863650 /* Pods-PulBackCashBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulBackCashBack.release.xcconfig"; path = "Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack.release.xcconfig"; sourceTree = "<group>"; };
 		C7113931273D3551007B74EE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../../../Bananjon/Bananjon/Networking/Reachability.swift; sourceTree = "<group>"; };
 		C7113938273D384D007B74EE /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loader.json; path = "../../../Bananjon/Bananjon/Lottie Files/loader.json"; sourceTree = "<group>"; };
-		C711393A273D3860007B74EE /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = done.json; path = "../../../Bananjon/Bananjon/Lottie Files/done.json"; sourceTree = "<group>"; };
-		C721A7F62746A5CD00DD82A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/PulBackCashBack-main 2/PulBackCashBack/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
+		C7298D1327540A6F00638DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/PulBackCashBack-main 2/PulBackCashBack/Recourses/Assets.xcassets"; sourceTree = "<group>"; };
 		C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerInfoWindow.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerInfoWindow.swift"; sourceTree = "<group>"; };
 		C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomMarkerView.swift; path = "../../../../../Downloads/CustomMarker-master/CustomMarker/CustomMarkerView.swift"; sourceTree = "<group>"; };
 		C73F67902750F8CD00C04775 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		C73F67922750F96B00C04775 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
-		C7455F09274FC5B200F6B8F7 /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
-		C7455F0A274FC5B200F6B8F7 /* ImagePickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerVC.xib; sourceTree = "<group>"; };
 		C753C4E42743D756004D3C18 /* Pays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pays.swift; sourceTree = "<group>"; };
 		C753C4E62743DF28004D3C18 /* BonusesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesTableCell.swift; sourceTree = "<group>"; };
 		C753C4E72743DF28004D3C18 /* BonusesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BonusesTableCell.xib; sourceTree = "<group>"; };
@@ -144,15 +142,19 @@
 		C785A212272ACB9E0061B719 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C785A215272ACCBE0061B719 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		C785A218272ACCE20061B719 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C78BFCFD275B83DB000105F9 /* ProfileUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateVC.swift; sourceTree = "<group>"; };
+		C78BFCFE275B83DC000105F9 /* ProfileUpdateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUpdateVC.xib; sourceTree = "<group>"; };
 		C78F2C3A273E1EE500EF6AF3 /* GetBannerNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBannerNews.swift; sourceTree = "<group>"; };
 		C7B1063A27369FDF004A0CD5 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		C7B1063B27369FDF004A0CD5 /* ProductsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsVC.xib; sourceTree = "<group>"; };
+		C7B8BF7327526F44000EFB3B /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		C7B8BF75275282A2000EFB3B /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = done.json; path = ../../../../../Downloads/done.json; sourceTree = "<group>"; };
 		C7CCBFB0273AF18100A8D5ED /* CarouselData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselData.swift; sourceTree = "<group>"; };
+		C7D079E72756554500B4A87D /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		C7D0C2612732C92B00AE06CB /* BonusesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesCell.swift; sourceTree = "<group>"; };
 		C7D0C2622732C92B00AE06CB /* BonusesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BonusesCell.xib; sourceTree = "<group>"; };
 		C7D320AC274CF68600DF180E /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C7D320AD274CF68600DF180E /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
-		C7D320B0274CFBEA00DF180E /* CodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
 		C7E08A5D273A313A00C15A74 /* NewsTappedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTappedVC.swift; sourceTree = "<group>"; };
 		C7E08A5E273A313A00C15A74 /* NewsTappedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTappedVC.xib; sourceTree = "<group>"; };
 		C7E0B438272F9A2B00FE4F78 /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
@@ -215,8 +217,8 @@
 		C7113937273D3841007B74EE /* Lottie Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7B8BF75275282A2000EFB3B /* done.json */,
 				C7113938273D384D007B74EE /* loader.json */,
-				C711393A273D3860007B74EE /* done.json */,
 			);
 			path = "Lottie Files";
 			sourceTree = "<group>";
@@ -349,8 +351,8 @@
 		C785A20B272AC82C0061B719 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7FE1F43273413A4004337ED /* CollectionViewCell */,
 				C77F7BF827318AE0003B3FAE /* TableView Cell */,
+				C7FE1F43273413A4004337ED /* CollectionViewCell */,
 				C77F7BF727317862003B3FAE /* Verification */,
 				C77F7BF6273166F9003B3FAE /* TabBarController */,
 				C766CB3427302F4700DB0E1A /* PinVC.xib */,
@@ -361,13 +363,11 @@
 		C785A20C272AC8300061B719 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C7FE1F3E27341380004337ED /* CollectionViewCell */,
 				C77F7BFE27318B4A003B3FAE /* TableViewCell */,
+				C7FE1F3E27341380004337ED /* CollectionViewCell */,
 				C77F7BFD27318B21003B3FAE /* Verification */,
 				C77F7BF5273166E8003B3FAE /* TabBarController */,
 				C766CB3327302F4700DB0E1A /* PinVC.swift */,
-				C7455F09274FC5B200F6B8F7 /* ImagePickerVC.swift */,
-				C7455F0A274FC5B200F6B8F7 /* ImagePickerVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 				C73A1BC327342E78009E6D1D /* CustomMarkerInfoWindow.swift */,
 				C73A1BC427342E78009E6D1D /* CustomMarkerView.swift */,
 				C782EF3427465ABE00565EFD /* DoneAlert.swift */,
-				C7D320B0274CFBEA00DF180E /* CodeCell.swift */,
+				C7B8BF7327526F44000EFB3B /* CustomAlert.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 		C7B025C027469C58009AA4C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C721A7F62746A5CD00DD82A5 /* Assets.xcassets */,
+				C7298D1327540A6F00638DCD /* Assets.xcassets */,
 				C785A201272AC7FB0061B719 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -446,6 +446,7 @@
 				C772A75E27451C6A00B5F5BF /* AppColor.swift */,
 				C73F67902750F8CD00C04775 /* AppURL.swift */,
 				C73F67922750F96B00C04775 /* AppIcon.swift */,
+				C7D079E72756554500B4A87D /* AppLanguage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -456,6 +457,7 @@
 				C77F7BF1273166DB003B3FAE /* MyProfileVC.swift */,
 				C7FE1F272733EC61004337ED /* Settings.swift */,
 				C7FE1F3627340771004337ED /* ReviewsVC.swift */,
+				C78BFCFD275B83DB000105F9 /* ProfileUpdateVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -466,6 +468,7 @@
 				C77F7BF2273166DB003B3FAE /* MyProfileVC.xib */,
 				C7FE1F282733EC61004337ED /* Settings.xib */,
 				C7FE1F3727340771004337ED /* ReviewsVC.xib */,
+				C78BFCFE275B83DC000105F9 /* ProfileUpdateVC.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -520,8 +523,8 @@
 				C785A1EF272AC7F60061B719 /* Sources */,
 				C785A1F0272AC7F60061B719 /* Frameworks */,
 				C785A1F1272AC7F60061B719 /* Resources */,
-				7770F1BA9B63258C26E79160 /* [CP] Embed Pods Frameworks */,
-				02E703203DAFBB89E0135C5F /* [CP] Copy Pods Resources */,
+				2F6FD5B5533A7EEC3A10F51C /* [CP] Embed Pods Frameworks */,
+				1CBFEFE8B95052F3D7495F4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,11 +572,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7455F0C274FC5B200F6B8F7 /* ImagePickerVC.xib in Resources */,
 				C7FE1F3927340771004337ED /* ReviewsVC.xib in Resources */,
 				C785A210272AC8860061B719 /* MainVC.xib in Resources */,
 				C77F7BF4273166DB003B3FAE /* MyProfileVC.xib in Resources */,
-				C721A7F72746A5CD00DD82A5 /* Assets.xcassets in Resources */,
+				C7298D1427540A6F00638DCD /* Assets.xcassets in Resources */,
 				C7FE1F302733ECEB004337ED /* SettingsCell.xib in Resources */,
 				C753C4F32743FD74004D3C18 /* ReviewsCell.xib in Resources */,
 				C7FC64D82736B02900A80D4B /* ProductsCell.xib in Resources */,
@@ -585,14 +587,15 @@
 				C785A214272ACB9E0061B719 /* LoginVC.xib in Resources */,
 				C7D320AF274CF68600DF180E /* NewsCell.xib in Resources */,
 				C77F7C0227318C5B003B3FAE /* OpenBeetoCell.xib in Resources */,
+				C78BFD00275B83DC000105F9 /* ProfileUpdateVC.xib in Resources */,
 				C77F7BE527316628003B3FAE /* HomeVC.xib in Resources */,
 				C77F7BE927316650003B3FAE /* BranchesVC.xib in Resources */,
-				C711393B273D3860007B74EE /* done.json in Resources */,
 				C7113939273D384D007B74EE /* loader.json in Resources */,
 				C7FE1F3D273412C7004337ED /* NewsVC.xib in Resources */,
 				C7FE1F342733F320004337ED /* ProfileCell.xib in Resources */,
 				C7E0B4482730180F00FE4F78 /* ProfileVC.xib in Resources */,
 				C7FE1F2A2733EC61004337ED /* Settings.xib in Resources */,
+				C7B8BF76275282A2000EFB3B /* done.json in Resources */,
 				C7E08A60273A313A00C15A74 /* NewsTappedVC.xib in Resources */,
 				C753C4E92743DF28004D3C18 /* BonusesTableCell.xib in Resources */,
 				C753C4ED2743E0AC004D3C18 /* PurchasesTableCell.xib in Resources */,
@@ -605,7 +608,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02E703203DAFBB89E0135C5F /* [CP] Copy Pods Resources */ = {
+		1CBFEFE8B95052F3D7495F4B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,6 +623,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F6FD5B5533A7EEC3A10F51C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3A9DE2D22FD47CC3C9B6B32E /* [CP] Check Pods Manifest.lock */ = {
@@ -644,23 +664,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7770F1BA9B63258C26E79160 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PulBackCashBack/Pods-PulBackCashBack-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -676,12 +679,12 @@
 				C78F2C3B273E1EE600EF6AF3 /* GetBannerNews.swift in Sources */,
 				C77F7BE827316650003B3FAE /* BranchesVC.swift in Sources */,
 				C7E0B442272FA0E900FE4F78 /* Alert.swift in Sources */,
-				C7455F0B274FC5B200F6B8F7 /* ImagePickerVC.swift in Sources */,
 				C77F7BE427316628003B3FAE /* HomeVC.swift in Sources */,
 				C73F67912750F8CD00C04775 /* AppURL.swift in Sources */,
 				C753C4F22743FD74004D3C18 /* ReviewsCell.swift in Sources */,
 				C772A75F27451C6A00B5F5BF /* AppColor.swift in Sources */,
 				C77F7BE1273165E7003B3FAE /* TabBarController.swift in Sources */,
+				C7D079E82756554500B4A87D /* AppLanguage.swift in Sources */,
 				C753C4EF2743EBAD004D3C18 /* Branches.swift in Sources */,
 				C785A1F7272AC7F60061B719 /* AppDelegate.swift in Sources */,
 				C77784B6273AA4D3002B1534 /* PurchasesCell.swift in Sources */,
@@ -705,12 +708,12 @@
 				C7FE1F3C273412C7004337ED /* NewsVC.swift in Sources */,
 				C778AD6A273D3AB500991C77 /* Net.swift in Sources */,
 				C753C4EC2743E0AC004D3C18 /* PurchasesTableCell.swift in Sources */,
+				C78BFCFF275B83DC000105F9 /* ProfileUpdateVC.swift in Sources */,
 				C7E0B43E272F9E4900FE4F78 /* Keys.swift in Sources */,
 				C785A213272ACB9E0061B719 /* LoginVC.swift in Sources */,
 				C7CCBFB1273AF18100A8D5ED /* CarouselData.swift in Sources */,
 				C7113932273D3551007B74EE /* Reachability.swift in Sources */,
 				C753C4E82743DF28004D3C18 /* BonusesTableCell.swift in Sources */,
-				C7D320B1274CFBEA00DF180E /* CodeCell.swift in Sources */,
 				C7FE1F332733F320004337ED /* ProfileCell.swift in Sources */,
 				C73A1BC527342E78009E6D1D /* CustomMarkerInfoWindow.swift in Sources */,
 				C778AD6C273D3AF300991C77 /* API.swift in Sources */,
@@ -718,6 +721,7 @@
 				C782EF3527465ABE00565EFD /* DoneAlert.swift in Sources */,
 				C785A219272ACCE20061B719 /* Extension.swift in Sources */,
 				C7FC64D72736B02900A80D4B /* ProductsCell.swift in Sources */,
+				C7B8BF7427526F44000EFB3B /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -841,7 +845,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -860,6 +864,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47VK337CR8;
 				INFOPLIST_FILE = "PulBackCashBack/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -880,6 +885,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47VK337CR8;
 				INFOPLIST_FILE = "PulBackCashBack/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

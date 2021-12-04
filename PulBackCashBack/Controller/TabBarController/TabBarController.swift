@@ -27,12 +27,12 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
     func setupTabBar() {
         let home = HomeVC(nibName: "HomeVC", bundle: nil)
         home.tabBarItem.image = AppIcon.tabBarHome
-        home.tabBarItem.title = "Главная"
+        home.tabBarItem.title = AppLanguage.getTitle(type: .homeTitle)
         
         let branches = BranchesVC(nibName: "BranchesVC", bundle: nil)
-        branches.title = "Филиалы"
+        branches.title = AppLanguage.getTitle(type: .branchesNav)
         branches.tabBarItem.image = AppIcon.tabBarBraches
-        branches.tabBarItem.title = "Филиалы"
+        branches.tabBarItem.title = AppLanguage.getTitle(type: .branchesNav)
         let navbranches =  UINavigationController(rootViewController: branches)
         
         let viewController = BarcodeScannerViewController()
@@ -42,15 +42,15 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         viewController.dismissalDelegate = self
         
         let news = NewsVC(nibName: "NewsVC", bundle: nil)
-        news.title = "Новости"
+        news.title = AppLanguage.getTitle(type: .newsTitle)
         news.tabBarItem.image = AppIcon.tabBarNotification
-        news.tabBarItem.title = "Новости"
+        news.tabBarItem.title = AppLanguage.getTitle(type: .newsNav)
         let navnews =  UINavigationController(rootViewController: news)
         
         let profile = MyProfileVC(nibName: "MyProfileVC", bundle: nil)
-        profile.title = "Профиль"
+        profile.title = AppLanguage.getTitle(type: .myProfileNav)
         profile.tabBarItem.image = UIImage(named: "user")
-        profile.tabBarItem.title = "Профиль"
+        profile.tabBarItem.title = AppLanguage.getTitle(type: .profileTitle)
         let navprofile =  UINavigationController(rootViewController: profile)
         
         viewControllers = [home, navbranches, viewController,  navnews, navprofile]

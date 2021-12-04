@@ -10,8 +10,6 @@ import GoogleMaps
 import Alamofire
 import SwiftyJSON
 
-
-
 let primaryColor = UIColor(red:0.00, green:0.19, blue:0.56, alpha:1.0)
 
 let secondaryColor = UIColor(red:0.89, green:0.15, blue:0.21, alpha:1.0)
@@ -25,7 +23,7 @@ struct SSPlace {
 let customMarkerWidth: Int = 50
 let customMarkerHeight: Int = 56
 
-class BranchesVC: UIViewController {
+class BranchesVC: UIViewController, CLLocationManagerDelegate {
     
     var places = [SSPlace]()
     
@@ -38,41 +36,56 @@ class BranchesVC: UIViewController {
         return v
     }()
     
+    var locationManager = CLLocationManager()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBranchesAPI()
+        
+        let camera = GMSCameraPosition.camera(withLatitude: 69,
+                                              longitude: 41,
+                                              zoom: 15.0)
+        self.mapView.animate(to: camera)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupMapView()
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+        
+            setupMapView()
             self.focusMapToShowAllMarkers()
-        }
     }
     
     //mapView create, setup mapView
     func setupMapView() {
         self.view.addSubview(mapView)
         mapView.setMinZoom(1, maxZoom: 15)
+        
         mapView.padding = UIEdgeInsets(top: 72, left: 25, bottom: 0, right: 25)
         mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        
         mapView.delegate = self
+        
         if !getBranches.isEmpty {
             Loader.stop()
             for i in 0..<getBranches.count {
                 places.append(SSPlace(name: getBranches[i].logo, address: getBranches[i].address, coordinates: (lat: getBranches[i].lat, lng: getBranches[i].long)))
                 print("places",places)
             }
+            
         }else {
             Loader.start()
             print("no item places")
-            mapView.camera = GMSCameraPosition(latitude: 69, longitude: 41, zoom: 14)
+            mapView.camera = GMSCameraPosition(latitude: 69,
+                                               longitude: 41,
+                                               zoom: 14)
             places.removeAll()
         }
+        
         self.addMarkers()
     }
     
@@ -80,8 +93,10 @@ class BranchesVC: UIViewController {
     func addMarkers() {
         markers.removeAll()
         for (index, place) in places.enumerated() {
+            
             let marker = GMSMarker()
             let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), imageName: place.name, borderColor: primaryColor, tag: index)
+            
             marker.iconView = customMarker
             marker.position = CLLocationCoordinate2D(latitude: place.coordinates!.lat, longitude: place.coordinates!.lng)
             marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0)
@@ -103,6 +118,7 @@ class BranchesVC: UIViewController {
             self.mapView.animate(with: update)
         }
     }
+    
 }
 
 //Map View delegate methods
@@ -173,18 +189,37 @@ extension String {
 extension BranchesVC {
     func getBranchesAPI() {
         if let token = Cache.getUserToken() {
+            
             let headers : HTTPHeaders = [
                 "Authorization": "\(token)"
             ]
+            
             Networking.fetchRequest(urlAPI: API.branchesUrl, method: .get, params: nil, encoding: JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
-                    print("data= ",data)
+                    
+                    Loader.start()
                     if data["code"].intValue == 0 {
+                        
                         let jsonData = JSON(data["data"])
+                        
                         for i in 0..<jsonData.count {
-                            let branches = Branches(_id: jsonData[i]["_id"].intValue, name: jsonData[i]["name"].stringValue, logo: jsonData[i]["logo"].stringValue, address: jsonData[i]["address"].stringValue, open_at: jsonData[i]["open_at"].stringValue, close_at: jsonData[i]["close_at"].stringValue, contact: jsonData[i]["contact"].stringValue, lat: jsonData[i]["lat"].doubleValue, long: jsonData[i]["long"].doubleValue)
+                            Loader.stop()
+                            
+                            let branches = Branches(_id: jsonData[i]["_id"].intValue,
+                                                    name: jsonData[i]["name"].stringValue,
+                                                    logo: jsonData[i]["logo"].stringValue,
+                                                    address: jsonData[i]["address"].stringValue,
+                                                    open_at: jsonData[i]["open_at"].stringValue,
+                                                    close_at: jsonData[i]["close_at"].stringValue,
+                                                    contact: jsonData[i]["contact"].stringValue,
+                                                    lat: jsonData[i]["lat"].doubleValue,
+                                                    long: jsonData[i]["long"].doubleValue)
+                            
                             getBranches.append(branches)
                         }
+                    }else if data["code"].intValue == 50019 {
+                        Loader.stop()
+                        Alert.showAlert(forState: .error, message: "Филиал не найден")
                     }
                 }
             }

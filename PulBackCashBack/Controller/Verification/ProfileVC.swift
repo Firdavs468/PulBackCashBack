@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class ProfileVC: UIViewController {
     
+    @IBOutlet weak var cashBackCardLbl: UILabel!
+    @IBOutlet weak var profileLbl: UILabel!
     @IBOutlet weak var requiredLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet var containerView: [UIView]!
@@ -19,17 +21,20 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var familyStatusTextField: UITextField!
+    @IBOutlet weak var continueLabel: UILabel!
     
     var picker = UIDatePicker()
     var comp = NSDateComponents()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
         tapGesture()
         registerKeyboardNotifications()
         newAppColor()
-        
+        setupLanguage()
     }
+    
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         Cache.saveUserDefaults(nameTextField.text, forKey: Keys.name)
@@ -128,6 +133,19 @@ class ProfileVC: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         birthdayTextField.text = dateFormatter.string(from: picker.date)
         birthdayTextField.resignFirstResponder()
+    }
+    
+    //app language
+    func setupLanguage() {
+        profileLbl.text = AppLanguage.getTitle(type: .profileLbl)
+        cashBackCardLbl.text = AppLanguage.getTitle(type: .cashBackCardLbl)
+        requiredLabel.text = AppLanguage.getTitle(type: .requiredFieldsLbl)
+        nameTextField.placeholder = AppLanguage.getTitle(type: .namePlc)
+        surnameTextField.placeholder = AppLanguage.getTitle(type: .surnamePlc)
+        birthdayTextField.placeholder = AppLanguage.getTitle(type: .birthdayPlc)
+        genderTextField.text = AppLanguage.getTitle(type: .genderPlc)
+        familyStatusTextField.placeholder = AppLanguage.getTitle(type: .familyStatusPlc)
+        continueLabel.text = AppLanguage.getTitle(type: .proccedLbl)
     }
     
 }

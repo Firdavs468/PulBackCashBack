@@ -24,12 +24,16 @@ class BonusesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         if isSmalScreen568 {
-            transformWidth = 125
+            transformWidth = 140
         }else if isSmalScreen736 {
             transformWidth = 170
         }else {
             transformWidth = 195
         }
+        
+        bonusesButton.setTitle(AppLanguage.getTitle(type: .bonusesBtn), for: .normal)
+        purchasesButton.setTitle(AppLanguage.getTitle(type: .purchasesBtn), for: .normal)
+        
         setupCollectionView()
     }
     

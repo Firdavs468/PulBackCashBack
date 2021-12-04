@@ -29,9 +29,4 @@ class AppIcon {
         UIImage(named: "message")!
     ]
     
-    static let reviewsCellButtonImage = [
-        UIImage(systemName: "chevron.right"),
-        UIImage(systemName: "chevron.right"),
-        UIImage(named: "upload")
-    ]
 }

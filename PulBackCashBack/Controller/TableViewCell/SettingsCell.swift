@@ -12,7 +12,11 @@ protocol SettingsDelegate {
 
 class SettingsCell: UITableViewCell {
     
+    @IBOutlet weak var useTouchIdLbl: UILabel!
     @IBOutlet weak var touchIdSwitch: UISwitch!
+    @IBOutlet weak var touchIdLb: UILabel!
+    
+    
     static func nib() -> UINib {
         return UINib(nibName: "SettingsCell", bundle: nil)
     }
@@ -22,6 +26,8 @@ class SettingsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        useTouchIdLbl.text = AppLanguage.getTitle(type: .useTouchIdLbl)
+        touchIdLb.text = AppLanguage.getTitle(type: .touchIdLbl)
     }
     
 }

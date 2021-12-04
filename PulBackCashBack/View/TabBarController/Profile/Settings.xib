@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Settings" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
+                <outlet property="supportButton" destination="ZpR-QW-B9c" id="0BE-vc-24a"/>
                 <outlet property="table_view" destination="sSH-DC-qVB" id="eLu-3s-F8w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,42 +21,58 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-DC-qVB">
-                    <rect key="frame" x="0.0" y="20" width="320" height="284"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-n3-EKY">
-                    <rect key="frame" x="80" y="334" width="160" height="64"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMN-Db-Yhv">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAH-KB-A94">
-                            <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                            <state key="normal" title="+998 94 555 58 92">
-                                <color key="titleColor" systemColor="systemBlueColor"/>
-                            </state>
-                            <connections>
-                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="xwb-IT-V7y"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpR-QW-B9c">
-                            <rect key="frame" x="0.0" y="34" width="160" height="30"/>
-                            <state key="normal" title="Служба поддержки"/>
-                            <connections>
-                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="Iwj-Ee-Iva"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-Ee-u89">
+                            <rect key="frame" x="0.0" y="20" width="320" height="503"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-DC-qVB">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="369"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-n3-EKY">
+                                    <rect key="frame" x="0.0" y="429" width="320" height="74"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAH-KB-A94">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                            <state key="normal" title="+998 94 555 58 92">
+                                                <color key="titleColor" systemColor="systemBlueColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="xwb-IT-V7y"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpR-QW-B9c">
+                                            <rect key="frame" x="0.0" y="37" width="320" height="37"/>
+                                            <state key="normal" title="Служба поддержки"/>
+                                            <connections>
+                                                <action selector="callCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="Iwj-Ee-Iva"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                </stackView>
+                    <constraints>
+                        <constraint firstItem="Okc-Ee-u89" firstAttribute="top" secondItem="xMN-Db-Yhv" secondAttribute="top" constant="20" id="DQU-SE-uzL"/>
+                        <constraint firstItem="Okc-Ee-u89" firstAttribute="leading" secondItem="xMN-Db-Yhv" secondAttribute="leading" id="IyG-Tu-vg5"/>
+                        <constraint firstAttribute="trailing" secondItem="Okc-Ee-u89" secondAttribute="trailing" id="R6X-bZ-Mt2"/>
+                        <constraint firstAttribute="bottom" secondItem="Okc-Ee-u89" secondAttribute="bottom" constant="20" id="etm-W9-BTm"/>
+                        <constraint firstItem="Okc-Ee-u89" firstAttribute="height" secondItem="xMN-Db-Yhv" secondAttribute="height" id="mf7-Xs-Vh4"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="sSH-DC-qVB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="UHw-fJ-hej"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sSH-DC-qVB" secondAttribute="trailing" id="Xgv-WB-yIt"/>
-                <constraint firstItem="Zic-n3-EKY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Yve-9v-9id"/>
-                <constraint firstItem="Zic-n3-EKY" firstAttribute="top" secondItem="sSH-DC-qVB" secondAttribute="bottom" constant="30" id="bC7-aT-3Yb"/>
-                <constraint firstItem="sSH-DC-qVB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vdp-Xl-kNY"/>
-                <constraint firstItem="sSH-DC-qVB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="xPy-jE-KM4"/>
+                <constraint firstItem="xMN-Db-Yhv" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.885563" id="8Yn-OS-qJa"/>
+                <constraint firstItem="xMN-Db-Yhv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9od-2W-zfx"/>
+                <constraint firstItem="sSH-DC-qVB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.65" id="K9F-Dy-uUO"/>
+                <constraint firstItem="xMN-Db-Yhv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mgO-ba-tE7"/>
+                <constraint firstItem="xMN-Db-Yhv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yw0-O2-uG2"/>
             </constraints>
             <point key="canvasLocation" x="28.985507246376812" y="60.9375"/>
         </view>

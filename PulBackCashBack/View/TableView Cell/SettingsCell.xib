@@ -51,7 +51,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="touchIdLb" destination="fd7-da-CWd" id="w4r-Hq-muh"/>
                 <outlet property="touchIdSwitch" destination="MZT-ra-kcE" id="tx5-JA-rbc"/>
+                <outlet property="useTouchIdLbl" destination="iwH-NE-7Ur" id="64s-qE-T2A"/>
             </connections>
             <point key="canvasLocation" x="46" y="126"/>
         </tableViewCell>

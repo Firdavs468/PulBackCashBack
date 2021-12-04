@@ -11,10 +11,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
                 <outlet property="birthdayTextField" destination="gW1-pV-x2s" id="g66-OX-QAM"/>
+                <outlet property="cashBackCardLbl" destination="QOR-eD-5I6" id="IRQ-5P-OIH"/>
+                <outlet property="continueLabel" destination="8Ec-fP-Vcv" id="ZPn-HG-7k8"/>
                 <outlet property="familyStatusTextField" destination="ZGX-Wb-yUV" id="Sf6-pI-F8U"/>
                 <outlet property="genderTextField" destination="R2J-Yo-1SQ" id="r76-O5-JUE"/>
                 <outlet property="nameTextField" destination="j4q-6L-ZTm" id="rK2-Ru-0Q8"/>
                 <outlet property="nextButton" destination="Q7u-6t-NGT" id="93o-Fh-aKd"/>
+                <outlet property="profileLbl" destination="rdA-dj-RmF" id="DSX-w5-u1i"/>
                 <outlet property="requiredLabel" destination="jvj-KX-22v" id="7po-1w-TTX"/>
                 <outlet property="surnameTextField" destination="cy6-8M-UQv" id="kK7-eK-Wcn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

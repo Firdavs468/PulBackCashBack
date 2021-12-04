@@ -23,7 +23,7 @@ class HomeVC: UIViewController, OpenBeeto {
         setupTableView()
         getBalanceAPI()
         setupUserLabel()
-        getBarCodeAPI()
+        
     }
     
     //userLabel setup
@@ -32,7 +32,8 @@ class HomeVC: UIViewController, OpenBeeto {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.22
         userLabel.numberOfLines = 0
-        userLabel.attributedText = NSMutableAttributedString(string: "Добрый день,\n\(userName)!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        
+        userLabel.attributedText = NSMutableAttributedString(string: AppLanguage.getTitle(type: .goodDayLbl), attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
     
 }
@@ -45,6 +46,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         self.table_view.dataSource = self
         self.table_view.separatorStyle = .none
         self.table_view.tableFooterView = UIView()
+        
         self.table_view.register(OpenBeetoCell.nib(), forCellReuseIdentifier: OpenBeetoCell.identifier)
         self.table_view.register(BalanceCell.nib(), forCellReuseIdentifier: BalanceCell.identifier)
         self.table_view.register(BonusesCell.nib(), forCellReuseIdentifier: BonusesCell.identifier)
@@ -75,12 +77,16 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //card flip animation
         if indexPath.row == 1 {
-            return 130
+            if isSmalScreen568 {
+               return 110
+            }else {
+                return 130
+            }
         }
         //go to Beeto
         else if indexPath.row == 0 {
             if isSmalScreen568 {
-                return 200
+                return 180
             }else if isSmalScreen736 {
                 return 200
             }else {
@@ -125,7 +131,8 @@ extension HomeVC {
     func navBarBackground(){
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded();      self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.layoutIfNeeded();
+        self.navigationItem.hidesBackButton = true
     }
 }
 
@@ -139,7 +146,6 @@ extension HomeVC {
                 ]
             Networking.fetchRequest(urlAPI: API.getBalanceUrl, method: .get, params: nil, encoding:JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
-                    print(data)
                     Loader.start()
                     let jsonData = JSON(data["data"])
                     if data["code"].intValue == 0 {
@@ -148,24 +154,6 @@ extension HomeVC {
                         self.table_view.reloadData()
                     }
                 }
-            }
-        }
-    }
-}
-
-//MARK: - Bar Code API
-extension HomeVC {
-    func getBarCodeAPI() {
-        let headers : HTTPHeaders = [
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiIrOTk4OTcxNTYwOTQ5Iiwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzMzUzODU2MCwiZXhwIjoxNjY1MDk2MTYwfQ.SzihTanBR0eugeEcRnsxiLf7h1CMD8CFJ_dKiQb0aeM",
-            "Content-Type": "application/json"
-        ]
-        let param : [String:Any] = [
-            "barcode" : "4780065640101"
-        ]
-        Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
-            if let data = data {
-                print("data✅✅✅ = ",data)
             }
         }
     }

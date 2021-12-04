@@ -23,6 +23,7 @@ class API {
         static let branches = "/branches"
         static let feedback = "/feedback"
         static let getImage = "http://89.223.71.112:9494/image?path="
+        
     }
     
     static  let signInUrl: URL = URL(string: base_url + EndPoints.signIn)!

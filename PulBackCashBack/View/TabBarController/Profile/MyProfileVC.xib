@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyProfileVC" customModule="PulBackCashBack" customModuleProvider="target">
             <connections>
+                <outlet property="myProfileLbl" destination="EzA-7C-Dca" id="qTg-3a-Cwd"/>
                 <outlet property="phoneNumberLabel" destination="oep-CG-bDR" id="Xm2-Cn-HXk"/>
+                <outlet property="supportBtn" destination="ukZ-7g-sdO" id="7Iv-tb-xbm"/>
                 <outlet property="table_view" destination="WaS-1S-zZk" id="Szf-SD-5jR"/>
                 <outlet property="userNameLabel" destination="HhX-X5-5rW" id="3qT-hR-JLc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,7 +38,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zkj-YE-kdT">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zkj-YE-kdT">
                                             <rect key="frame" x="0.0" y="45.5" width="280" height="54.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-IO-jQc">
@@ -57,8 +59,8 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On5-fk-Mdn">
-                                                    <rect key="frame" x="210.5" y="0.0" width="69.5" height="54.5"/>
-                                                    <state key="normal" image="login"/>
+                                                    <rect key="frame" x="205.5" y="0.0" width="74.5" height="54.5"/>
+                                                    <state key="normal" image="logout"/>
                                                     <connections>
                                                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="XXj-3A-QMw"/>
                                                     </connections>
@@ -118,7 +120,7 @@
         </view>
     </objects>
     <resources>
-        <image name="login" width="24" height="24"/>
+        <image name="logout" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

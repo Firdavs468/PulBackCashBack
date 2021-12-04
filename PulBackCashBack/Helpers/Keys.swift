@@ -20,4 +20,8 @@ class Keys {
     static let isLogged = "isLogged"
     static let card_id = "card_id"
     static let bithday = "birthday"
+    static let feedbackType = "feedbackType"
+    static let branchesAddress = "branchesAddress"
+    static let languages = "languages"
+    static let language = "language"
 }

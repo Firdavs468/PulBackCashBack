@@ -30,13 +30,23 @@ class BalanceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        appLanguage()
         barCodeNumberLabel.text = "\(UserDefaults.standard.integer(forKey: Keys.card_id))"
         userNameLabel.text = BalanceCell.userName
+        
+        //tap gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
         containerView.isUserInteractionEnabled = true
         containerView.addGestureRecognizer(tap)
         barCodeImage.image = UIImage(barcode: barCodeNumberLabel.text!)
     }
+    
+    func appLanguage() {
+        yourBalanceLabel.text = AppLanguage.getTitle(type: .myBalanceLbl)
+        showCodeButton.setTitle(AppLanguage.getTitle(type: .showCodeLbl), for: .normal)
+    }
+    
+    
     
     //flip card animation
     @IBAction func showCodeButtonPressed(_ sender: Any) {
@@ -113,6 +123,7 @@ class BalanceCell: UITableViewCell {
     
     
 }
+
 class BarcodeGenerator {
     enum Descriptor: String {
         case code128 = "CICode128BarcodeGenerator"

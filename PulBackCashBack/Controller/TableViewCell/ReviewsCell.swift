@@ -6,18 +6,16 @@
 //
 
 import UIKit
-
 class ReviewsCell: UITableViewCell {
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var lbl: UILabel!
-    @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var img: UIImageView!
     
     static func nib() -> UINib {
         return UINib(nibName: "ReviewsCell", bundle: nil)
     }
     static let identifier = "ReviewsCell"
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = containerView.frame.height/15
@@ -27,9 +25,10 @@ class ReviewsCell: UITableViewCell {
         containerView.layer.shadowOpacity = 0.4
     }
     
+    
     func updateCell(lbl:String, buttonImage:UIImage) {
         self.lbl.text = lbl
-        self.btn.setImage(buttonImage, for: .normal)
+        self.img.image = buttonImage
     }
     
 }

@@ -8,7 +8,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-
+//oqar suv - sevaramusic
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -31,14 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.windows.forEach { window in
             window.overrideUserInterfaceStyle = .light
         }
-        if Cache.isUserLogged() {
-            //            let home = TabBarController(nibName: "TabBarController", bundle: nil)
-            let home = PinVC(nibName: "PinVC", bundle: nil)
-            window?.rootViewController = home
-        }else {
-            let main = MainVC(nibName: "MainVC", bundle: nil)
-            window?.rootViewController = main
-        }
+                if Cache.isUserLogged() {
+                    let home = TabBarController(nibName: "TabBarController", bundle: nil)
+                    window?.rootViewController = home
+                }else {
+                    let main = MainVC(nibName: "MainVC", bundle: nil)
+                    window?.rootViewController = main
+                }
+        
+//        let vc = MyProfileVC(nibName: "MyProfileVC", bundle: nil)
+//        let nav = UINavigationController(rootViewController: vc)
+//        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true
     }

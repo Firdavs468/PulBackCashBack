@@ -31,7 +31,6 @@ class NewsVC: UIViewController {
         getBanner()
         setupCollectionView()
         setupConstraint()
-        title = "Новости"
     }
     override func viewWillAppear(_ animated: Bool) {
         setNeedsStatusBarAppearanceUpdate()

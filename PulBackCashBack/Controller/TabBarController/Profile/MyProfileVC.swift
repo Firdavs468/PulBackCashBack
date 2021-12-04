@@ -12,22 +12,30 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var table_view: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var myProfileLbl: UILabel!
+    @IBOutlet weak var supportBtn: UIButton!
     
-    let lblsArr = [
+    let lblsArrRus = [
         "Настройки приложения",
         "О программе лояльности",
         "Поделиться приложением",
         "Жалобы и предложения"
     ]
     
+    let lblsArrUzb = [
+        "Ilova sozlamalari",
+        "Sodiqlik dasturi haqida",
+        "Ushbu ilovani baham ko'ring",
+        "Shikoyat va takliflar"
+    ]
+    
     let userData : UserData! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Профиль"
         setupTableView()
         setupUI()
+        appLanguage()
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -61,6 +69,12 @@ class MyProfileVC: UIViewController {
         phoneNumberLabel.text = Cache.getUserDefaultsString(forKey: "phone")
     }
     
+    func appLanguage() {
+        myProfileLbl.text = AppLanguage.getTitle(type: .myProfileTiinLbl)
+        supportBtn.setTitle(AppLanguage.getTitle(type: .SupportLbl), for: .normal)
+    }
+    
+    
 }
 
 //MARK: - TableView delegate methods
@@ -80,7 +94,13 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.table_view.dequeueReusableCell(withIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
-        cell.updateCell(image:AppIcon.settingsImages[indexPath.row] , label: lblsArr[indexPath.row])
+        let language = Cache.getUserDefaultsString(forKey: Keys.language)
+        if language == "uz" {
+            cell.updateCell(image:AppIcon.settingsImages[indexPath.row] , label: lblsArrUzb[indexPath.row])
+        }else {
+            cell.updateCell(image: AppIcon.settingsImages[indexPath.row], label: lblsArrRus[indexPath.row])
+        }
+        
         return cell
     }
     

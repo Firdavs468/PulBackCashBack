@@ -11,7 +11,15 @@ import SwiftyJSON
 import GoogleMaps
 
 class LoginVC: UIViewController {
+//    case letsGoLbl
+//    case mobileNumberLbl
+//    case loginSmsLbl
+//    case userAgreementLbl
+//    case agreeLbl
     
+    @IBOutlet weak var smsOrLoginLbl: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var letsGoLabel: UILabel!
     @IBOutlet weak var textFieldContainerView: UIView! {
         didSet {
             textFieldContainerView.layer.cornerRadius = textFieldContainerView.frame.height/9
@@ -39,6 +47,7 @@ class LoginVC: UIViewController {
         setupTextField()
         multipleFontColorsSingleLabel()
         newAppColor()
+        setupLanguage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +55,7 @@ class LoginVC: UIViewController {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
     }
     
+  
     @IBAction func clearTextButtonPressed(_ sender: Any) {
         phoneNumberTF.text = ""
     }
@@ -144,6 +154,15 @@ class LoginVC: UIViewController {
         tiinMarketLabel.attributedText = combination2
     }
     
+    //app language
+    func setupLanguage() {
+        letsGoLabel.text = AppLanguage.getTitle(type: .letsGoLbl)
+        tiinMarketLabel.text = AppLanguage.getTitle(type: .userAgreementLbl)
+        fullTextLabel.text = AppLanguage.getTitle(type: .agreeLbl)
+        phoneNumberLabel.text = AppLanguage.getTitle(type: .mobileNumberLbl)
+        smsOrLoginLbl.text = AppLanguage.getTitle(type: .loginSmsLbl)
+    }
+    
 }
 
 
@@ -180,10 +199,8 @@ extension LoginVC {
             if ch == "X" {
                 // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-                
                 // move numbers iterator to the next index
                 index = numbers.index(after: index)
-                
             } else {
                 result.append(ch) // just append a mask character
             }

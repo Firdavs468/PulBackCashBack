@@ -13,9 +13,12 @@
             <connections>
                 <outlet property="checkButton" destination="KIK-Mb-smF" id="MIM-wO-w0Z"/>
                 <outlet property="fullTextLabel" destination="Vzh-xD-pxN" id="5nZ-oc-M85"/>
+                <outlet property="letsGoLabel" destination="Idm-st-cPv" id="KAW-YP-5PG"/>
                 <outlet property="nextButton" destination="5lb-Zz-56f" id="xmL-bN-xZA"/>
                 <outlet property="phoneLabel" destination="d9s-tR-QwK" id="QVP-la-yH0"/>
+                <outlet property="phoneNumberLabel" destination="d9s-tR-QwK" id="f5C-bp-II7"/>
                 <outlet property="phoneNumberTF" destination="sgU-y5-itS" id="t9m-2j-NqM"/>
+                <outlet property="smsOrLoginLbl" destination="lkP-js-kxF" id="9CX-rH-aRN"/>
                 <outlet property="textFieldContainerView" destination="pQF-4V-DEH" id="9Hf-Li-s0x"/>
                 <outlet property="tiinMarketLabel" destination="fpz-DO-4eN" id="iCg-Jb-CmG"/>
                 <outlet property="uncheckButton" destination="rL2-CG-f9d" id="nSb-qC-dGI"/>
@@ -60,7 +63,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sqt-5k-mnu">
                                                                     <rect key="frame" x="15" y="4" width="230" height="32"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя * " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgU-y5-itS">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+998 " placeholder="Номер мобильного*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgU-y5-itS">
                                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="32"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <textInputTraits key="textInputTraits"/>

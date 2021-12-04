@@ -28,6 +28,7 @@ class OpenBeetoCell: UITableViewCell {
         containerView.layer.shadowColor = UIColor.systemGray.cgColor
         containerView.layer.shadowRadius = 10
         openBeetoLabel.textColor = AppColor.appColor
+        openBeetoLabel.text = AppLanguage.getTitle(type: .openBeetoBtn)
     }
     func open(_ url: URL,
       options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:],

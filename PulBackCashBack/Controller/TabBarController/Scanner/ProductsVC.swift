@@ -46,6 +46,7 @@ class ProductsVC: UIViewController {
         scanerButton.layer.cornerRadius = scanerButton.frame.height/6
         scanerButton.backgroundColor = AppColor.appColor
         goToBeeto.setTitleColor(AppColor.appColor, for: .normal)
+        goToBeeto.layer.cornerRadius = goToBeeto.frame.height/6
         goToBeeto.layer.borderWidth = 2
         goToBeeto.layer.borderColor = AppColor.appColor.cgColor
         qrCodeLabel.textColor = AppColor.appColor
@@ -84,7 +85,7 @@ extension ProductsVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.collection_view.frame.width+30)/3 , height:self.collection_view.frame.height-20)
+        return CGSize(width: (self.collection_view.frame.width+30)/3 , height:self.collection_view.frame.height-10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -105,24 +106,30 @@ extension ProductsVC {
         ]
         Networking.fetchRequest(urlAPI: API.barCodUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { [self] data in
             if let data = data {
+                
                 print(data)
                 let itemData = data["data"]
                 let dataPrices = data["data"]["prices"]
+                
                 if data["code"].intValue == 0 {
                     for i in 0..<dataPrices.count {
                         let prices = Prices(from: dataPrices[i]["from"].intValue, price: dataPrices[i]["price"].intValue)
                         getPrices.append(prices)
                         self.collection_view.reloadData()
                     }
+                    
                     //item data
                     numberLabel.text = "#\(itemData["sku"].intValue)"
                     qrCodeLabel.text = Cache.getUserDefaultsString(forKey: Keys.bar_code)
+                    
                     itemImage.sd_setImage(with: URL(string: itemData["representation"].stringValue), placeholderImage: UIImage(named: "noitem"))
+                    
                     let img = itemData["representation"].stringValue
                     let urlString = img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? img
                     self.itemImage.sd_setImage(with: URL(string:urlString))
+                    
                     itemNameLabel.text = itemData["name"].stringValue
-                    //                                     let getItem = ItemGetByBarCode(prices: getPrices, name: itemData["name"].stringValue, in_stock: itemData["in_stock"].intValue, _id: itemData["_id"].stringValue, barCode: itemData["barcode"].stringValue, sold_by: itemData["sold_by"].stringValue, representation: itemData["representation"].stringValue, price: itemData["price"].intValue, sku: itemData["sku"].intValue, representation_type: "")
+                   
                     
                 }else if data["code"].intValue == 12000 {
                     dismiss(animated: true, completion: nil)

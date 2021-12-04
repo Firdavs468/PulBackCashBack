@@ -15,12 +15,16 @@ import SwiftyJSON
 //My Telegram code - 3434
 class ConfirmationVC: UIViewController {
     
+    @IBOutlet weak var timerStack: UIStackView!
     @IBOutlet weak var textFieldContainerView: UIView!
     @IBOutlet weak var otpLabel: UILabel!
     @IBOutlet weak var otpTF: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var sendAgainButton: UIButton!
+    @IBOutlet weak var confirmationLbl: UILabel!
+    @IBOutlet weak var textFieldTitle: UILabel!
     
     var counter = 59
     var userData : UserData! = nil
@@ -29,9 +33,12 @@ class ConfirmationVC: UIViewController {
         cornerView()
         setupTextField()
         tapGesture()
-        phoneNumberLabel.text = "Номер мобильного  " +  Cache.getUserDefaultsString(forKey:"phone")
+        setupLanguage()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        sendAgainButton.isHidden = true
+        timerStack.isHidden = false
     }
+  
     
     override func viewDidLayoutSubviews() {
         nextButton.layer.cornerRadius = nextButton.frame.height/2
@@ -51,13 +58,22 @@ class ConfirmationVC: UIViewController {
         }
     }
     
+    @IBAction func sendAgainButtonPressed(_ sender: Any) {
+        //        userVerification()
+        counter = 59
+        timerStack.isHidden = false
+        sendAgainButton.isHidden = true
+    }
     
     //OTP timer
     @objc func updateCounter() {
         //example functionality
-        if counter >= 0 {
-            timerLabel.text = "00:\(counter) сек"
+        if counter > -1 {
+            timerLabel.text = "00:\(counter) с"
             counter -= 1
+        }else {
+            timerStack.isHidden = true
+            sendAgainButton.isHidden = false
         }
     }
     
@@ -67,14 +83,14 @@ class ConfirmationVC: UIViewController {
         textFieldContainerView.layer.cornerRadius = textFieldContainerView.frame.height/10
         //Setup Constraint
         if isSmalScreen568 {
-            otpLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            timerLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        }else if isSmalScreen736 {
             otpLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
             timerLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        }else if isSmalScreen736 {
+            otpLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            timerLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         }else {
-            otpLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-            timerLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+            otpLabel.font = UIFont.systemFont(ofSize: 21, weight: .regular)
+            timerLabel.font = UIFont.systemFont(ofSize: 21, weight: .regular)
         }
     }
     
@@ -84,6 +100,17 @@ class ConfirmationVC: UIViewController {
         otpTF.textContentType = .oneTimeCode
         otpTF.keyboardType = .numberPad
         otpTF.delegate = self
+    }
+    
+    //app language
+    func setupLanguage() {
+        phoneNumberLabel.text = AppLanguage.getTitle(type: .phoneNumberLbl) + " " + Cache.getUserDefaultsString(forKey:"phone")
+        confirmationLbl.text = AppLanguage.getTitle(type: .confirmationLbl)
+        textFieldTitle.text = AppLanguage.getTitle(type: .smsCodeLbl)
+        otpTF.placeholder = AppLanguage.getTitle(type: .confirmationCodePlc)
+        otpLabel.text = AppLanguage.getTitle(type: .otpTimerLbl)
+        sendAgainButton.setTitle(AppLanguage.getTitle(type: .sendAgainBtn), for: .normal)
+
     }
     
 }
@@ -154,6 +181,7 @@ extension ConfirmationVC {
         }
     }
 }
+
 //MARK: - Anor group kodi -> anor_p@ssw0rd
 
 //User Sign Up

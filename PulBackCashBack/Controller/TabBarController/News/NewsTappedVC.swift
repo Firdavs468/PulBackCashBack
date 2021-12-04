@@ -17,8 +17,8 @@ class NewsTappedVC: UIViewController {
     var getBanner : GetBannerNews!
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Новости"
         setupGetBanner()
+        title = AppLanguage.getTitle(type: .newsNav)
     }
     
     func setupGetBanner() {

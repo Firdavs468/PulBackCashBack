@@ -20,11 +20,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvr-6a-9dS">
                         <rect key="frame" x="10" y="10" width="472" height="152"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-UW-uBw">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-UW-uBw">
                                 <rect key="frame" x="20" y="10" width="432" height="132"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-gY-dIo">
-                                        <rect key="frame" x="0.0" y="0.0" width="191" height="132"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-gY-dIo">
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="132"/>
                                         <string key="text">Начните
 покупки через</string>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -42,6 +42,7 @@
                             <constraint firstItem="6xJ-UW-uBw" firstAttribute="leading" secondItem="Mvr-6a-9dS" secondAttribute="leading" constant="20" id="4Jc-fY-olI"/>
                             <constraint firstAttribute="bottom" secondItem="6xJ-UW-uBw" secondAttribute="bottom" constant="10" id="BQj-XA-IQK"/>
                             <constraint firstItem="6xJ-UW-uBw" firstAttribute="top" secondItem="Mvr-6a-9dS" secondAttribute="top" constant="10" id="Lni-JB-Wxz"/>
+                            <constraint firstItem="cOe-FO-4Yz" firstAttribute="width" secondItem="Mvr-6a-9dS" secondAttribute="width" multiplier="0.404661" id="RLp-1V-RFB"/>
                             <constraint firstAttribute="trailing" secondItem="6xJ-UW-uBw" secondAttribute="trailing" constant="20" id="pRZ-dm-ziM"/>
                         </constraints>
                     </view>
