@@ -226,7 +226,6 @@
 		C77F7BF5273166E8003B3FAE /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				C77F7BE0273165E7003B3FAE /* TabBarController.swift */,
 				C7E08A61273A315300C15A74 /* News */,
 				C7FE1F2B2733EC6A004337ED /* Profile */,
 				C7B1063927369F08004A0CD5 /* Scanner */,
@@ -390,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				C785A1F6272AC7F60061B719 /* AppDelegate.swift */,
+				C77F7BE0273165E7003B3FAE /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

@@ -7,8 +7,11 @@
 
 import Foundation
 import SnapKit
+
 let isSmalScreen568 = Int(UIScreen.main.bounds.height) <= 568
 let isSmalScreen736 = UIScreen.main.bounds.height <= 736 && UIScreen.main.bounds.height > 568
+
+
 class AlertView: UIView {
     override func draw(_ rect: CGRect) {
         self.layer.cornerRadius = 20

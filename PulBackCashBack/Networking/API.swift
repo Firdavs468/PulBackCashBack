@@ -23,6 +23,7 @@ class API {
         static let branches = "/branches"
         static let feedback = "/feedback"
         static let getImage = "http://89.223.71.112:9494/image?path="
+        static let updateProfile = "/updateUser"
         
     }
     
@@ -35,6 +36,7 @@ class API {
     static let branchesUrl : URL = URL(string: base_url + EndPoints.branches)!
     static let barCodUrl : URL = URL(string: "http://pos.inone.uz/client-api/item/get-by-barcode")!
     static let feedbackUrl : URL = URL(string: base_url + EndPoints.feedback)!
+    static let updateProfileUrl : URL = URL(string: base_url + EndPoints.updateProfile)!
     
     
     //MARK: - Get API

@@ -205,7 +205,7 @@ extension AppLanguage {
             case .openLbl:
                 return "Открыт"
             case .closeLbl:
-                return "Закрывается в "
+                return "Закрывается в: "
             case .scanBtn:
                 return "Сканировать"
             case .oneClickBtn:

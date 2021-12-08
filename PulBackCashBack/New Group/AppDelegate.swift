@@ -20,28 +20,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey("AIzaSyDOyOZf1XkqaKBKS5ZOS4PuSI95jha56N0")
         GMSPlacesClient.provideAPIKey("AIzaSyDOyOZf1XkqaKBKS5ZOS4PuSI95jha56N0")
+        
         UITabBar.appearance().tintColor = AppColor.appColor
         //        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar")
+        
         UINavigationBar.appearance().setBackgroundImage(UIImage(named:"navbar"),
                                                         for: .default)
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
+        
         UINavigationBar.appearance().titleTextAttributes = attrs
         UIApplication.shared.windows.forEach { window in
             window.overrideUserInterfaceStyle = .light
         }
-                if Cache.isUserLogged() {
-                    let home = TabBarController(nibName: "TabBarController", bundle: nil)
-                    window?.rootViewController = home
-                }else {
-                    let main = MainVC(nibName: "MainVC", bundle: nil)
-                    window?.rootViewController = main
-                }
         
-//        let vc = MyProfileVC(nibName: "MyProfileVC", bundle: nil)
-//        let nav = UINavigationController(rootViewController: vc)
-//        window?.rootViewController = nav
+        //        if Cache.isUserLogged() {
+        //            let home = TabBarController(nibName: "TabBarController", bundle: nil)
+        //            window?.rootViewController = home
+        //        }else {
+        //            let main = MainVC(nibName: "MainVC", bundle: nil)
+        //            window?.rootViewController = main
+        //        }
+        let vc = TabBarController()
+        Cache.saveUserDefaults(nil, forKey: Keys.feedbackType)
+        Cache.saveUserDefaults(nil, forKey: "selectbranch")
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         return true
     }

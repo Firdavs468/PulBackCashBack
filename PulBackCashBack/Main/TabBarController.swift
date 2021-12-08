@@ -18,6 +18,7 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         //        let imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         setupTabBar()
+        tabBarController?.tabBar.items![3].badgeValue = "3"
     }
     
     override func viewWillLayoutSubviews() {
@@ -36,7 +37,8 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         let navbranches =  UINavigationController(rootViewController: branches)
         
         let viewController = BarcodeScannerViewController()
-        viewController.tabBarItem.image = AppIcon.tabBarScaner
+//        viewController.tabBarItem.image = AppIcon.tabBarScaner
+//        viewController.tabBarItem.image?.withTintColor(AppColor.appColor )
         viewController.codeDelegate = self
         viewController.errorDelegate = self
         viewController.dismissalDelegate = self
@@ -52,12 +54,37 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         profile.tabBarItem.image = UIImage(named: "user")
         profile.tabBarItem.title = AppLanguage.getTitle(type: .profileTitle)
         let navprofile =  UINavigationController(rootViewController: profile)
-        
+    
         viewControllers = [home, navbranches, viewController,  navnews, navprofile]
+        setupMiddleButton()
     }
     
     @objc func selector() {
         print("hello world")
+    }
+    
+    func setupMiddleButton() {
+        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+        var menuButtonFrame = menuButton.frame
+        menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 50
+        menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2
+        menuButton.frame = menuButtonFrame
+
+//        menuButton.backgroundColor = UIColor.red
+        menuButton.layer.cornerRadius = menuButtonFrame.height/2
+        view.addSubview(menuButton)
+
+        menuButton.setImage(UIImage(named: "scaner"), for: .normal)
+        menuButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
+
+        view.layoutIfNeeded()
+    }
+
+
+    // MARK: - Actions
+
+    @objc private func menuButtonAction(sender: UIButton) {
+        selectedIndex = 2
     }
     
 }
@@ -81,7 +108,7 @@ extension TabBarController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDeleg
     
 }
 
-extension TabBarController: UITabBarControllerDelegate{
+extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         switch viewController {
             case is BarcodeScannerViewController :
@@ -94,3 +121,4 @@ extension TabBarController: UITabBarControllerDelegate{
         }
     }
 }
+

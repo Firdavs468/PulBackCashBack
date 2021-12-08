@@ -54,8 +54,6 @@ class ReviewsVC: UIViewController {
     var selectedImage : UIImage? = nil
     var getAddress = [String]()
     
-    let feedBackType = Int(Cache.getUserDefaultsString(forKey: Keys.feedbackType))
-    let branch = Int(Cache.getUserDefaultsString(forKey: "selectbranch"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +69,10 @@ class ReviewsVC: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
+        let feedBackType = Int(Cache.getUserDefaultsString(forKey: Keys.feedbackType))
+        let branch = Int(Cache.getUserDefaultsString(forKey: "selectbranch"))
         
+        print("branch =", branch, "\nfeedbacktype= ", feedBackType)
         if textView.text.isEmpty {
             Alert.showAlert(forState: .error, message: "Text yozing")
         };if branch == nil {
@@ -163,6 +164,9 @@ extension ReviewsVC : UITableViewDelegate, UITableViewDataSource {
 //MARK: - Create feedback API
 extension ReviewsVC {
     func createFeedback() {
+        let feedBackType = Int(Cache.getUserDefaultsString(forKey: Keys.feedbackType))
+        let branch = Int(Cache.getUserDefaultsString(forKey: "selectbranch"))
+        
         if let token = Cache.getUserToken() {
             
             let headers : HTTPHeaders = [
@@ -234,6 +238,7 @@ extension ReviewsVC {
             }else {
                 typeAlert.addAction(UIAlertAction(title: feedBackTypeRus[i], style: .default, handler: { _ in
                     Cache.saveUserDefaults("\(i)", forKey: Keys.feedbackType)
+                    print(Cache.getUserDefaultsString(forKey: Keys.feedbackType))
                 }))
             }
         }

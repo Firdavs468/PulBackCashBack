@@ -24,6 +24,7 @@ class HomeVC: UIViewController, OpenBeeto {
         getBalanceAPI()
         setupUserLabel()
         
+        self.table_view.reloadData()
     }
     
     //userLabel setup
@@ -78,7 +79,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         //card flip animation
         if indexPath.row == 1 {
             if isSmalScreen568 {
-               return 110
+                return 110
             }else {
                 return 130
             }

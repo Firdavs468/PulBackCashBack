@@ -33,10 +33,12 @@ class MyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupUI()
         appLanguage()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setupUI()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userNameLabel.textColor = AppColor.appColor
@@ -47,9 +49,10 @@ class MyProfileVC: UIViewController {
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "выход ", message: "вы хотите выйти из своего профиля?", preferredStyle: .alert)
+        
         let yes = UIAlertAction(title: "Да", style: .default) { _ in
             Cache.saveUserToken(token: nil)
-            Cache.saveUserDefaults(false, forKey: Keys.isLogged)
+            
             let window = UIApplication.shared.keyWindow
             let vc = LoginVC(nibName: "LoginVC", bundle: nil)
             DispatchQueue.main.async {
@@ -63,6 +66,7 @@ class MyProfileVC: UIViewController {
         alert.addAction(no)
         present(alert, animated: true, completion: nil)
     }
+    
     func setupUI() {
         userNameLabel.textColor = AppColor.appColor
         userNameLabel.text = Cache.getUserDefaultsString(forKey: Keys.name) + " " + Cache.getUserDefaultsString(forKey: Keys.surname)
@@ -114,10 +118,8 @@ extension MyProfileVC : UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 3 {
             let vc = ReviewsVC(nibName: "ReviewsVC", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
-        }else {
-            let product = ProductsVC(nibName: "ProductsVC", bundle: nil)
-            present(product, animated: true, completion: nil)
         }
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if isSmalScreen568 {

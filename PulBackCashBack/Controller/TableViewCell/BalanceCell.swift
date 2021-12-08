@@ -10,11 +10,11 @@ import CoreImage
 
 class BalanceCell: UITableViewCell {
     
+    @IBOutlet weak var showCodeLbl: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var balancLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var yourBalanceLabel: UILabel!
-    @IBOutlet weak var showCodeButton: UIButton!
     @IBOutlet weak var barCodeNumberLabel: UILabel!
     @IBOutlet weak var barCodeImage: UIImageView!
     @IBOutlet weak var barCodeStack: UIStackView!
@@ -25,6 +25,7 @@ class BalanceCell: UITableViewCell {
     }
     static let identifier = "BalanceCell"
     var isOpened  = false
+    
     static var userName = Cache.getUserDefaultsString(forKey: Keys.name) + " " + Cache.getUserDefaultsString(forKey: Keys.surname)
     
     override func awakeFromNib() {
@@ -43,28 +44,7 @@ class BalanceCell: UITableViewCell {
     
     func appLanguage() {
         yourBalanceLabel.text = AppLanguage.getTitle(type: .myBalanceLbl)
-        showCodeButton.setTitle(AppLanguage.getTitle(type: .showCodeLbl), for: .normal)
-    }
-    
-    
-    
-    //flip card animation
-    @IBAction func showCodeButtonPressed(_ sender: Any) {
-        if isOpened {
-            isOpened = false
-            barCodeStack.isHidden = true
-            nameStack.isHidden = false
-            UIView.transition(with: containerView, duration: 1, options: .transitionFlipFromLeft) { [self] in
-                userNameLabel.text = BalanceCell.userName
-            }
-        }else {
-            isOpened = true
-            barCodeStack.isHidden = false
-            nameStack.isHidden = true
-            UIView.transition(with: containerView, duration: 1, options: .transitionFlipFromRight) {
-                
-            }
-        }
+        showCodeLbl.text = AppLanguage.getTitle(type: .showCodeLbl)
     }
     
     //tap gesture
@@ -101,8 +81,8 @@ class BalanceCell: UITableViewCell {
         yourBalanceLabel.attributedText = NSMutableAttributedString(string: "На вашем балансе:", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         
         //show code Button
-        showCodeButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        showCodeButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        showCodeLbl.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        showCodeLbl.font = .systemFont(ofSize: 14, weight: .medium)
         
         //user name Label
         userNameLabel.textColor = UIColor(red: 0.545, green: 0.545, blue: 0.545, alpha: 1)

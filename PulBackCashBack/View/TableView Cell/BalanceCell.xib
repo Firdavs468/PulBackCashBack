@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -55,23 +56,21 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="er3-ZN-2hn">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="er3-ZN-2hn">
                                                         <rect key="frame" x="0.0" y="21.5" width="459" height="43"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="376,650.00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyi-Uc-zcZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="219.5" height="43"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="43"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.7725490196" blue="0.65784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-Il-oxv">
-                                                                <rect key="frame" x="239.5" y="0.0" width="219.5" height="43"/>
-                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" title="Показать код"/>
-                                                                <connections>
-                                                                    <action selector="showCodeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JEf-gP-67J"/>
-                                                                </connections>
-                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="4qz-WS-xxG">
+                                                                <rect key="frame" x="234.5" y="12.5" width="224.5" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -115,7 +114,7 @@
                 <outlet property="barCodeStack" destination="Y3Z-SA-vfi" id="Fos-hS-CSh"/>
                 <outlet property="containerView" destination="5Ib-IN-ER3" id="HWg-EE-T1A"/>
                 <outlet property="nameStack" destination="LMg-j3-1WG" id="QUi-we-dLL"/>
-                <outlet property="showCodeButton" destination="BaF-Il-oxv" id="hWG-8J-fvV"/>
+                <outlet property="showCodeLbl" destination="4qz-WS-xxG" id="cJj-qh-Mtd"/>
                 <outlet property="userNameLabel" destination="ZpL-Q7-J5X" id="Pce-E8-D5f"/>
                 <outlet property="yourBalanceLabel" destination="ajv-Nv-8m2" id="vz4-1q-nlP"/>
             </connections>

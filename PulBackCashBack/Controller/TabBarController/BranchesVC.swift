@@ -10,6 +10,7 @@ import GoogleMaps
 import Alamofire
 import SwiftyJSON
 
+
 let primaryColor = UIColor(red:0.00, green:0.19, blue:0.56, alpha:1.0)
 
 let secondaryColor = UIColor(red:0.89, green:0.15, blue:0.21, alpha:1.0)
@@ -23,21 +24,19 @@ struct SSPlace {
 let customMarkerWidth: Int = 50
 let customMarkerHeight: Int = 56
 
-class BranchesVC: UIViewController, CLLocationManagerDelegate {
+class BranchesVC: UIViewController {
     
     var places = [SSPlace]()
     
     var markers = [GMSMarker]()
     var getBranches = [Branches]()
+    var locationManager: CLLocationManager?
     
     var mapView: GMSMapView = {
         let v = GMSMapView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
-    
-    var locationManager = CLLocationManager()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +47,14 @@ class BranchesVC: UIViewController, CLLocationManagerDelegate {
                                               zoom: 15.0)
         self.mapView.animate(to: camera)
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-            setupMapView()
-            self.focusMapToShowAllMarkers()
+        setupMapView()
+        self.focusMapToShowAllMarkers()
     }
     
     //mapView create, setup mapView
@@ -138,12 +138,27 @@ extension BranchesVC: GMSMapViewDelegate {
             marker.tracksInfoWindowChanges = true
             let infoWindow = CustomMarkerInfoWindow()
             infoWindow.tag = 5555
-            let height: CGFloat = 170
-            let paddingWith = self.view.frame.width-20
+            let height: CGFloat = 200
+            let paddingWith = self.view.frame.width+50 // -20
             infoWindow.frame = CGRect(x: 0, y: 0, width: getEstimatedWidthForMarker(place, padding: paddingWith) + paddingWith, height: height)
-            for i in 0..<getBranches.count {
-                infoWindow.updateMarkerInfo(name: getBranches[i].name, address: getBranches[i].address, open_at: getBranches[i].open_at, close_at: getBranches[i].close_at, contact: getBranches[i].contact, logo: getBranches[i].logo)
+            
+            if !getBranches.isEmpty {
+                Loader.stop()
+                print(Data(),"data")
+                print(Date(), "date")
+                for i in 0..<getBranches.count {
+                    infoWindow.updateMarkerInfo(branchName: getBranches[i].name,
+                                                branchAddress: getBranches[i].address,
+                                                branchLogo: getBranches[i].logo,
+                                                closed: getBranches[i].close_at,
+                                                isOpen: getBranches[i].open_at,
+                                                contact: getBranches[i].contact)
+                }
+                
+            }else {
+                Loader.start()
             }
+            
             return infoWindow
         }
         return nil
@@ -152,12 +167,11 @@ extension BranchesVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         if let place = marker.userData as? SSPlace {
             print("Info window tapped", place)
-            openGoogleMap()
+            openGoogleDriveMap()
         }
     }
     
     func mapView(_ mapView: GMSMapView, didCloseInfoWindowOf marker: GMSMarker) {
-        //        self.fetchSpots()
         guard let customMarkerView = marker.iconView as? CustomMarkerView else { return }
         let imgName = getBranches[0].logo
         let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), imageName: imgName, borderColor: primaryColor, tag: customMarkerView.tag)
@@ -168,8 +182,8 @@ extension BranchesVC: GMSMapViewDelegate {
         var estimatedWidth: CGFloat = 0
         let infoWindow = CustomMarkerInfoWindow()
         let maxWidth = (UIDevice.current.userInterfaceIdiom == .pad ? UIScreen.main.bounds.width * 0.7 : UIScreen.main.bounds.width * 0.8) - padding
-        let titleWidth = (place.name ?? "").width(withConstrainedHeight: infoWindow.addressLabel.frame.height, font: infoWindow.addressLabel.font)
-        let subtitleWidth = (place.address ?? "").width(withConstrainedHeight: infoWindow.nameLabel.frame.height, font: infoWindow.nameLabel.font)
+        let titleWidth = (place.name ?? "").width(withConstrainedHeight: infoWindow.branchAddressLabel.frame.height, font: infoWindow.branchAddressLabel.font)
+        let subtitleWidth = (place.address ?? "").width(withConstrainedHeight: infoWindow.branchNameLabel.frame.height, font: infoWindow.branchNameLabel.font)
         estimatedWidth = min(maxWidth, max(titleWidth, subtitleWidth))
         return estimatedWidth
     }
@@ -196,15 +210,14 @@ extension BranchesVC {
             
             Networking.fetchRequest(urlAPI: API.branchesUrl, method: .get, params: nil, encoding: JSONEncoding.default, headers: headers) { [self] data in
                 if let data = data {
-                    
                     Loader.start()
+                    
                     if data["code"].intValue == 0 {
-                        
                         let jsonData = JSON(data["data"])
                         
                         for i in 0..<jsonData.count {
                             Loader.stop()
-                            
+                            print(data)
                             let branches = Branches(_id: jsonData[i]["_id"].intValue,
                                                     name: jsonData[i]["name"].stringValue,
                                                     logo: jsonData[i]["logo"].stringValue,
@@ -256,11 +269,47 @@ extension BranchesVC {
     }
     
     func openGoogleDriveMap() {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        //        locationManager?.requestWhenInUseAuthorization()
+        
+        let lat = mapView.myLocation?.coordinate.latitude
+        let long = mapView.myLocation?.coordinate.longitude
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
-            UIApplication.shared.open(URL(string:"comgooglemaps://?center=\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(41.3281887),\(69.3209524)")!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL(string:"comgooglemaps://?center=\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(lat),\(long)")!, options: [:], completionHandler: nil)
         } else {
-            UIApplication.shared.open(URL(string: "http://maps.google.com/maps?q=loc:\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(41.3281887),\(69.3209524)")!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL(string: "http://maps.google.com/maps?q=loc:\(41.3281887),\(69.3209524)&zoom=14&views=traffic&q=\(lat),\(long)")!, options: [:], completionHandler: nil)
         }
     }
 }
 
+// MARK: - CLLocationManagerDelegate
+//1
+extension BranchesVC: CLLocationManagerDelegate {
+    // 2
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // 3
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        // 4
+        locationManager!.startUpdatingLocation()
+        
+        //5
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+    
+    // 6
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        // 7
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        
+        // 8
+        locationManager!.stopUpdatingLocation()
+    }
+}

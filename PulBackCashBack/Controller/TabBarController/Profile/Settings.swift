@@ -88,7 +88,7 @@ extension Settings : UITableViewDelegate, UITableViewDataSource {
             self.chooseLanguageAlert()
         }else {
             let vc = ProfileUpdateVC(nibName: "ProfileUpdateVC", bundle: nil)
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true )
         }
         
     }

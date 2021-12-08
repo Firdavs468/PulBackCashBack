@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileUpdateVC: UIViewController {
     
@@ -17,17 +19,15 @@ class ProfileUpdateVC: UIViewController {
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var familiyStatusTextField: UITextField!
-    @IBOutlet weak var profilePhotoTextField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet var containerView: [UIView]!
     
-    @IBOutlet weak var selectPhotoButton: UIButton!
     
     var datePicker = UIDatePicker()
     var selectedImage : UIImage? = nil
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class ProfileUpdateVC: UIViewController {
         cornerView()
         newAppColor()
         toolbar()
+        setupTextField()
         
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
@@ -72,8 +73,23 @@ class ProfileUpdateVC: UIViewController {
         self.familiyStatusAlert()
     }
     
-    @IBAction func selectPhotoButtonPressed(_ sender: Any) {
-        photoLibraryAlert()
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        if nameTextField.text!.isEmpty || birthdayTextField.text!.isEmpty || familiyStatusTextField.text!.isEmpty || genderTextField.text!.isEmpty {
+            
+            Alert.showAlert(forState: .error, message: "Belgilangan maydonlarni to'ldiring")
+            
+        }else {
+            profileUpdate()
+        }
+        
+    }
+    
+    func setupTextField() {
+        nameTextField.text = Cache.getUserDefaultsString(forKey: Keys.name)
+        surnameTextField.text =  Cache.getUserDefaultsString(forKey: Keys.surname)
+        birthdayTextField.text = Cache.getUserDefaultsString(forKey: Keys.bithday)
     }
     
     //new app color
@@ -145,7 +161,6 @@ class ProfileUpdateVC: UIViewController {
         birthdayTextField.placeholder = AppLanguage.getTitle(type: .birthdayPlc)
         genderTextField.placeholder = AppLanguage.getTitle(type: .genderPlc)
         familiyStatusTextField.placeholder = AppLanguage.getTitle(type: .familyStatusPlc)
-        profilePhotoTextField.placeholder = AppLanguage.getTitle(type: .profilePhotoPlc)
         
     }
     
@@ -197,57 +212,48 @@ extension ProfileUpdateVC {
     }
 }
 
-//open imagePicker controller
-extension ProfileUpdateVC : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    func photoLibraryAlert() {
-        
-        let alert = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
-        
-        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
-            self.openCamer()
+// profile update api
+extension ProfileUpdateVC {
+    func profileUpdate() {
+        if let token = Cache.getUserToken() {
+            let headers : HTTPHeaders = [
+                "Authorization": token,
+                "Content-Type": "application/json"
+            ]
+            
+            let param : [String:Any] = [
+                "first_name": nameTextField.text ?? "",
+                "last_name": surnameTextField.text ?? "",
+                "birth_date": birthdayTextField.text!+"T14:58:29.134673671+05:00",
+                "gender": 1,
+                "family_status":1,
+            ]
+            
+            Networking.fetchRequest(urlAPI: API.updateProfileUrl, method: .post, params: param, encoding: JSONEncoding.default, headers: headers) { data in
+                if let data = data {
+                    let jsonData = data["data"]
+                    if data["code"].intValue == 0 {
+                        DoneAlert.showAlert(title: "Profile muvafaqiyatli taxrirlandi")
+                        
+                        Cache.saveUserDefaults(jsonData["last_name"].stringValue, forKey: Keys.surname)
+                        Cache.saveUserDefaults(jsonData["first_name"].stringValue, forKey: Keys.name)
+                        Cache.saveUserDefaults(jsonData["birthday"].stringValue, forKey: Keys.bithday)
+                        
+                        print(data)
+                        
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    }else if data["code"].intValue == 50003 {
+                        Alert.showAlert(forState: .error, message: "Nomalum xato")
+                    }else if data["code"].intValue == 50001 {
+                        Alert.showAlert(forState: .error, message: "Foydalanuvchi allaqachon mavjud")
+                    }else {
+                        Alert.showAlert(forState: .error, message: "Nomalum xato")
+                    }
+                }
+            }
+            
         }
-        let photolibrary = UIAlertAction(title: "PhotoLibrary", style: .default) { _ in
-            self.openGallery()
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alert.addAction(camera)
-        alert.addAction(photolibrary)
-        alert.addAction(cancel)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func openGallery() {
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.allowsEditing = false //If you want edit option set "true"
-        imagePickerController.sourceType = .photoLibrary //.photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
         
     }
-    
-    func openCamer() {
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.allowsEditing = false //If you want edit option set "true"
-        imagePickerController.sourceType = .camera //.photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-        
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let tempImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
-        selectedImage = tempImage
-        selectPhotoButton.setImage(selectedImage, for: .normal)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
